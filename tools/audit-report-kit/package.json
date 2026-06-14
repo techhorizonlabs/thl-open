@@ -1,0 +1,22 @@
+{
+  "name": "theo-report-kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "THL Theo — audit JSON → client PDF (react-pdf) + compile-checked JSON-LD (schema-dts)",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "report": "tsx src/cli.ts"
+  },
+  "dependencies": {
+    "@react-pdf/renderer": "^4.1.6",
+    "react": "^18.3.1",
+    "schema-dts": "^1.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
