@@ -1,9 +1,9 @@
 {
-  "name": "theo-report-kit",
+  "name": "audit-report-kit",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "THL Theo — audit JSON → client PDF (react-pdf) + compile-checked JSON-LD (schema-dts)",
+  "description": "Tech Horizon Labs — audit JSON → branded client PDF (react-pdf) + compile-checked JSON-LD (schema-dts)",
   "scripts": {
     "build": "tsc --noEmit",
     "report": "tsx src/cli.ts"
