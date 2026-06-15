@@ -1,7 +1,18 @@
 // Fictional sample audit — anonymized broker. No real client data.
 // This is the shape Theo's audit pipeline would emit and the report renders.
 
-export type CategoryScore = { key: string; label: string; score: number };
+// `provenance` is optional and, when set, renders as a small muted tag beside the bar.
+// [scan] = scored from data fetched this run · [partial-scan] = some pages sampled ·
+// [heuristic] = model judgement, no data fetched · [unmeasured] = data source unavailable.
+// When a category is [unmeasured] or pure [heuristic], set `score: null` and the bar
+// renders "—" instead of an invented number (see THL GEO Method, scoring discipline).
+export type Provenance = "scan" | "partial-scan" | "heuristic" | "unmeasured";
+export type CategoryScore = {
+  key: string;
+  label: string;
+  score: number | null;
+  provenance?: Provenance;
+};
 export type Finding = {
   severity: "critical" | "high" | "medium";
   title: string;

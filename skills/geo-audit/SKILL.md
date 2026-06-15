@@ -218,15 +218,23 @@ Generate a file called `GEO-AUDIT-REPORT.md` with the following structure:
 
 ### Score Breakdown
 
-| Category | Score | Weight | Weighted Score |
-|---|---|---|---|
-| AI Citability | [X]/100 | 25% | [X] |
-| Brand Authority | [X]/100 | 20% | [X] |
-| Content E-E-A-T | [X]/100 | 20% | [X] |
-| Technical GEO | [X]/100 | 15% | [X] |
-| Schema & Structured Data | [X]/100 | 10% | [X] |
-| Platform Optimization | [X]/100 | 10% | [X] |
-| **Overall GEO Score** | | | **[X]/100** |
+| Category | Score | Weight | Weighted Score | Provenance |
+|---|---|---|---|---|
+| AI Citability | [X]/100 | 25% | [X] | [scan] |
+| Brand Authority | [X]/100 | 20% | [X] | [scan] |
+| Content E-E-A-T | [X]/100 | 20% | [X] | [partial-scan] |
+| Technical GEO | [X]/100 | 15% | [X] | [scan] |
+| Schema & Structured Data | [X]/100 | 10% | [X] | [scan] |
+| Platform Optimization | [X]/100 | 10% | [X] | [scan] |
+| **Overall GEO Score** | | | **[X]/100** | |
+
+**Provenance vocabulary (THL enhancement — every row carries one):** `[scan]` = scored
+from data actually fetched this run · `[partial-scan]` = some pages sampled, others
+inferred · `[heuristic]` = model judgement, no underlying data fetched · `[unmeasured]`
+= the data source needed was unavailable. When a category is `[unmeasured]` or pure
+`[heuristic]`, emit `—` for its score, **never a number** — a number with weak
+provenance still reads as hard data. This is how the audit stays honest about what it
+actually measured.
 
 ---
 

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/techhorizonlabs/thl-open/blob/main/SECURITY.md
+    about: Please report security issues privately — see SECURITY.md, do not open a public issue.
+  - name: Tech Horizon Labs
+    url: https://techhorizonlabs.com
+    about: Questions about working with us on a real engagement.

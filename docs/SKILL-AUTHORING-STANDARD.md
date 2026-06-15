@@ -59,6 +59,13 @@ audits, give a checklist the model ticks off so no category is silently dropped.
 **This is the single biggest lever on consistency** — `agent-readiness-scan`'s fixed
 CSV schema and its "never hand-author rows" rule are the model.
 
+For any skill that emits scores, **tag each score's provenance** in the output
+template — `[scan]` / `[partial-scan]` / `[heuristic]` / `[unmeasured]` — and require
+`—` instead of a number when a value is `[unmeasured]` or pure `[heuristic]`. A number
+with weak provenance reads as hard data; the tag is what keeps "we measured this" honest
+versus "we guessed this." (See the scoring discipline in
+[the GEO Method](../docs/THL-GEO-METHOD.md).)
+
 **P8 — Right degrees of freedom.** High freedom (prose) for judgement
 (content / E-E-A-T advice); low freedom (pinned scripts and schemas) for measurement
 (scoring, parsing, validation) so two runs on the same input are comparable.
