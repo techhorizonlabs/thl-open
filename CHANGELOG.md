@@ -26,6 +26,24 @@ The `skills/geo*` suite is an improved fork of
   - `geo-technical` 448 → 69 lines (`references/audit-categories.md`, `output-template.md`)
   - `geo-llmstxt` 432 → 111 lines (`references/spec.md`, `output-template.md`)
 
+### 2026-06-15 (later) — adoption + credibility layer
+- **Added [`examples/`](examples)** — a prompt cheat-sheet for every skill plus a worked
+  end-to-end audit on a fictional broker (numbers consistent with the sample report and
+  the committed `harborview.jsonld`).
+- **Published the [THL Skill-Authoring Standard](docs/SKILL-AUTHORING-STANDARD.md)**
+  (P1–P10 + the security rule + a pre-publish gate) and baked its checklist into
+  [`CONTRIBUTING.md`](CONTRIBUTING.md) as the PR gate.
+- **Packaged as a Claude Code plugin** — `.claude-plugin/marketplace.json` +
+  `plugin.json`, so the whole suite installs via
+  `/plugin marketplace add techhorizonlabs/thl-open`.
+- **Added [`evals/`](evals)** — the eval-harness shape (frozen sites, expected ranges,
+  must-flag findings, tier-aware runs) with one fictional worked fixture. The real
+  client regression set stays proprietary.
+- **Added [`docs/HOW-WE-COMPARE.md`](docs/HOW-WE-COMPARE.md)** — an honest landscape
+  comparison (incl. where alternatives like GEO Optimizer are ahead) and the permissive
+  building blocks worth adopting, with licence traps flagged.
+
 ### Queued (next pass)
 - Replace the suite's internal PDF generator with `tools/audit-report-kit` end to end.
 - Resolve cross-skill reference paths so the orchestrator's sub-skill links always resolve.
+- Add a second and third frozen eval fixture (different verticals) to widen regression coverage.
