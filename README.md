@@ -1,41 +1,93 @@
+<div align="center">
+
 # THL Open
 
-Open-source building blocks from [Tech Horizon Labs](https://techhorizonlabs.com) for Claude-native GTM + AI-visibility work — a GEO/AI-visibility skill suite plus the THL-original tools we pair with it.
+### AI-visibility engineering, the open way
 
-## What's inside
+The open layer of how [**Tech Horizon Labs**](https://techhorizonlabs.com) runs GEO / AI-visibility audits — a Claude Code skill suite, two original tools, and the **method** that ties them together.
 
-### GEO / AI-visibility skill suite — `skills/geo*`
-A comprehensive set of Claude Code skills for Generative Engine Optimization: full GEO audits, citability scoring, AI crawler analysis, `llms.txt` generation, schema markup, brand-mention scanning, platform-specific optimization, technical SEO, content E-E-A-T, prospect tracking, proposals, and report generation.
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Built for Claude Code](https://img.shields.io/badge/built%20for-Claude%20Code-da7756.svg)](https://claude.com/claude-code)
+[![Method](https://img.shields.io/badge/read-the%20THL%20GEO%20method-1a1a2e.svg)](docs/THL-GEO-METHOD.md)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-10b981.svg)](CONTRIBUTING.md)
 
-> **Attribution.** These `geo-*` skills are an **improved fork** of [`geo-seo-claude`](https://github.com/zubair-trabzada/geo-seo-claude) by **Zubair Trabzada** (MIT — original license at [`skills/geo/LICENSE-geo-seo-claude`](skills/geo/LICENSE-geo-seo-claude)). Tech Horizon Labs' changes: removed baked-in dates / time-sensitive facts, relativized machine-specific paths, and wired the suite to the THL-original tools below. See [`NOTICE.md`](NOTICE.md).
-
-### `skills/agent-readiness-scan` — THL-original
-Turns Cloudflare's public [`isitagentready.com`](https://isitagentready.com) check into audit-grade artifacts (fixed-schema CSV + the 0–100 score + evidence). The companion to the GEO audit.
-
-### `tools/audit-report-kit` — THL-original
-Turns an audit's JSON into a polished, branded **client PDF** (react-pdf) + compile-checked **JSON-LD** (schema-dts). Use it as the report-generation layer for the GEO suite. See [its README](tools/audit-report-kit/README.md).
-
-## Install
-
-```bash
-cp -R skills/geo skills/geo-llmstxt skills/geo-crawlers ~/.claude/skills/   # pick what you need
-cp -R skills/agent-readiness-scan ~/.claude/skills/
-```
-
-## What's THL-original vs improved-fork
-
-| Component | Status |
-|---|---|
-| `skills/agent-readiness-scan` | **THL-original** |
-| `tools/audit-report-kit` | **THL-original** |
-| `skills/geo*` | Improved fork of geo-seo-claude (Zubair Trabzada, MIT) — credited |
-
-We keep that distinction honest: the GEO suite stands on someone else's good open-source work, improved and integrated; the readiness scan and report kit are ours end-to-end.
-
-## License
-
-[MIT](LICENSE) — Tech Horizon Labs for the THL-original parts; `skills/geo*` retain the original MIT (Zubair Trabzada) per [`skills/geo/LICENSE-geo-seo-claude`](skills/geo/LICENSE-geo-seo-claude). Use it, fork it, ship it.
+</div>
 
 ---
 
-*By Tech Horizon Labs — Claude-native GTM + AI-visibility infrastructure, built on Cloudflare.*
+> **Search is splitting in two.** A growing share of your future customers will never click a blue link — they'll get an answer straight from ChatGPT, Claude, Perplexity, or Google's AI Overview. **GEO — Generative Engine Optimization — is how you stay inside that answer.** This repo is how we measure it, engineer it, and prove the movement.
+
+We're an Australian AI-visibility agency. This is the *open* layer of our practice: the method we actually use on client work, the tools we built ourselves, and our improvements to the open-source GEO suite we build on. The calibration data, client playbooks, and full engagement pack stay proprietary — but the method and the utilities are here, for free.
+
+---
+
+## The method (start here)
+
+Everything in this repo is organised around one opinionated workflow — **[the THL GEO Method](docs/THL-GEO-METHOD.md)**. Three layers, each answering a different question:
+
+```
+  ┌──────────────────────────────────────────────────────────────┐
+  │  1. DIMENSIONAL AUDIT        skills/geo-audit                 │
+  │     "How citable is this site, across six GEO dimensions?"    │
+  │     → a 0–100 composite + a prioritised action plan          │
+  ├──────────────────────────────────────────────────────────────┤
+  │  2. EXTERNAL BENCHMARK       skills/agent-readiness-scan ★    │
+  │     "What does an independent checker say?"                   │
+  │     → Cloudflare's isitagentready.com 0–100, tracked as a    │
+  │       delta across re-audits — the movement is the proof     │
+  ├──────────────────────────────────────────────────────────────┤
+  │  3. DELIVERABLE              tools/audit-report-kit ★         │
+  │     "Hand the client something they can act on."             │
+  │     → a branded PDF + compile-checked JSON-LD to paste       │
+  └──────────────────────────────────────────────────────────────┘
+                          ★ = built by THL, end to end
+```
+
+The discipline that makes it repeatable: **every score traces to evidence, the composite is a fixed formula, and you verify the artifacts — not that "a run happened."** Full write-up in [`docs/THL-GEO-METHOD.md`](docs/THL-GEO-METHOD.md); the run-time QA lives in the [audit checklist](skills/geo-audit/references/thl-audit-checklist.md).
+
+---
+
+## What's inside
+
+### ★ Built by THL, end to end
+
+| Component | What it does |
+|---|---|
+| **[`skills/agent-readiness-scan`](skills/agent-readiness-scan)** | Turns Cloudflare's public `isitagentready.com` check into audit-grade artifacts — a fixed-schema CSV, the 0–100 score, and the evidence behind it. The independent benchmark the dimensional audit can't give itself. |
+| **[`tools/audit-report-kit`](tools/audit-report-kit)** | Turns an audit's JSON into a polished, branded **client PDF** (`react-pdf`) plus compile-checked **JSON-LD** (`schema-dts`) — the schema the audit recommends, ready to paste. |
+| **[`docs/THL-GEO-METHOD.md`](docs/THL-GEO-METHOD.md)** | The orchestration + scoring discipline above. |
+
+### The GEO skill suite
+
+A comprehensive set of Claude Code skills for Generative Engine Optimization — full audits, citability scoring, AI-crawler analysis, `llms.txt`, schema markup, brand-mention scanning, platform-specific optimization, technical SEO, content E-E-A-T, and report generation.
+
+> **Honest attribution:** the `geo-*` skills are an **improved fork** of [`geo-seo-claude`](https://github.com/zubair-trabzada/geo-seo-claude) by **Zubair Trabzada** (MIT). We've de-rotted them, fixed portability, and wired them into our method and tools — but the foundation is his good open-source work, and we credit it. See [`NOTICE.md`](NOTICE.md) and [`CHANGELOG.md`](CHANGELOG.md). Improving and crediting open source *is* the standard we hold ourselves to.
+
+---
+
+## Quickstart
+
+```bash
+# Clone, then install the pieces you want as Claude Code skills:
+cp -R skills/agent-readiness-scan ~/.claude/skills/
+cp -R skills/geo-audit skills/geo-crawlers skills/geo-schema ~/.claude/skills/
+
+# In Claude Code:
+#   "run an agent-readiness scan on example.com"
+#   "do a GEO audit of example.com"
+
+# The report kit (Node):
+cd tools/audit-report-kit && npm install && npm run report   # → out/*.pdf + out/*.jsonld
+```
+
+---
+
+## Who's behind this
+
+[**Tech Horizon Labs**](https://techhorizonlabs.com) is a Claude-native GTM + AI-visibility studio. We deploy this infrastructure for real clients — insurance brokers, professional-services firms, and scale-ups — on Cloudflare, into the workspace they already run. This repo is the part we can give away.
+
+If it's useful, a ⭐ helps. Issues and PRs welcome — see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+## License
+
+[MIT](LICENSE). The `geo-*` suite retains its original MIT notice (Zubair Trabzada) per [`skills/geo/LICENSE-geo-seo-claude`](skills/geo/LICENSE-geo-seo-claude); everything else is © Tech Horizon Labs. Use it, fork it, ship it.

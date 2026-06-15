@@ -42,23 +42,6 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 
 ---
 
-## Market Context (Why GEO Matters)
-
-| Metric | Value | Source |
-|--------|-------|--------|
-| GEO services market (2025) | $850M-$886M | Yahoo Finance / Superlines |
-| Projected GEO market (2031) | $7.3B (34% CAGR) | Industry analysts |
-| AI-referred sessions growth | +527% (Jan-May 2025) | SparkToro |
-| AI traffic conversion vs organic | 4.4x higher | Industry data |
-| Google AI Overviews reach | 1.5B users/month, 200+ countries | Google |
-| ChatGPT weekly active users | 900M+ | OpenAI |
-| Perplexity monthly queries | 500M+ | Perplexity |
-| Gartner: search traffic drop by 2028 | -50% | Gartner |
-| Marketers investing in GEO | Only 23% | Industry surveys |
-| Brand mentions vs backlinks for AI | 3x stronger correlation | Ahrefs (Dec 2025) |
-
----
-
 ## Orchestration Logic
 
 ### Full Audit (`/geo audit <url>`)
