@@ -14,163 +14,38 @@ allowed-tools:
 
 ## Purpose
 
-This skill handles everything related to the `llms.txt` standard -- an emerging convention (proposed by Jeremy Howard in September 2024, gaining adoption through 2025-2026) that allows websites to provide structured guidance to AI systems about their content, structure, and key information. It is analogous to `robots.txt` (which tells crawlers what NOT to access) but instead tells AI systems what IS most useful to understand about the site.
+This skill handles everything related to the `llms.txt` standard — an emerging convention (proposed
+by Jeremy Howard in September 2024) that lets a website give AI systems structured guidance about
+its content, structure, and key information. It is analogous to `robots.txt` (which tells crawlers
+what NOT to access) but instead tells AI systems what IS most useful to understand about the site.
+
+The full format spec, the `llms-full.txt` variant, a fill-in template, and best practices live in
+**[`references/spec.md`](references/spec.md)** — read it before validating or generating a file.
 
 ## Why llms.txt Matters
 
-AI language models face a fundamental challenge when processing websites: they must determine which pages are most important, what the site is about, and how content is organized -- typically by crawling many pages and inferring structure. `llms.txt` solves this by providing an explicit, machine-readable (and human-readable) summary.
+AI models must work out which pages matter, what a site is about, and how content is organized —
+usually by crawling many pages and inferring structure. `llms.txt` solves this with an explicit,
+machine- and human-readable summary.
 
-**Benefits of having a well-crafted llms.txt:**
-
-1. **Faster AI comprehension:** AI systems can understand your site's purpose and structure from a single file rather than crawling dozens of pages.
-2. **Controlled narrative:** You choose which pages and facts AI systems see first, shaping how they represent your brand.
-3. **Higher citation accuracy:** AI systems that consult llms.txt can cite the correct, authoritative page for each topic.
-4. **Reduced misrepresentation:** Key facts (pricing, features, locations) are stated explicitly, reducing AI hallucination about your business.
-5. **Early adopter advantage:** As of early 2026, fewer than 5% of websites have an llms.txt file, making it a differentiator.
-
----
-
-## The llms.txt Specification
-
-### File Location
-
-The file MUST be located at the root of the domain:
-```
-https://example.com/llms.txt
-```
-
-### Format Specification
-
-The file uses Markdown formatting with specific conventions:
-
-```markdown
-# [Site Name]
-
-> [One-sentence description of what the site/business does. Keep under 200 characters.]
-
-## Docs
-
-- [Page Title](https://example.com/page-url): Concise description of what this page covers and why it matters.
-- [Another Page](https://example.com/another-page): Description of content.
-
-## Optional
-
-- [Less Critical Page](https://example.com/optional-page): Description.
-```
-
-### Detailed Format Rules
-
-**1. Title (Required)**
-```markdown
-# Site Name
-```
-- Must be the first line of the file.
-- Should be the official business/site name.
-- Use the H1 heading format (single `#`).
-
-**2. Description (Required)**
-```markdown
-> Brief description of the site/business
-```
-- Must appear immediately after the title.
-- Use Markdown blockquote format (`>`).
-- Keep under 200 characters.
-- Should clearly state what the business does and who it serves.
-- Avoid marketing fluff -- be factual and specific.
-
-**3. Main Sections (Required -- at least one)**
-
-Use H2 headings (`##`) to organize pages by category. Common section names:
-
-| Section Name | Purpose | Example Content |
-|---|---|---|
-| `## Docs` | Primary documentation or key pages | Product pages, service descriptions, core content |
-| `## Optional` | Secondary pages worth knowing about | Blog posts, supplementary resources |
-| `## API` | API documentation | API reference, authentication guides |
-| `## Blog` | Blog or news content | Recent/popular articles |
-| `## Products` | Product catalog | Product pages, pricing |
-| `## Services` | Service offerings | Service descriptions, process pages |
-| `## About` | Company information | About page, team, mission |
-| `## Resources` | Educational/reference content | Guides, tutorials, whitepapers |
-| `## Legal` | Legal documents | Terms of service, privacy policy |
-| `## Contact` | Contact information | Contact page, support channels |
-
-**4. Page Entries (Required)**
-
-Each entry follows the format:
-```markdown
-- [Page Title](URL): Description of page content
-```
-
-Rules for page entries:
-- **Title:** Use the actual page title or a clear descriptive title.
-- **URL:** Must be a full, absolute URL (not relative paths).
-- **Description:** 10-30 words describing what the page covers. Be specific about the information available.
-- **Order:** List pages in order of importance within each section.
-- **Limit:** Include 10-30 page entries total. Prioritize your most authoritative and useful pages.
-
-**5. Key Facts Section (Recommended)**
-
-```markdown
-## Key Facts
-- Founded in [year] by [founder(s)]
-- Headquarters: [City, Country]
-- [X] customers/users in [Y] countries
-- Key products: [Product A], [Product B], [Product C]
-- Industry: [Industry classification]
-```
-
-This section provides quick reference data that AI systems frequently need to answer user queries about your business.
-
-**6. Contact Section (Recommended)**
-
-```markdown
-## Contact
-- Website: https://example.com
-- Email: hello@example.com
-- Support: support@example.com
-- Phone: +1-555-123-4567
-- Address: 123 Main St, City, State, ZIP, Country
-```
-
----
-
-## llms-full.txt (Extended Version)
-
-In addition to `llms.txt`, sites can provide `/llms-full.txt` -- an extended version with more detail.
-
-**Differences from llms.txt:**
-
-| Feature | llms.txt | llms-full.txt |
-|---|---|---|
-| **Length** | Concise (50-150 lines) | Comprehensive (150-500+ lines) |
-| **Page entries** | 10-30 key pages | 30-100+ pages |
-| **Descriptions** | 10-30 words per entry | 30-100 words per entry, may include key facts from each page |
-| **Audience** | Quick AI comprehension | Deep AI analysis |
-| **Sections** | 3-6 sections | 8-15 sections |
-| **Key facts** | Business-level facts | Page-level facts and data points |
-
-Both files can coexist. AI systems check for `llms.txt` first, then may optionally load `llms-full.txt` for deeper understanding.
+1. **Faster AI comprehension:** understand the site's purpose and structure from one file rather than dozens of pages.
+2. **Controlled narrative:** you choose which pages and facts AI systems see first, shaping how they represent your brand.
+3. **Higher citation accuracy:** AI systems that consult llms.txt cite the correct, authoritative page for each topic.
+4. **Reduced misrepresentation:** key facts (pricing, features, locations) are stated explicitly, reducing hallucination.
+5. **Early-adopter advantage:** only a small minority of sites have an llms.txt today, so it remains a differentiator.
 
 ---
 
 ## Analysis Mode
 
-When checking an existing llms.txt file:
+When checking an existing llms.txt file.
 
 ### Step 1: Fetch the File
-
-1. Use WebFetch to retrieve `[domain]/llms.txt`.
-2. Also check for `[domain]/llms-full.txt`.
-3. Record HTTP status code:
-   - **200:** File exists -- proceed to validation.
-   - **404:** File does not exist -- recommend generation.
-   - **403:** File exists but is blocked -- flag as misconfiguration.
-   - **301/302:** Redirect -- follow and note the redirect.
+1. Use WebFetch to retrieve `[domain]/llms.txt`. Also check `[domain]/llms-full.txt`.
+2. Record HTTP status: **200** → validate; **404** → recommend generation; **403** → file blocked, flag as misconfiguration; **301/302** → follow and note the redirect.
 
 ### Step 2: Validate Format
-
-Check each structural element:
+Check each structural element against the format rules in [`references/spec.md`](references/spec.md):
 
 | Element | Check | Severity if Missing |
 |---|---|---|
@@ -187,246 +62,50 @@ Check each structural element:
 | No broken Markdown | Proper formatting throughout | Medium |
 
 ### Step 3: Assess Content Quality
+Rate three dimensions 0-100:
+- **Completeness:** covers all major site sections? most important/highest-traffic pages? Key Facts present and accurate? recent content?
+- **Accuracy:** descriptions reflect page content? URLs valid and correct? Key Facts verifiable and current? business description accurate?
+- **Usefulness:** would an AI understand the site from this file alone? descriptions specific enough to differentiate pages? citation-worthy pages highlighted? logical organization?
 
-Rate the llms.txt on these dimensions:
-
-**Completeness (0-100):**
-- Does it cover all major site sections visible in the navigation?
-- Are the most important/highest-traffic pages included?
-- Is the Key Facts section present with accurate business data?
-- Does it include recent/updated content?
-
-**Accuracy (0-100):**
-- Do descriptions accurately reflect page content?
-- Are URLs valid and pointing to the correct pages?
-- Are Key Facts verifiable and current?
-- Is the business description accurate?
-
-**Usefulness (0-100):**
-- Would an AI system understand the site's purpose from this file alone?
-- Are descriptions specific enough to differentiate pages?
-- Are the most citation-worthy pages highlighted?
-- Is the organization logical and intuitive?
-
-**Overall llms.txt Score** = (Completeness * 0.40) + (Accuracy * 0.35) + (Usefulness * 0.25)
+```
+Overall llms.txt Score = (Completeness * 0.40) + (Accuracy * 0.35) + (Usefulness * 0.25)
+```
 
 ### Step 4: Compare Against Site Content
-
-1. Crawl the site's main navigation and sitemap.
-2. Identify important pages NOT listed in llms.txt.
-3. Check if any listed URLs are broken or redirected.
-4. Verify that the business description matches current homepage messaging.
-5. Flag stale entries (pages that have been significantly updated since the llms.txt was written).
+Crawl the main navigation and sitemap; identify important pages NOT listed; flag broken/redirected URLs, a business description that no longer matches the homepage, and stale entries (pages significantly updated since the llms.txt was written).
 
 ---
 
 ## Generation Mode
 
-When creating a new llms.txt file from scratch:
+When creating a new llms.txt from scratch.
 
 ### Step 1: Site Discovery
-
-1. Fetch the homepage and extract:
-   - Site name (from `<title>`, `<meta property="og:site_name">`, or H1)
-   - Business description (from meta description or hero section)
-   - Main navigation links
-   - Footer links
-2. Fetch `/sitemap.xml` to discover all public pages.
-3. Identify the site's primary business type (SaaS, E-commerce, Local, Publisher, Agency).
+Fetch the homepage and extract the site name (`<title>`, `og:site_name`, or H1), business description (meta description or hero), and main navigation + footer links. Fetch `/sitemap.xml` for all public pages. Identify the business type (SaaS, E-commerce, Local, Publisher, Agency).
 
 ### Step 2: Page Prioritization
-
-Categorize all discovered pages and select the most important ones:
-
-**Always Include:**
-- Homepage
-- About / Company page
-- Pricing page (if exists)
-- Primary product/service pages (top 3-5)
-- Contact page
-- Documentation landing page (if exists)
-
-**Include if High Quality:**
-- Top blog posts (by apparent importance, recency, or comprehensiveness)
-- Case studies or customer stories
-- Key resource/guide pages
-- FAQ page
-- Careers page (for large companies)
-
-**Skip:**
-- Thin category/tag pages
-- Pagination pages
-- Login/signup pages
-- Legal boilerplate (unless specifically relevant)
-- Duplicate or near-duplicate content
-- Pages with minimal unique content
+- **Always include:** homepage, About, pricing (if any), top 3-5 product/service pages, contact, docs landing.
+- **Include if high quality:** top blog posts, case studies, key guides, FAQ, careers (large companies).
+- **Skip:** thin category/tag pages, pagination, login/signup, legal boilerplate (unless relevant), duplicates, minimal-content pages.
 
 ### Step 3: Write Descriptions
-
-For each selected page:
-
-1. Fetch the page content using WebFetch.
-2. Read the H1, meta description, and first 2-3 paragraphs.
-3. Write a description that:
-   - Is 10-30 words long
-   - States what information is on the page
-   - Mentions specific topics, data, or features covered
-   - Avoids marketing language ("best," "leading," "revolutionary")
-   - Uses factual, informative language
-
-**Good description examples:**
-- `Explains the three pricing tiers (Free, Pro, Enterprise) with feature comparison and annual/monthly costs.`
-- `Details the company's founding in 2018, team of 45 employees, and office locations in Austin and London.`
-- `Covers integration setup for Slack, Salesforce, and HubSpot with step-by-step guides and API endpoints.`
-
-**Bad description examples:**
-- `Our amazing pricing page!` (marketing language, no specifics)
-- `Learn more about our company.` (too vague)
-- `Click here for details.` (not descriptive)
+For each selected page, fetch it and read the H1, meta description, and first 2-3 paragraphs, then write a 10-30 word description that states what information is on the page and the specific topics/data/features covered. Use factual language; avoid "best/leading/revolutionary."
+- Good: `Explains the three pricing tiers (Free, Pro, Enterprise) with feature comparison and annual/monthly costs.`
+- Bad: `Our amazing pricing page!` / `Learn more about our company.`
 
 ### Step 4: Compile Key Facts
-
-Gather key business facts from the site:
-
-- Year founded
-- Founder name(s)
-- Headquarters location
-- Number of employees (if public)
-- Number of customers/users (if public)
-- Key products or services (list top 3-5)
-- Industry classification
-- Notable clients or partnerships (if public)
-- Key differentiators (what makes this business unique)
-- Recent milestones or achievements (last 12 months)
+Gather: year founded, founder(s), HQ, employee count (if public), customer/user count (if public), top 3-5 products/services, industry, notable clients/partnerships (if public), key differentiators, recent milestones (last 12 months).
 
 ### Step 5: Assemble the File
-
-Construct the llms.txt following this template:
-
-```markdown
-# [Site Name]
-
-> [One clear sentence: what the business does, who it serves, and its primary value proposition. Under 200 characters.]
-
-## Docs
-
-- [Most Important Page](https://example.com/page): Description covering the key content on this page.
-- [Second Page](https://example.com/page-2): Description of this page's content and value.
-- [Third Page](https://example.com/page-3): What users and AI systems will find here.
-
-## Products
-
-- [Product A](https://example.com/product-a): Core features, target users, and pricing model for Product A.
-- [Product B](https://example.com/product-b): What Product B does and how it differs from Product A.
-
-## Resources
-
-- [Guide Title](https://example.com/guide): Comprehensive guide covering [topic] with [X] sections and practical examples.
-- [Blog Post](https://example.com/blog/post): Analysis of [topic] with original data from [source].
-
-## Key Facts
-
-- Founded in [year] by [name(s)]
-- Headquartered in [City, Country]
-- [Specific metric: e.g., "Serves 10,000+ businesses in 40 countries"]
-- [Key differentiator: e.g., "Only platform offering real-time X and Y integration"]
-- Industry: [Classification]
-
-## Contact
-
-- Website: https://example.com
-- Email: [primary contact email]
-- Support: [support URL or email]
-```
+Build the file from the template in [`references/spec.md`](references/spec.md).
 
 ### Step 6: Validate the Generated File
-
-Before outputting:
-1. Verify all URLs are reachable (200 status).
-2. Confirm total entry count is between 10-30.
-3. Check that no description exceeds 50 words.
-4. Verify the overall file length is 50-150 lines.
-5. Ensure Markdown formatting is clean and consistent.
+Verify all URLs return 200; entry count is 10-30; no description exceeds 50 words; total length is 50-150 lines; Markdown is clean and consistent.
 
 ---
 
-## Output Format
+## Output
 
-### For Analysis Mode
-
-Generate `GEO-LLMSTXT-ANALYSIS.md`:
-
-```markdown
-# llms.txt Analysis: [Domain]
-
-**Analysis Date:** [Date]
-**llms.txt Status:** [Found at URL / Not Found / Error]
-**llms-full.txt Status:** [Found / Not Found]
-
----
-
-## Overall llms.txt Score: [X]/100
-
-| Dimension | Score |
-|---|---|
-| Completeness | [X]/100 |
-| Accuracy | [X]/100 |
-| Usefulness | [X]/100 |
-
----
-
-## Format Validation
-
-| Element | Status | Notes |
-|---|---|---|
-| H1 Title | [Pass/Fail] | [Notes] |
-| Description blockquote | [Pass/Fail] | [Notes] |
-| H2 Sections | [Pass/Fail] | [X sections found] |
-| Page entries | [Pass/Fail] | [X entries found] |
-| URL validity | [Pass/Fail] | [X broken URLs] |
-| Entry descriptions | [Pass/Fail] | [X missing descriptions] |
-| Key Facts | [Pass/Fail] | [Notes] |
-| Contact section | [Pass/Fail] | [Notes] |
-
----
-
-## Missing Pages
-
-These important pages were found on the site but not in llms.txt:
-
-1. [Page Title](URL) -- [Why it should be included]
-2. [Page Title](URL) -- [Why it should be included]
-
-## Improvement Recommendations
-
-1. [Specific recommendation]
-2. [Specific recommendation]
-3. [Specific recommendation]
-
-## Suggested Updated llms.txt
-
-[Complete rewritten llms.txt file if significant improvements are needed]
-```
-
-### For Generation Mode
-
-Output the complete `llms.txt` file content, ready to be saved to the site's root directory. Also output a brief `GEO-LLMSTXT-GENERATION.md` report explaining:
-- How many pages were discovered and how many were selected
-- The prioritization rationale
-- Any pages that were borderline (might add later)
-- Recommended update frequency (e.g., monthly for active blogs, quarterly for stable sites)
-
----
-
-## Best Practices Reference
-
-1. **Update regularly.** If your site publishes weekly blog posts, update llms.txt monthly. If your product changes quarterly, update after each release.
-2. **Lead with your strongest content.** The first entries in each section should be your most authoritative, comprehensive pages.
-3. **Be specific in descriptions.** "Comprehensive 3,000-word guide to React Server Components with code examples" is far more useful than "React guide."
-4. **Include your differentiators.** If your site has unique data, original research, or exclusive features, highlight these in descriptions and Key Facts.
-5. **Keep it concise.** The llms.txt should be scannable in under 60 seconds. Save detail for llms-full.txt.
-6. **Use absolute URLs.** Always include the full `https://` URL, never relative paths.
-7. **Test after deployment.** After uploading, verify the file is accessible at `https://yourdomain.com/llms.txt` with no redirects.
-8. **Coordinate with robots.txt.** Ensure pages listed in llms.txt are not blocked in robots.txt for AI crawlers.
-9. **Mirror your site structure.** Section names in llms.txt should roughly correspond to your main navigation categories.
-10. **Avoid sensitive pages.** Do not include internal tools, admin panels, or pages with sensitive information.
+Use the templates in [`references/output-template.md`](references/output-template.md):
+- **Analysis mode:** `GEO-LLMSTXT-ANALYSIS.md` — score, format-validation table, missing pages, recommendations, and a suggested rewrite if needed.
+- **Generation mode:** the complete `llms.txt`, plus a short `GEO-LLMSTXT-GENERATION.md` noting pages discovered vs. selected, prioritization rationale, borderline pages, and recommended update frequency.

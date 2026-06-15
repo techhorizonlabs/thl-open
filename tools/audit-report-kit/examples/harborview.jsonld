@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Harborview Insurance Brokers",
+  "url": "https://harborview-brokers.com.au",
+  "telephone": "+61 7 5000 0000",
+  "description": "General insurance brokerage serving SE Queensland businesses.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1 Marine Parade",
+    "addressLocality": "Gold Coast",
+    "addressRegion": "QLD",
+    "postalCode": "4217",
+    "addressCountry": "AU"
+  },
+  "areaServed": [
+    "Gold Coast",
+    "Brisbane",
+    "Queensland"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/harborview-brokers",
+    "https://www.google.com/maps?cid=000000000000"
+  ]
+}

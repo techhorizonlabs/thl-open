@@ -19,10 +19,13 @@ The `skills/geo*` suite is an improved fork of
 - **Added** the [THL GEO Method](docs/THL-GEO-METHOD.md) (orchestration of the three layers)
   and a copy-able [audit checklist](skills/geo-audit/references/thl-audit-checklist.md)
   (scoring + cross-check QA).
+- **Split the over-length skills** into progressive-disclosure `references/`, keeping each
+  `SKILL.md` as a tight orchestration layer and moving rubrics, output templates, and reference
+  data one level down:
+  - `geo-brand-mentions` 480 → 123 lines (`references/platforms.md`, `output-template.md`, `research.md`)
+  - `geo-technical` 448 → 69 lines (`references/audit-categories.md`, `output-template.md`)
+  - `geo-llmstxt` 432 → 111 lines (`references/spec.md`, `output-template.md`)
 
 ### Queued (next pass)
-- Split the over-length skills (`geo-brand-mentions`, `geo-technical`, `geo-llmstxt`) into
-  `references/` per the [authoring standard](https://techhorizonlabs.com) so each SKILL.md
-  body stays under ~500 lines.
 - Replace the suite's internal PDF generator with `tools/audit-report-kit` end to end.
 - Resolve cross-skill reference paths so the orchestrator's sub-skill links always resolve.
