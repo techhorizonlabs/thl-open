@@ -25,6 +25,18 @@ of contributions. The short version — a PR touching a skill should pass all of
 New to skill structure? [`skills/agent-readiness-scan`](skills/agent-readiness-scan) is
 the reference shape (54 lines, trigger-rich, fixed CSV schema).
 
+## Before you open a PR
+
+Run the validator — CI runs the same script on every PR:
+
+```bash
+bash scripts/validate.sh
+```
+
+It checks the manifest schemas + version lockstep, that every skill has a
+`name`/`description`, that local markdown links resolve, the no-login/no-telemetry
+posture, a client-name/secret leak-check, and warns on skill trigger-phrase overlap.
+
 ## A note on the `geo-*` suite
 
 Those skills are an **attributed fork** of

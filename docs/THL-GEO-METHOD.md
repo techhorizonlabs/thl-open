@@ -23,6 +23,7 @@ Run the dimensional audit first; run the readiness scan alongside it for the ext
 ## The scoring discipline (why this is repeatable)
 
 - **Every score traces to evidence.** A citability score points at the exact passages scored; a schema score points at the markup found. No number without a reason.
+- **Tag each score's provenance.** Mark every dimension `[scan]` (scored from data fetched this run), `[partial-scan]` (some pages sampled, the rest inferred), `[heuristic]` (model judgement, no underlying data fetched), or `[unmeasured]` (the data source needed to score it was unavailable). When a score is `[unmeasured]` — or would be pure `[heuristic]` — emit `—`, not a number. A number with weak provenance still reads as hard data to a client.
 - **The composite is a fixed formula, not a vibe.** Same weights every run (see the audit skill's scoring table), so two audits of the same site are comparable.
 - **Run the checklist.** `skills/geo-audit/references/thl-audit-checklist.md` is a copy-able checklist that stops a dimension being silently dropped and cross-checks that the same facts (entity details, scores) appear consistently across every section.
 - **Verify the outcome, not the run.** A finished audit isn't "an audit ran" — it's "every category scored, every score evidenced, the report renders, the JSON-LD validates." Check the artifacts.

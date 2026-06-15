@@ -52,13 +52,18 @@ do a GEO audit of harborview-brokers.com.au
 The audit crawls the site, scores six dimensions into a 0–100 composite, and ranks
 the fixes by impact. For Harborview it lands at **38/100 (Critical)**:
 
-| Dimension | Score | Why |
-|---|---:|---|
-| AI Citability | 31 | Pages don't answer questions in quotable, self-contained blocks |
-| Crawler Access | 48 | 2 of 8 major AI crawlers blocked in `robots.txt` |
-| Schema Markup | 8 | No `Organization` / `LocalBusiness` / `Service` JSON-LD at all |
-| Content E-E-A-T | 44 | Service pages too thin to cite; little first-hand expertise signalled |
-| Technical SEO | 57 | Indexable, but slow and light on structure |
+| Dimension | Score | Provenance | Why |
+|---|---:|---|---|
+| AI Citability | 31 | `[scan]` | Pages don't answer questions in quotable, self-contained blocks |
+| Crawler Access | 48 | `[scan]` | 2 of 8 major AI crawlers blocked in `robots.txt` |
+| Schema Markup | 8 | `[scan]` | No `Organization` / `LocalBusiness` / `Service` JSON-LD at all |
+| Content E-E-A-T | 44 | `[partial-scan]` | Service pages too thin to cite; little first-hand expertise signalled |
+| Technical SEO | 57 | `[scan]` | Indexable, but slow and light on structure |
+
+Every row carries a **provenance tag** — `[scan]` (fetched this run), `[partial-scan]`,
+`[heuristic]`, or `[unmeasured]`. A category the audit couldn't actually measure shows
+`—`, never an invented number. (Core Web Vitals, for instance, reads `[unmeasured]`
+unless a PageSpeed key is set.)
 
 Top ranked fixes: **(1)** deploy `Organization` + `Service` JSON-LD (unlocks the
 biggest citability gain), **(2)** open `robots.txt` to GPTBot and ClaudeBot, **(3)**

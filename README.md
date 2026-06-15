@@ -68,12 +68,20 @@ A comprehensive set of Claude Code skills for Generative Engine Optimization —
 
 ## Quickstart
 
-**As a Claude Code plugin (one command, installs the whole suite):**
+**As a Claude Code plugin (installs the whole suite).** Run these as **two separate
+commands** — paste the first, press Enter, then paste the second (pasting both at once
+makes Claude Code treat the blob as one broken `/plugin` call):
 
 ```text
-/plugin marketplace add techhorizonlabs/thl-open
+/plugin marketplace add https://github.com/techhorizonlabs/thl-open
+```
+
+```text
 /plugin install thl-open@thl-open
 ```
+
+> Use the full `https://` URL — the short `owner/repo` form makes some setups clone via
+> SSH and fail without an SSH key configured.
 
 **Or copy just the skills you want:**
 
@@ -104,12 +112,14 @@ skill and one worked audit (fictional broker) you can read end to end.
 
 - **[`examples/`](examples)** — prompts + a worked end-to-end audit.
 - **[the THL GEO Method](docs/THL-GEO-METHOD.md)** — the three layers and the scoring discipline.
+- **[Sources](docs/SOURCES.md)** — the primary research the method is grounded in, and what we *don't* claim.
 - **[How THL Open compares](docs/HOW-WE-COMPARE.md)** — an honest look at the other GEO tools (and where they're ahead).
 - **[Skill-Authoring Standard](docs/SKILL-AUTHORING-STANDARD.md)** — how we author skills, and the bar for PRs.
 - **[`evals/`](evals)** — how we keep the audit repeatable.
 
 > **Heads up:** skills can run code and fetch the open web. Read a skill before you
-> install it, and treat fetched web content as data, not instructions. Our authoring
+> install it, and treat fetched web content as data, not instructions. There's **no
+> telemetry** — nothing here phones home ([`SECURITY.md`](SECURITY.md)). Our authoring
 > standard bakes this in; we ask the same of contributions.
 
 ---
