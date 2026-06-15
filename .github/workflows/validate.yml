@@ -1,0 +1,42 @@
+name: Validate
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Read-only — the validator only reads the checked-out repo.
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: scripts/validate.sh
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3'
+      - name: Run validator
+        run: bash scripts/validate.sh
+
+  report-kit:
+    name: audit-report-kit typecheck
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/audit-report-kit
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install
+        run: npm install
+      - name: Typecheck + JSON-LD types
+        run: npm run build

@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
   barLabel: { width: 110, fontSize: 9, color: THL.ink },
   barTrack: { flex: 1, height: 12, backgroundColor: THL.track, borderRadius: 2 },
   barScore: { width: 26, fontSize: 9, textAlign: "right", color: THL.muted, fontFamily: "Helvetica-Bold" },
+  prov: { width: 64, fontSize: 7, textAlign: "right", color: THL.muted, textTransform: "uppercase", letterSpacing: 0.5 },
   findRow: { marginTop: 12, paddingLeft: 10, borderLeftWidth: 3 },
   findTitle: { fontSize: 10.5, fontFamily: "Helvetica-Bold", color: THL.ink },
   findDetail: { fontSize: 9, color: THL.muted, marginTop: 2, lineHeight: 1.4 },
@@ -63,18 +64,29 @@ function barColor(score: number): string {
   return THL.blue;
 }
 
+const PROV_LABEL: Record<NonNullable<CategoryScore["provenance"]>, string> = {
+  scan: "scan",
+  "partial-scan": "partial",
+  heuristic: "heuristic",
+  unmeasured: "unmeasured",
+};
+
 function sevColor(sev: Finding["severity"]): string {
   return sev === "critical" ? THL.danger : sev === "high" ? THL.amber : THL.muted;
 }
 
 function CategoryBar({ cat }: { cat: CategoryScore }) {
+  const measured = typeof cat.score === "number";
   return (
     <View style={styles.barRow}>
       <Text style={styles.barLabel}>{cat.label}</Text>
       <View style={styles.barTrack}>
-        <View style={{ width: `${cat.score}%`, height: 12, backgroundColor: barColor(cat.score), borderRadius: 2 }} />
+        {measured && (
+          <View style={{ width: `${cat.score}%`, height: 12, backgroundColor: barColor(cat.score as number), borderRadius: 2 }} />
+        )}
       </View>
-      <Text style={styles.barScore}>{cat.score}</Text>
+      <Text style={styles.barScore}>{measured ? cat.score : "—"}</Text>
+      {cat.provenance && <Text style={styles.prov}>{PROV_LABEL[cat.provenance]}</Text>}
     </View>
   );
 }

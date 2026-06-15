@@ -43,6 +43,26 @@ The `skills/geo*` suite is an improved fork of
   comparison (incl. where alternatives like GEO Optimizer are ahead) and the permissive
   building blocks worth adopting, with licence traps flagged.
 
+### 2026-06-15 (later still) — hardening, drawn from a competitor teardown
+Studied a mature same-category plugin (Akii's SEO/AEO/GEO optimizer) and adopted the
+on-brand parts (honest sourcing, provenance, a CI gate) while deliberately skipping its
+telemetry/CTA growth machinery.
+- **CI validator** — `scripts/validate.sh` + `.github/workflows/validate.yml`: validates
+  the manifests + version lockstep, skill frontmatter, resolving local links,
+  no-login/no-telemetry posture, a client-name/secret leak-check, and a skill
+  trigger-phrase-overlap warning. A second CI job typechecks `audit-report-kit`.
+- **[`docs/SOURCES.md`](docs/SOURCES.md)** — grounds the method in primary sources
+  (Google AI Optimization Guide, the KDD 2024 GEO paper, Schema.org, the llms.txt
+  proposal, crawler-operator docs, Cloudflare) with an explicit "what we don't claim."
+- **Provenance tags** — `[scan]` / `[partial-scan]` / `[heuristic]` / `[unmeasured]` are
+  now part of the GEO Method's scoring discipline, the `geo-audit` output template, the
+  worked example, and authoring-standard P7, with the rule "emit `—`, never a number,
+  when unmeasured." `audit-report-kit` gained an optional `provenance` field + null-score
+  rendering (the committed sample sets none, so the sample PDF is unchanged).
+- **Governance** — `SECURITY.md` (private disclosure + the no-telemetry stance),
+  `.github/ISSUE_TEMPLATE/`, and a hardened plugin-install path in the README (full
+  `https://` URL, two-separate-commands caveat).
+
 ### Queued (next pass)
 - Replace the suite's internal PDF generator with `tools/audit-report-kit` end to end.
 - Resolve cross-skill reference paths so the orchestrator's sub-skill links always resolve.
