@@ -1,0 +1,33 @@
+{
+  "name": "thl-open",
+  "owner": {
+    "name": "Tech Horizon Labs",
+    "url": "https://techhorizonlabs.com"
+  },
+  "metadata": {
+    "description": "AI-visibility engineering, the open way — the THL GEO / AI-search audit skill suite and tools.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "thl-open",
+      "source": ".",
+      "description": "GEO / AI-visibility audit skills (full audit, citability, AI-crawler access, llms.txt, schema, brand mentions, technical, content, reporting) plus the THL-original agent-readiness-scan, organised around the THL GEO Method.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Tech Horizon Labs",
+        "url": "https://techhorizonlabs.com"
+      },
+      "homepage": "https://github.com/techhorizonlabs/thl-open",
+      "tags": [
+        "geo",
+        "ai-visibility",
+        "generative-engine-optimization",
+        "seo",
+        "llms-txt",
+        "schema",
+        "audit"
+      ]
+    }
+  ]
+}

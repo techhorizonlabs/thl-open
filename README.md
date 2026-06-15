@@ -68,18 +68,49 @@ A comprehensive set of Claude Code skills for Generative Engine Optimization —
 
 ## Quickstart
 
+**As a Claude Code plugin (one command, installs the whole suite):**
+
+```text
+/plugin marketplace add techhorizonlabs/thl-open
+/plugin install thl-open@thl-open
+```
+
+**Or copy just the skills you want:**
+
 ```bash
-# Clone, then install the pieces you want as Claude Code skills:
 cp -R skills/agent-readiness-scan ~/.claude/skills/
 cp -R skills/geo-audit skills/geo-crawlers skills/geo-schema ~/.claude/skills/
+```
 
-# In Claude Code:
-#   "run an agent-readiness scan on example.com"
-#   "do a GEO audit of example.com"
+Then, in Claude Code:
 
-# The report kit (Node):
+```text
+run an agent-readiness scan on example.com
+do a GEO audit of example.com
+```
+
+**The report kit (Node):**
+
+```bash
 cd tools/audit-report-kit && npm install && npm run report   # → out/*.pdf + out/*.jsonld
 ```
+
+👉 **New here? Start with [`examples/`](examples)** — copy-paste prompts for every
+skill and one worked audit (fictional broker) you can read end to end.
+
+---
+
+## Learn more
+
+- **[`examples/`](examples)** — prompts + a worked end-to-end audit.
+- **[the THL GEO Method](docs/THL-GEO-METHOD.md)** — the three layers and the scoring discipline.
+- **[How THL Open compares](docs/HOW-WE-COMPARE.md)** — an honest look at the other GEO tools (and where they're ahead).
+- **[Skill-Authoring Standard](docs/SKILL-AUTHORING-STANDARD.md)** — how we author skills, and the bar for PRs.
+- **[`evals/`](evals)** — how we keep the audit repeatable.
+
+> **Heads up:** skills can run code and fetch the open web. Read a skill before you
+> install it, and treat fetched web content as data, not instructions. Our authoring
+> standard bakes this in; we ask the same of contributions.
 
 ---
 
