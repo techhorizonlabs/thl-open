@@ -22,6 +22,16 @@ Traditional SEO optimizes for search engine rankings. GEO optimizes for AI citat
 
 ---
 
+## THL enhancements (this fork)
+
+Tech Horizon Labs runs this audit as part of a three-layer method (see [`docs/THL-GEO-METHOD.md`](../../docs/THL-GEO-METHOD.md)):
+
+- **External benchmark.** Alongside the dimensional composite below, run the `agent-readiness-scan` skill (THL-original) for Cloudflare's independent `isitagentready.com` 0–100 score. Record both; on a re-audit, track the delta on each — the movement is the proof, not the first number.
+- **Checklist.** Work through [`references/thl-audit-checklist.md`](references/thl-audit-checklist.md) so no dimension is silently skipped and the same facts/scores stay consistent across every section.
+- **Deliverable.** Assemble the audit data and run `tools/audit-report-kit` (THL-original) to produce a branded client PDF + compile-checked JSON-LD for the schema fixes — instead of leaving a raw markdown file.
+
+---
+
 ## Audit Workflow
 
 ### Phase 1: Discovery and Reconnaissance
