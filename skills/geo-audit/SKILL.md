@@ -59,6 +59,7 @@ Tech Horizon Labs runs this audit as part of a three-layer method (see [`docs/TH
 | **E-commerce** | Product listings, shopping cart, product schema, category pages, price displays, "Add to cart" buttons |
 | **Publisher** | Blog-heavy navigation, article schema, author pages, date-based archives, RSS feeds, high content volume |
 | **Agency/Services** | Case studies, portfolio, "Our Work" section, team page, client logos, service descriptions |
+| **Professional / financial services (YMYL)** | Named advisers/practitioners, displayed credentials, a regulatory licence (AFSL / AR number / registration), FSG / privacy / disclaimer pages, and "your money or your life" topics (finance, legal, health). A trust-critical sub-type of Local/Agency. |
 | **Hybrid** | Combination of above signals -- classify by dominant pattern |
 
 **Step 2: Crawl Sitemap and Internal Links**
@@ -96,11 +97,13 @@ For each page in the crawl set, record:
 
 Delegate analysis to 5 specialized subagents. Each subagent operates on the collected page data and produces a category score (0-100) plus findings.
 
+**Return contract — every subagent follows it (THL):** return your dimension score(s) as a number `0–100`, a **provenance tag** (`[scan]` = data fetched this run · `[partial-scan]` · `[heuristic]` = judgement, no data · `[unmeasured]` = source unavailable → emit `—`, not a number), and findings each tied to the evidence that justifies it. Return the orchestrator's named dimensions directly — do **not** invent your own blended sub-composite or your own weights (that breaks the fixed composite formula below).
+
 **Subagent 1: AI Visibility Analysis (geo-ai-visibility)**
+- Return **two separate** dimension scores: **AI Citability** (quotability/extractability) and **Brand Authority** (entity recognition) — not one blended "AI visibility" number, since the composite weights them differently (25% vs 20%).
 - Analyze content blocks for quotability by AI systems (citability scoring)
-- Check AI crawler access via robots.txt and llms.txt presence
-- Scan brand presence across YouTube, Reddit, Wikipedia, LinkedIn
-- Score brand authority signals that AI models use for entity recognition
+- Check AI crawler access via robots.txt and llms.txt presence (these also inform Technical GEO)
+- Scan brand presence across YouTube, Reddit, Wikipedia, LinkedIn for the Brand Authority score
 
 **Subagent 2: Platform Optimization (geo-platform-analysis)**
 - Assess readiness for Google AI Overviews, ChatGPT, Perplexity, Gemini, Bing Copilot
@@ -353,3 +356,9 @@ actually measured.
 - Extra weight on: Case studies (citability), expertise demonstration, thought leadership
 - Check for: Portfolio schema, team credentials, industry-specific expertise signals
 - Key schema: Organization, Service, Person (team), Review
+
+### Professional / financial services (YMYL)
+- Extra weight on: displayed **credentials** (CFP/FChFP/degrees), regulatory IDs (AFSL / AR number / registration), named article authors, and trust/compliance pages (FSG, privacy, complaints).
+- Check for: each practitioner has on-page credentials **and** a `Person` node; the firm uses the right LocalBusiness subtype (not bare `Organization`); YMYL claims are sourced, not asserted.
+- Key schema: `FinancialService` / `ProfessionalService` / `LegalService` / `MedicalBusiness` (the correct LocalBusiness subtype), `Person` (per adviser), `FAQPage`.
+- **Entity reconciliation:** identify the legal entity vs the trading/brand/domain name (they often differ) so the audit findings and the schema name one consistent entity.

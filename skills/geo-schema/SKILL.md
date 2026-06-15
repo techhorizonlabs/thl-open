@@ -314,6 +314,8 @@ Based on the detected business type, generate ready-to-paste JSON-LD blocks. Alw
 
 ## Scoring Rubric (0-100)
 
+> **Provenance (THL):** tag the score `[scan]` (data fetched this run), `[partial-scan]`, `[heuristic]` (judgement, no data), or `[unmeasured]` — and emit `—` instead of a number when `[unmeasured]` or pure `[heuristic]`. A number with weak provenance still reads as hard data. See [the GEO Method](../../docs/THL-GEO-METHOD.md).
+
 | Criterion | Points | How to Score |
 |---|---|---|
 | Organization/Person schema present and complete | 15 | 15 if full, 10 if basic, 0 if none |

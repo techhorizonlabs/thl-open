@@ -63,6 +63,27 @@ telemetry/CTA growth machinery.
   `.github/ISSUE_TEMPLATE/`, and a hardened plugin-install path in the README (full
   `https://` URL, two-separate-commands caveat).
 
+### 2026-06-16 — improvements surfaced by a live dogfood audit
+Ran the whole package end to end on a real site; these are the gaps that run exposed.
+- **Provenance is now intrinsic to every dimension skill.** Added the
+  `[scan]/[partial-scan]/[heuristic]/[unmeasured]` tag (and "emit `—`, not a number")
+  to all seven sub-skills' output sections (`geo-citability`, `-content`, `-schema`,
+  `-technical`, `-platform-optimizer`, `-brand-mentions`, `-crawlers`) — previously only
+  the orchestrator carried it, so standalone runs lost it.
+- **Subagent return contract** (geo-audit Phase 2): every subagent must return the
+  orchestrator's named dimensions + a provenance tag, and **not** invent its own blended
+  sub-composite or weights. `geo-ai-visibility` now returns AI Citability and Brand
+  Authority as two separate scores (the composite weights them 25% vs 20%).
+- **New business type: Professional / financial services (YMYL)** in `geo-audit`, with
+  its schema (`FinancialService`/`ProfessionalService`/`Person`) + E-E-A-T expectations
+  (displayed credentials, regulatory IDs) and an **entity-reconciliation** step (legal
+  entity vs trading/brand name) — also added to the audit checklist.
+- **`audit-report-kit`** — `generateOrgJsonLd` now takes a `type` (Organization /
+  LocalBusiness / FinancialService / ProfessionalService) so the deliverable's schema
+  matches the audit's own recommendation; the report `summary` is now a field instead of
+  hardcoded boilerplate. Both default to prior behaviour, so the committed sample is
+  unchanged.
+
 ### Queued (next pass)
 - Replace the suite's internal PDF generator with `tools/audit-report-kit` end to end.
 - Resolve cross-skill reference paths so the orchestrator's sub-skill links always resolve.

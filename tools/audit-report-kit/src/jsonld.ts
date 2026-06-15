@@ -3,9 +3,19 @@
 
 import type { Organization, WithContext } from "schema-dts";
 
+// LocalBusiness-family subtypes worth emitting for a GEO schema fix. The audit
+// recommends the right one per business type (e.g. a financial-advice firm →
+// "FinancialService", not bare "Organization").
+export type OrgType =
+  | "Organization"
+  | "LocalBusiness"
+  | "FinancialService"
+  | "ProfessionalService";
+
 export type OrgInput = {
   name: string;
   url: string;
+  type?: OrgType;
   telephone?: string;
   description?: string;
   logo?: string;
@@ -18,7 +28,7 @@ export type OrgInput = {
 };
 
 export function generateOrgJsonLd(c: OrgInput): WithContext<Organization> {
-  return {
+  const node: WithContext<Organization> = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: c.name,
@@ -41,4 +51,8 @@ export function generateOrgJsonLd(c: OrgInput): WithContext<Organization> {
     ...(c.areaServed ? { areaServed: c.areaServed } : {}),
     ...(c.sameAs ? { sameAs: c.sameAs } : {}),
   };
+  // schema-dts types @type as the literal "Organization"; override the runtime value to
+  // the recommended subtype AFTER type-checked construction so properties stay validated.
+  (node as { "@type": string })["@type"] = c.type ?? "Organization";
+  return node;
 }

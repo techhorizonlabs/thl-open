@@ -63,6 +63,8 @@ Per-category point breakdowns live alongside each category's checks in
 
 ## Output
 
+> **Provenance (THL):** tag the score `[scan]` (data fetched this run), `[partial-scan]`, `[heuristic]` (judgement, no data), or `[unmeasured]` — and emit `—` instead of a number when `[unmeasured]` or pure `[heuristic]`. A number with weak provenance still reads as hard data. See [the GEO Method](../../docs/THL-GEO-METHOD.md).
+
 Write `GEO-TECHNICAL-AUDIT.md` using
 [`references/output-template.md`](references/output-template.md): technical score, per-category
 breakdown with Pass/Warn/Fail status, the AI-crawler access table, then issues tiered as Critical

@@ -21,6 +21,7 @@ a client. (THL-original addition to this fork.)
 
 ## Cross-check before delivery (consistency catches real errors)
 
+- [ ] **Entity reconciliation:** the legal entity name and the trading/brand/domain name are both identified, and where they differ both are stated — so schema and findings name one consistent entity
 - [ ] The same entity facts (name, address, ABN/registration, phone) appear verbatim in every section
 - [ ] The same citation positions appear across the citability, benchmark, and platform sections
 - [ ] The same technical numbers (LCP, crawler status) appear across the technical section and any chart

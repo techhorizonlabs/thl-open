@@ -112,6 +112,8 @@ If competitors are known, quick-scan their platform presence for context. It cal
 
 ## Output
 
+> **Provenance (THL):** tag the score `[scan]` (data fetched this run), `[partial-scan]`, `[heuristic]` (judgement, no data), or `[unmeasured]` — and emit `—` instead of a number when `[unmeasured]` or pure `[heuristic]`. A number with weak provenance still reads as hard data. See [the GEO Method](../../docs/THL-GEO-METHOD.md).
+
 Write `GEO-BRAND-MENTIONS.md` using the template in
 [`references/output-template.md`](references/output-template.md) — score header, platform
 breakdown table, per-platform detail, tiered recommendations, competitive context, and a

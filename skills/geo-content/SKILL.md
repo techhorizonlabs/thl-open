@@ -278,6 +278,8 @@ Topical authority measures whether a site comprehensively covers a topic rather 
 
 ## Output Format
 
+> **Provenance (THL):** tag the score `[scan]` (data fetched this run), `[partial-scan]`, `[heuristic]` (judgement, no data), or `[unmeasured]` — and emit `—` instead of a number when `[unmeasured]` or pure `[heuristic]`. A number with weak provenance still reads as hard data. See [the GEO Method](../../docs/THL-GEO-METHOD.md).
+
 Generate **GEO-CONTENT-ANALYSIS.md** with:
 
 ```markdown

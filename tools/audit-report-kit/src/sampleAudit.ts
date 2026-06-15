@@ -24,6 +24,8 @@ export type AuditReport = {
   client: { name: string; domain: string; location: string };
   composite: number; // 0–100
   band: string;
+  summary?: string; // optional headline sentence; falls back to a default in the report
+
   generatedAt: string; // ISO date
   categories: CategoryScore[];
   findings: Finding[];

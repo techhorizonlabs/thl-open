@@ -112,8 +112,8 @@ function ReportDoc({ audit }: { audit: AuditReport }) {
           <Text style={styles.scoreBand}>{audit.band}</Text>
         </View>
         <Text style={{ fontSize: 10, color: THL.muted, lineHeight: 1.4 }}>
-          When AI engines answer questions in this category, the firm is largely invisible. The score is the
-          baseline; the ranked fix sequence below moves it, and the re-audit proves the delta.
+          {audit.summary ??
+            "This score is the baseline for how visible the business is to AI answer engines. The ranked fix sequence below moves it, and the re-audit proves the delta."}
         </Text>
 
         <View style={styles.sectionHead}>
