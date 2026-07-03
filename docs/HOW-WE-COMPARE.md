@@ -63,6 +63,16 @@ These aren't competitors — they're good building blocks for a GEO pipeline:
   **[Unlighthouse](https://github.com/harlan-zw/unlighthouse)** (MIT),
   **[Lighthouse](https://github.com/GoogleChrome/lighthouse)** (Apache-2.0) — crawling
   and site-wide performance/a11y passes that feed the technical dimension.
+- **[`jdevalk/seo-graph`](https://github.com/jdevalk/seo-graph)** (MIT, Joost de Valk) —
+  a schema `@graph` **builder** whose prototype scanner independently converged on the
+  same audit loop we run (emit → validate → diff), which we read as evidence the loop is
+  right. Two of its patterns are prior art for signals now in the
+  [areyoufoundbyai.com](https://areyoufoundbyai.com) scanner: **registry-ID mining**
+  (label-anchored, checksum-gated ABN/ACN extraction — we added live verification
+  against the Australian Business Register on top) and the **organization-subtype
+  inference ladder** (declared subtype > host patterns > registry facts). The tools
+  are complements, not competitors: Joost's tooling *emits* the graph; Found by AI
+  *measures whether it worked*.
 
 ## Licence cautions
 
