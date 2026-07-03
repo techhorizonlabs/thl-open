@@ -1,0 +1,23 @@
+# THL Open — AI-visibility engineering (GEO)
+
+> The open layer of Tech Horizon Labs' GEO / AI-visibility practice: a Claude Code skill suite, two original tools, and the method that ties them together. GEO — Generative Engine Optimization — is how a business stays inside the answer when its customers ask ChatGPT, Claude, Perplexity, or Google's AI Overview instead of clicking a blue link.
+
+## Start here
+
+- [Are you found by AI? — free 60-second scan](https://areyoufoundbyai.com): the method automated. Enter a URL, get an AI-visibility score across ChatGPT, Claude, Perplexity, and Google AI. Hosted, no install.
+- [The THL GEO Method](https://github.com/techhorizonlabs/thl-open/blob/main/docs/THL-GEO-METHOD.md): the three-layer workflow — dimensional audit, external benchmark, deliverable — and the scoring discipline that makes it repeatable.
+
+## Tools (built by THL)
+
+- [agent-readiness-scan](https://github.com/techhorizonlabs/thl-open/tree/main/skills/agent-readiness-scan): turns Cloudflare's isitagentready.com check into audit-grade artifacts — a fixed-schema CSV, a 0–100 score, and the evidence behind it.
+- [audit-report-kit](https://github.com/techhorizonlabs/thl-open/tree/main/tools/audit-report-kit): turns an audit's JSON into a branded client PDF plus compile-checked JSON-LD, ready to paste.
+- [GEO skill suite](https://github.com/techhorizonlabs/thl-open/tree/main/skills): citability scoring, AI-crawler access, llms.txt, schema markup, brand-mention scanning, platform-specific optimization, technical SEO, content E-E-A-T, and report generation.
+
+## Method and evidence
+
+- [Sources](https://github.com/techhorizonlabs/thl-open/blob/main/docs/SOURCES.md): the primary research the method is grounded in, and what it does not claim.
+- [How THL Open compares](https://github.com/techhorizonlabs/thl-open/blob/main/docs/HOW-WE-COMPARE.md): an honest comparison with other GEO tools.
+
+## About
+
+- [Tech Horizon Labs](https://techhorizonlabs.com): the Australian, Claude-native AI-visibility and GTM studio behind this repo. Done-for-you GEO deployed on Cloudflare, into the workspace clients already run.
