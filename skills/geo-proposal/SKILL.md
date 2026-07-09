@@ -32,9 +32,9 @@ Generate a fully customized, client-ready GEO service proposal that:
 
 **Examples:**
 ```
-/geo proposal electron-srl.com
-/geo proposal electron-srl.com --tier standard --client-name "Electron Srl"
-/geo proposal ~/.geo-prospects/audits/electron-srl.com-2026-03-12.md
+/geo proposal meridianlegal.com.au
+/geo proposal meridianlegal.com.au --tier standard --client-name "Meridian Legal"
+/geo proposal ~/.geo-prospects/audits/meridianlegal.com.au-2026-03-12.md
 ```
 
 ---
@@ -105,7 +105,7 @@ The three most urgent issues are:
 2. **[CRITICAL FINDING 2]** — [Business impact in one sentence]
 3. **[CRITICAL FINDING 3]** — [Business impact in one sentence]
 
-We recommend the **[TIER NAME] package** at **€[PRICE]/month**, which addresses
+We recommend the **[TIER NAME] package** at **A$[PRICE]/month**, which addresses
 all critical issues within 90 days and positions [COMPANY] as an AI-visible
 authority in [INDUSTRY].
 
@@ -171,7 +171,7 @@ We offer three engagement models based on the scope of optimization needed.
 
 ---
 
-### BASIC — €2,500/month
+### BASIC — A$2,500/month
 *Best for: Sites with score 61-75 needing targeted improvements*
 
 **What's included:**
@@ -187,7 +187,7 @@ We offer three engagement models based on the scope of optimization needed.
 
 ---
 
-### STANDARD — €5,000/month ⭐ Recommended for [COMPANY]
+### STANDARD — A$5,000/month ⭐ Recommended for [COMPANY]
 *Best for: Sites with score 40-60 needing structured monthly work*
 
 **Everything in Basic, plus:**
@@ -204,7 +204,7 @@ We offer three engagement models based on the scope of optimization needed.
 
 ---
 
-### PREMIUM — €9,500/month
+### PREMIUM — A$9,500/month
 *Best for: Sites with score 0-40 with critical issues, or competitive industries*
 
 **Everything in Standard, plus:**
@@ -227,10 +227,10 @@ Based on your current GEO score of [SCORE]/100 and industry benchmarks:
 
 | Scenario | 6-Month Score | AI Traffic Increase | Est. Additional Value/Month |
 |----------|--------------|--------------------|-----------------------------|
-| No action | [SCORE + 2]/100 | +5% (organic growth) | €[LOW] |
-| Basic package | [SCORE + 15]/100 | +30-40% | €[MED] |
-| Standard package | [SCORE + 32]/100 | +60-90% | €[HIGH] |
-| Premium package | [SCORE + 50]/100 | +100-150% | €[VERY HIGH] |
+| No action | [SCORE + 2]/100 | +5% (organic growth) | A$[LOW] |
+| Basic package | [SCORE + 15]/100 | +30-40% | A$[MED] |
+| Standard package | [SCORE + 32]/100 | +60-90% | A$[HIGH] |
+| Premium package | [SCORE + 50]/100 | +100-150% | A$[VERY HIGH] |
 
 **Assumptions:**
 - Based on estimated [X] monthly organic visitors to [DOMAIN]
@@ -284,9 +284,9 @@ Based on your current GEO score of [SCORE]/100 and industry benchmarks:
 
 | Package | Monthly | 6-Month | 12-Month |
 |---------|---------|---------|----------|
-| Basic | €2,500 | €15,000 | €30,000 |
-| Standard | €5,000 | €30,000 | €60,000 |
-| Premium | €9,500 | €57,000 | €114,000 |
+| Basic | A$2,500 | A$15,000 | A$30,000 |
+| Standard | A$5,000 | A$30,000 | A$60,000 |
+| Premium | A$9,500 | A$57,000 | A$114,000 |
 
 *All prices exclude VAT. Payment terms: monthly, due within 15 days of invoice.*
 
@@ -329,9 +329,9 @@ are based on current industry best practices for Generative Engine Optimization.
 2. Update prospect record: set `status` to `proposal`, save `proposal_file` path
 3. Print confirmation:
    ```
-   ✓ Proposal generated: ~/.geo-prospects/proposals/electron-srl.com-proposal-2026-03-12.md
+   ✓ Proposal generated: ~/.geo-prospects/proposals/meridianlegal.com.au-proposal-2026-03-12.md
    ✓ Prospect status updated: Qualified → Proposal
-   ✓ Recommended package: STANDARD (€5,000/month) — Score 32/100
+   ✓ Recommended package: STANDARD (A$5,000/month) — Score 32/100
 
    Next: Share the proposal file or run `/geo report-pdf` for a visual version.
    ```

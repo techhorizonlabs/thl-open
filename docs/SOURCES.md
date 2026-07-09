@@ -67,3 +67,23 @@ paper as the rationale for the tactics, not a performance guarantee.
 Every substantive claim in a skill should trace to a source above (or to the underlying
 primary source it cites). If you find one that doesn't, that's a bug —
 [open an issue](https://github.com/techhorizonlabs/thl-open/issues).
+
+## Research figures cited across the skills — provenance
+
+Numbers that appear in skill bodies, and where they come from. Some are from peer-reviewed
+work; others are vendor studies cited **as reported** (we haven't independently reproduced
+them). Treat percentages as directional, not guarantees — engine behaviour shifts, and any
+"expected lift" a skill emits is a research-informed estimate, never a promise.
+
+| Figure (as it appears) | Source | Status |
+|---|---|---|
+| GEO tactics lift visibility ~30–115% depending on method (cite sources, quotations, statistics, fluency) | Aggarwal et al., **"GEO: Generative Engine Optimization," KDD 2024** (authors at Princeton / Georgia Tech / IIT Delhi / Allen AI) | Peer-reviewed; the figures vary by tactic and query set — cite the range, not a point number |
+| "134–167 words" optimal answer-block length | Reported in GEO practitioner analysis (Bortolato, 2025) | Vendor/practitioner; cited as reported |
+| Brand-authority platform correlations (e.g. YouTube ≈ 0.737, backlinks/DR ≈ 0.266) | Ahrefs brand-study (2025, ~75K brands), as reported | Vendor study; cited as reported, not reproduced |
+| E-E-A-T applies well beyond YMYL | Google Search Quality Rater Guidelines (ongoing; Google revises periodically — check the current PDF for the live wording) | Primary, but undated on purpose — do not assert a specific release month as fact |
+| AI-referred traffic growth figures (e.g. large YoY %) | Various 2025 analytics vendor reports, as reported | Directional; rot-prone — prefer "growing fast," verify before quoting a specific % to a client |
+
+**Rule for contributors:** if you add a figure to a skill body, add its row here first. A bare
+percentage with no provenance is exactly the kind of "reads like hard data" claim the
+[authoring standard](SKILL-AUTHORING-STANDARD.md) (P2) tells us to keep out of skill bodies —
+put the number here, and reference it.

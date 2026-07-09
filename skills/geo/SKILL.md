@@ -51,16 +51,16 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 2. Detect business type (SaaS, Local, E-commerce, Publisher, Agency, Other)
 3. Extract key pages from sitemap.xml or internal links (up to 50 pages)
 
-**Phase 2: Parallel Analysis (Delegate to Subagents)**
-Launch these 5 subagents simultaneously:
+**Phase 2: Dimensional analysis (delegate to the specialised skills)**
+The canonical orchestrator is [`skills/geo-audit`](../geo-audit/SKILL.md) — it runs the five analysis dimensions in parallel under a fixed return contract and composite. This umbrella skill defers to it; don't re-implement the orchestration here. The dimensions and the skills that measure them:
 
-| Subagent | File | Responsibility |
-|----------|------|---------------|
-| geo-ai-visibility | `agents/geo-ai-visibility.md` | GEO audit, citability, AI crawlers, llms.txt, brand mentions |
-| geo-platform-analysis | `agents/geo-platform-analysis.md` | Platform-specific optimization (ChatGPT, Perplexity, Google AIO) |
-| geo-technical | `agents/geo-technical.md` | Technical SEO, Core Web Vitals, crawlability, indexability |
-| geo-content | `agents/geo-content.md` | Content quality, E-E-A-T, readability, AI content detection |
-| geo-schema | `agents/geo-schema.md` | Schema markup detection, validation, generation |
+| Dimension | Skill | Measures |
+|-----------|-------|----------|
+| AI visibility (citability + brand) | [`geo-citability`](../geo-citability/SKILL.md), [`geo-brand-mentions`](../geo-brand-mentions/SKILL.md) | Passage citability, off-page brand-authority signals |
+| Platform optimisation | [`geo-platform-optimizer`](../geo-platform-optimizer/SKILL.md) | Per-surface readiness (Google AIO, ChatGPT, Perplexity) |
+| Technical | [`geo-technical`](../geo-technical/SKILL.md) | SSR, Core Web Vitals, crawlability, AI-crawler access |
+| Content / E-E-A-T | [`geo-content`](../geo-content/SKILL.md) | Expertise, original data, author credentials |
+| Schema | [`geo-schema`](../geo-schema/SKILL.md) | Structured-data detection, validation, generation |
 
 **Phase 3: Synthesis (Sequential)**
 1. Collect all subagent reports
@@ -118,15 +118,15 @@ Adjust recommendations based on detected type. Local businesses need LocalBusine
 
 ---
 
-## Subagents (5 Parallel Workers)
+## What this measures — and what it can't
 
-| Agent | File | Skills Used |
-|-------|------|-------------|
-| geo-ai-visibility | `agents/geo-ai-visibility.md` | geo-citability, geo-crawlers, geo-llmstxt, geo-brand-mentions |
-| geo-platform-analysis | `agents/geo-platform-analysis.md` | geo-platform-optimizer |
-| geo-technical | `agents/geo-technical.md` | geo-technical |
-| geo-content | `agents/geo-content.md` | geo-content |
-| geo-schema | `agents/geo-schema.md` | geo-schema |
+These skills read **public signals** — your pages, schema, crawler access, and off-page authority (Wikipedia/Wikidata verified live; other platforms via search) — and from them **infer** how citable and recommendable you are to AI answer engines. That inference is grounded in published research (see [`docs/SOURCES.md`](../../docs/SOURCES.md)) and is genuinely useful for fixing the foundations you control.
+
+What it does **not** do: it does **not** query ChatGPT, Claude, Perplexity or Google's AI live to check whether they actually **name** you in an answer. That's a different measurement — the *outcome*, not the *inputs* — and it's what our hosted scanner does:
+
+> **For the full audit — the live "are you actually in the answer" measurement across ChatGPT, Claude, Perplexity and Google's AI — run the free scan at [areyoufoundbyai.com](https://areyoufoundbyai.com).** These open skills score your **readiness**; the scanner measures your **visibility**. (See [`docs/THL-GEO-METHOD.md`](../../docs/THL-GEO-METHOD.md) for how the two fit together.)
+
+Every score this suite emits is tagged with its provenance (`[scan]` / `[partial-scan]` / `[heuristic]` / `[unmeasured]`) — read a `[heuristic]` tag as "informed model judgement from signals," not a measured fact.
 
 ---
 

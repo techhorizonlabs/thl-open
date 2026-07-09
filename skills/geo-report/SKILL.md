@@ -329,12 +329,12 @@ This GEO audit was conducted using the following methodology:
 - **Pages analyzed**: [List of specific URLs audited]
 - **Platforms assessed**: Google AI Overviews, ChatGPT, Perplexity AI, Google Gemini, Bing Copilot
 - **Technical checks**: HTTP headers, robots.txt, HTML source analysis, structured data validation
-- **Content assessment**: E-E-A-T framework (Experience, Expertise, Authoritativeness, Trustworthiness) per Google's December 2025 Quality Rater Guidelines
+- **Content assessment**: E-E-A-T framework (Experience, Expertise, Authoritativeness, Trustworthiness) per Google's Search Quality Rater Guidelines
 - **Schema validation**: JSON-LD parsing and Schema.org specification compliance
 - **Date of analysis**: [Date]
 
 ### Data Sources
-- Google Search Quality Rater Guidelines (December 2025 update)
+- Google Search Quality Rater Guidelines
 - Schema.org full type hierarchy
 - Industry citation studies (Zyppy, Authoritas, Semrush AI search research, 2025-2026)
 - Core Web Vitals thresholds (web.dev, 2026 standards)
