@@ -13,11 +13,13 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 
 This skill generates a professional, visually polished PDF report from GEO audit data. The PDF includes score gauges, bar charts, platform readiness visualizations, color-coded tables, and a prioritized action plan — ready to deliver directly to clients.
 
+> **Two PDF paths — pick one.** For a **branded, client-ready** deliverable, prefer the TypeScript [`tools/audit-report-kit`](../../tools/audit-report-kit) (react-pdf, THL brand tokens, provenance tags, `—` for null scores, compile-checked JSON-LD alongside). The ReportLab script below is the lightweight Python path when you don't want a Node toolchain. They render the same audit JSON; don't run both.
+
 ## Prerequisites
 
 - **ReportLab** must be installed: `pip install reportlab`
-- The PDF generation script is located at: `scripts/generate_pdf_report.py`
-- Run a full GEO audit first (using `/geo-audit`) to have data to include in the report
+- The Python PDF generation script lives at [`../geo/scripts/generate_pdf_report.py`](../geo/scripts/generate_pdf_report.py) (shared with the `geo` umbrella skill). Run it from the repo root: `python3 skills/geo/scripts/generate_pdf_report.py <data.json> <out.pdf>`.
+- Run a full GEO audit first (using `geo-audit`) to have data to include in the report
 
 ## How to Generate a PDF Report
 
@@ -89,7 +91,7 @@ EOF
 Run the PDF generation script:
 
 ```bash
-python3 scripts/generate_pdf_report.py /tmp/geo-audit-data.json GEO-REPORT-[brand].pdf
+python3 skills/geo/scripts/generate_pdf_report.py /tmp/geo-audit-data.json GEO-REPORT-[brand].pdf
 ```
 
 The script will produce a professional PDF report with:
@@ -132,7 +134,7 @@ When the user runs this skill, follow this exact sequence:
 
 6. **Run the PDF generator**:
    ```bash
-   python3 scripts/generate_pdf_report.py /tmp/geo-audit-data.json "GEO-REPORT-[brand_name].pdf"
+   python3 skills/geo/scripts/generate_pdf_report.py /tmp/geo-audit-data.json "GEO-REPORT-[brand_name].pdf"
    ```
 
 7. **Report success** — Tell the user the PDF was generated, its location, and file size.
