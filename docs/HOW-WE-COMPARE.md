@@ -24,10 +24,15 @@ answer engines to check whether you're actually cited. There's a freemium SaaS o
 
 **Where GEO Optimizer is ahead, plainly:**
 
-- **Live citation checking.** Its `geo citations` queries ChatGPT / Perplexity /
-  others to see if your brand is mentioned and your domain cited. This repo's
-  `geo-brand-mentions` analyses presence and authority signals; it does not query
-  answer engines live. If that feature is what you need, use theirs.
+- **Live citation checking, open-source.** Its `geo citations` queries ChatGPT /
+  Perplexity / others live to see if your brand is named and your domain cited — and
+  it's in their repo. **This repo doesn't ship that**, on purpose: the open skills here
+  measure *readiness* (the inputs), and our live *visibility* measurement lives in the
+  hosted scanner at [areyoufoundbyai.com](https://areyoufoundbyai.com) rather than as
+  open code (it's the part of the practice we keep as the product — see
+  [`THL-GEO-METHOD.md`](THL-GEO-METHOD.md)). So: if you want live citation checking as
+  code you run and modify, use theirs; if you want the measurement done for you, free,
+  run our scanner. Both honest choices.
 - **CI / programmatic surface.** PyPI install, MCP server, Astro plugin, heavy test
   coverage — built to drop into a build pipeline.
 - **Maturity signals.** More stars, more tests, more release cadence.

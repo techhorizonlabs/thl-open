@@ -15,7 +15,7 @@ The open layer of how [**Tech Horizon Labs**](https://techhorizonlabs.com) runs 
 
 ### ⚡ [Are you found by AI? &nbsp;— run the free 60-second scan →](https://areyoufoundbyai.com)
 
-<sub>The method in this repo, automated. Enter your URL, get your AI-visibility score across ChatGPT · Claude · Perplexity · Google AI — no install, no Claude Code, just the answer.</sub>
+<sub>The live measurement: it asks ChatGPT · Claude · Perplexity · Google AI whether they actually name you, and who they name instead — no install, no Claude Code, just the answer. This repo is the readiness diagnosis behind that score.</sub>
 
 <br>
 
@@ -39,8 +39,8 @@ Same method, three depths — start wherever you are:
 
 | | | |
 |---|---|---|
-| **⚡ Instant** | **[areyoufoundbyai.com](https://areyoufoundbyai.com)** | Enter your URL → your AI-visibility score in ~60 seconds. Free, hosted, nothing to install. This is the method below, automated. |
-| **🛠 Do it yourself** | **this repo** | Run the full six-dimension audit in Claude Code — the same method, all the evidence, none of the black box. |
+| **⚡ Measure visibility** | **[areyoufoundbyai.com](https://areyoufoundbyai.com)** | Enter your URL → the live check of whether ChatGPT, Claude, Perplexity and Google's AI actually name you, in ~60 seconds. Free, hosted, nothing to install. The *outcome*. |
+| **🛠 Diagnose readiness** | **this repo** | Run the full six-dimension readiness audit in Claude Code — *why* you're visible or not, all the evidence, none of the black box. The *inputs* you control. |
 | **🤝 Done for you** | **[Tech Horizon Labs](https://techhorizonlabs.com)** | We deploy it on your stack, with the calibration data and client playbooks that stay proprietary. |
 
 ---
@@ -144,7 +144,7 @@ skill and one worked audit (fictional broker) you can read end to end.
 
 ## Who's behind this
 
-[**Tech Horizon Labs**](https://techhorizonlabs.com) is a Claude-native GTM + AI-visibility studio. We deploy this infrastructure for real clients — insurance brokers, professional-services firms, and scale-ups — on Cloudflare, into the workspace they already run. This repo is the part we can give away — and [**areyoufoundbyai.com**](https://areyoufoundbyai.com) is the method automated into a free scanner anyone can run in 60 seconds.
+[**Tech Horizon Labs**](https://techhorizonlabs.com) is a Claude-native GTM + AI-visibility studio. We deploy this infrastructure for real clients — insurance brokers, professional-services firms, and scale-ups — on Cloudflare, into the workspace they already run. This repo is the readiness diagnosis we can give away — and [**areyoufoundbyai.com**](https://areyoufoundbyai.com) is the live visibility measurement, free for anyone to run in 60 seconds. Readiness here; visibility there. ([How they fit together.](docs/THL-GEO-METHOD.md))
 
 If it's useful, a ⭐ helps. Issues and PRs welcome — see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 

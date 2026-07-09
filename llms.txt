@@ -4,7 +4,7 @@
 
 ## Start here
 
-- [Are you found by AI? — free 60-second scan](https://areyoufoundbyai.com): the method automated. Enter a URL, get an AI-visibility score across ChatGPT, Claude, Perplexity, and Google AI. Hosted, no install.
+- [Are you found by AI? — free 60-second scan](https://areyoufoundbyai.com): the LIVE visibility measurement — asks ChatGPT, Claude, Perplexity and Google AI whether they actually name you, and who they name instead. This repo is the readiness diagnosis behind it. Hosted, no install.
 - [The THL GEO Method](https://github.com/techhorizonlabs/thl-open/blob/main/docs/THL-GEO-METHOD.md): the three-layer workflow — dimensional audit, external benchmark, deliverable — and the scoring discipline that makes it repeatable.
 
 ## Tools (built by THL)
