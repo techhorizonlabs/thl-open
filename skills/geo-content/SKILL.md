@@ -11,7 +11,7 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 
 ## Purpose
 
-AI search platforms do not just find content — they evaluate whether content deserves to be cited. The primary framework for this evaluation is **E-E-A-T** (Experience, Expertise, Authoritativeness, Trustworthiness), which per Google's December 2025 Quality Rater Guidelines update now applies to **ALL competitive queries**, not just YMYL (Your Money Your Life) topics. Content that scores high on E-E-A-T is dramatically more likely to be cited by AI platforms.
+AI search platforms do not just find content — they evaluate whether content deserves to be cited. The primary framework for this evaluation is **E-E-A-T** (Experience, Expertise, Authoritativeness, Trustworthiness), from Google's Search Quality Rater Guidelines. E-E-A-T began as a YMYL (Your Money Your Life) lens but is now widely applied by raters well beyond YMYL topics; treat strong E-E-A-T as table stakes for any competitive query. Content that scores high on E-E-A-T is materially more likely to be cited by AI platforms. (See [`docs/SOURCES.md`](../../docs/SOURCES.md) for the guidelines reference and dates.)
 
 This skill evaluates content through two lenses:
 1. **E-E-A-T signals** — does the content demonstrate real expertise and trust?

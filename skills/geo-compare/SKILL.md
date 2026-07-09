@@ -26,13 +26,13 @@ score is proof of value. This skill generates the "here's your progress" report.
 ```
 /geo compare <domain>
 /geo compare <baseline-file> <current-file>
-/geo compare electron-srl.com --month march-2026
+/geo compare meridianlegal.com.au --month march-2026
 ```
 
 **Examples:**
 ```
-/geo compare electron-srl.com
-/geo compare ~/.geo-prospects/audits/electron-srl.com-2026-01-15.md ~/.geo-prospects/audits/electron-srl.com-2026-03-12.md
+/geo compare meridianlegal.com.au
+/geo compare ~/.geo-prospects/audits/meridianlegal.com.au-2026-01-15.md ~/.geo-prospects/audits/meridianlegal.com.au-2026-03-12.md
 ```
 
 ---
@@ -89,7 +89,7 @@ Generate the following document:
 
 [2-3 sentences: What improved, what's the trend, what to focus on next month.]
 
-Example: "Electron Srl's GEO Score improved from 32 to 44 this month (+12 points),
+Example: "Meridian Legal's GEO Score improved from 32 to 44 this month (+12 points),
 placing the site firmly in the 'Below Average' tier and on track to reach 'Moderate'
 by May. The biggest wins were AI crawler access (+3 crawlers now allowed) and schema
 implementation (+Organization and LocalBusiness schemas live). Next month's focus is
@@ -190,7 +190,7 @@ OVERALL GEO SCORE
 
 ✅ **[WIN 1]:** [Specific, tangible result — e.g., "GPTBot and ClaudeBot are now allowed. ChatGPT can now crawl and cite your content."]
 ✅ **[WIN 2]:** [e.g., "Organization schema implemented on homepage. Your brand entity is now machine-readable."]
-✅ **[WIN 3]:** [e.g., "llms.txt created and deployed at electron-srl.com/llms.txt — one of only ~12% of sites in your industry to have this."]
+✅ **[WIN 3]:** [e.g., "llms.txt created and deployed at meridianlegal.com.au/llms.txt — one of only ~12% of sites in your industry to have this."]
 
 ---
 
@@ -240,7 +240,7 @@ Based on the [X]-point improvement this month:
 - **AI citation likelihood:** Increased by approximately [X]%
 - **Crawlers with access:** [X]/14 → [Y]/14 (better coverage on [platforms])
 - **Estimated monthly AI-referred traffic improvement:** +[X]% (conservative)
-- **Traffic value at current conversion rates:** +€[X]/month in organic value
+- **Traffic value at current conversion rates:** +A$[X]/month in organic value
 
 *Note: Full traffic impact from GEO changes typically takes 4-8 weeks to materialize
 as AI platforms re-index and update their knowledge bases.*
@@ -296,7 +296,7 @@ fresh audit that weren't visible before. Frame declines as "newly discovered opp
 1. Save report to `~/.geo-prospects/reports/<domain>-monthly-<YYYY-MM>.md`
 2. Print confirmation with key stats:
    ```
-   ✓ Monthly report generated: ~/.geo-prospects/reports/electron-srl.com-monthly-2026-03.md
+   ✓ Monthly report generated: ~/.geo-prospects/reports/meridianlegal.com.au-monthly-2026-03.md
 
    SUMMARY:
    GEO Score: 32 → 44 (+12 points) ▲

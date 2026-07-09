@@ -57,7 +57,7 @@ For each detected schema block, validate:
 5. **sameAs Links**: Does the schema include `sameAs` properties linking to other platform presences?
 6. **URL Validity**: Do all URLs in the schema resolve (not 404)?
 7. **Nesting**: Is the schema properly nested (e.g., author inside Article, address inside Organization)?
-8. **Rendering Method**: Is the JSON-LD in the server-rendered HTML or injected via JavaScript? Per Google's December 2025 guidance, **JavaScript-injected structured data may face delayed processing**. Flag any schema that requires JS execution.
+8. **Rendering Method**: Is the JSON-LD in the server-rendered HTML or injected via JavaScript? Google's guidance is that **JavaScript-injected structured data can face delayed processing** (it must render before the markup is seen). Flag any schema that requires JS execution.
 
 ---
 

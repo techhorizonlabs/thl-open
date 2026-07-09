@@ -38,15 +38,20 @@ export const sampleAudit: AuditReport = {
     domain: "harborview-brokers.com.au",
     location: "Gold Coast, QLD",
   },
-  composite: 38,
+  // Composite from the method's fixed weights: citability .25, brand .20, E-E-A-T .20,
+  // technical .15, schema .10, platform .10 → 31·.25 + 22·.20 + 44·.20 + 57·.15 + 8·.10 + 26·.10 = 37.
+  composite: 37,
   band: "Critical",
   generatedAt: "2026-06-14",
+  // The six canonical readiness dimensions (same as skills/geo-audit). Crawler access is a
+  // sub-component of Technical, not a top-level dimension. Platform is [heuristic] here → null → "—".
   categories: [
-    { key: "citability", label: "AI Citability", score: 31 },
-    { key: "crawlers", label: "Crawler Access", score: 48 },
-    { key: "schema", label: "Schema Markup", score: 8 },
-    { key: "content", label: "Content E-E-A-T", score: 44 },
-    { key: "technical", label: "Technical SEO", score: 57 },
+    { key: "citability", label: "AI Citability", score: 31, provenance: "scan" },
+    { key: "brand", label: "Brand Authority", score: 22, provenance: "partial-scan" },
+    { key: "eeat", label: "Content E-E-A-T", score: 44, provenance: "scan" },
+    { key: "technical", label: "Technical SEO", score: 57, provenance: "scan" },
+    { key: "schema", label: "Schema Markup", score: 8, provenance: "scan" },
+    { key: "platform", label: "Platform Optimization", score: 26, provenance: "heuristic" },
   ],
   findings: [
     {

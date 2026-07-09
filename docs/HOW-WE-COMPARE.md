@@ -24,10 +24,15 @@ answer engines to check whether you're actually cited. There's a freemium SaaS o
 
 **Where GEO Optimizer is ahead, plainly:**
 
-- **Live citation checking.** Its `geo citations` queries ChatGPT / Perplexity /
-  others to see if your brand is mentioned and your domain cited. This repo's
-  `geo-brand-mentions` analyses presence and authority signals; it does not query
-  answer engines live. If that feature is what you need, use theirs.
+- **Live citation checking, open-source.** Its `geo citations` queries ChatGPT /
+  Perplexity / others live to see if your brand is named and your domain cited — and
+  it's in their repo. **This repo doesn't ship that**, on purpose: the open skills here
+  measure *readiness* (the inputs), and our live *visibility* measurement lives in the
+  hosted scanner at [areyoufoundbyai.com](https://areyoufoundbyai.com) rather than as
+  open code (it's the part of the practice we keep as the product — see
+  [`THL-GEO-METHOD.md`](THL-GEO-METHOD.md)). So: if you want live citation checking as
+  code you run and modify, use theirs; if you want the measurement done for you, free,
+  run our scanner. Both honest choices.
 - **CI / programmatic surface.** PyPI install, MCP server, Astro plugin, heavy test
   coverage — built to drop into a build pipeline.
 - **Maturity signals.** More stars, more tests, more release cadence.
@@ -63,6 +68,16 @@ These aren't competitors — they're good building blocks for a GEO pipeline:
   **[Unlighthouse](https://github.com/harlan-zw/unlighthouse)** (MIT),
   **[Lighthouse](https://github.com/GoogleChrome/lighthouse)** (Apache-2.0) — crawling
   and site-wide performance/a11y passes that feed the technical dimension.
+- **[`jdevalk/seo-graph`](https://github.com/jdevalk/seo-graph)** (MIT, Joost de Valk) —
+  a schema `@graph` **builder** whose prototype scanner independently converged on the
+  same audit loop we run (emit → validate → diff), which we read as evidence the loop is
+  right. Two of its patterns are prior art for signals now in the
+  [areyoufoundbyai.com](https://areyoufoundbyai.com) scanner: **registry-ID mining**
+  (label-anchored, checksum-gated ABN/ACN extraction — we added live verification
+  against the Australian Business Register on top) and the **organization-subtype
+  inference ladder** (declared subtype > host patterns > registry facts). The tools
+  are complements, not competitors: Joost's tooling *emits* the graph; Found by AI
+  *measures whether it worked*.
 
 ## Licence cautions
 

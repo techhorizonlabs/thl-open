@@ -1,5 +1,13 @@
 # Changelog
 
+### 2026-07-09 — polish pass: Visibility-vs-Readiness reframe, health, honesty
+
+- **Reframed the whole method around Visibility ≠ Readiness** ([`docs/THL-GEO-METHOD.md`](docs/THL-GEO-METHOD.md)). This repo audits **Readiness** (the inputs, inferred from public signals); the live **Visibility** measurement (actually asking ChatGPT/Claude/Perplexity/Google's AI whether they name you) is the hosted scanner at [areyoufoundbyai.com](https://areyoufoundbyai.com). Added a public *"how to measure visibility honestly"* principles section (sample for stochasticity, anchor location, named-vs-cited, reject near-duplicate names, never fabricate a number).
+- **Every inferring skill now states its own limits** and points to the scanner for the live check (`geo-audit`, `geo-citability`, `geo-brand-mentions`, and the `geo` umbrella). Reconciled the README triptych and `llms.txt`; `HOW-WE-COMPARE.md` no longer *concedes* live citation checking to a competitor — we have it (as the hosted scanner), and the open/closed boundary is stated as a deliberate choice.
+- **Health / de-rot:** fixed the `geo` umbrella skill's broken delegation to non-existent `agents/*.md` (now points at the real `geo-audit` orchestrator + specialised skills). Removed orphan fork-residue scripts (`crm_dashboard.py` + `webapp/` — Italian comments, EUR; `citability_scorer.py` — regex duplicate; `brand_scanner.py` — redundant). De-Italianised / AUD-ified the customer-facing examples in `geo-prospect`/`geo-compare`/`geo-proposal`.
+- **Honesty:** softened dated, asserted-as-fact research claims ("Dec 2025 QRG applies to ALL queries", etc.) to attributed wording, and added a **Research-figures provenance table** to [`docs/SOURCES.md`](docs/SOURCES.md) so every cited number traces to a source (the repo's own P2 rule).
+- **Reconciled duplicates:** the `audit-report-kit` sample now uses the method's **six** canonical dimensions (was five, missing Brand + Platform; composite recomputed from the fixed weights). `geo-report-pdf`'s broken script path fixed, and it now names the branded TS report-kit as the preferred deliverable.
+
 ## THL improvements to the forked GEO suite
 
 The `skills/geo*` suite is an improved fork of

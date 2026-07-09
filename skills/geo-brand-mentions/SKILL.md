@@ -14,10 +14,16 @@ allowed-tools:
 
 ## Core Insight
 
-Brand mentions correlate roughly 3x more strongly with AI visibility than traditional backlinks.
-An Ahrefs study (Dec 2025, 75,000 brands across AI search platforms) found that **unlinked brand
-mentions** — references to a brand name with no hyperlink — predict whether AI systems cite and
-recommend a brand better than Domain Rating or backlink count.
+Brand mentions correlate more strongly with AI visibility than traditional backlinks. An Ahrefs
+brand study (2025, ~75,000 brands, cited as reported — see [`docs/SOURCES.md`](../../docs/SOURCES.md))
+found **unlinked brand mentions** — references to a brand name with no hyperlink — predict whether
+AI systems cite and recommend a brand better than Domain Rating or backlink count.
+
+> **This measures off-page authority signals, not answer-engine outcomes.** Wikipedia/Wikidata are
+> checked live via their APIs; the other platforms are assessed via search, not by querying the AI
+> engines. A high Brand Authority Score means the *signals* AI trusts are present — it does not
+> confirm any engine actually names you. For that live check, run the free scan at
+> **[areyoufoundbyai.com](https://areyoufoundbyai.com)**.
 
 The critical finding: **the platform the mention sits on matters enormously.** A mention on
 YouTube or Reddit carries far more weight for AI citation than one on a low-authority blog,

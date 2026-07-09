@@ -16,6 +16,8 @@ allowed-tools:
 
 This skill performs a comprehensive Generative Engine Optimization (GEO) audit of any website. GEO is the practice of optimizing web content so that AI systems (ChatGPT, Claude, Perplexity, Gemini, etc.) can discover, understand, cite, and recommend it. This audit measures how well a site performs across all GEO dimensions and produces an actionable improvement plan.
 
+> **What this composite is — and isn't.** This score is a **readiness** measure: it reads public signals (content, schema, crawler access, off-page authority) and infers how citable and recommendable the site is. It does **not** query the AI engines to confirm the business is actually named in their answers. Read it as "how well-built for AI is this site," not "is this site in the answer right now." For the live outcome — actually asking ChatGPT, Claude, Perplexity and Google's AI whether they name you — run the free scan at **[areyoufoundbyai.com](https://areyoufoundbyai.com)** (the two are complementary: readiness here, visibility there; see [`docs/THL-GEO-METHOD.md`](../../docs/THL-GEO-METHOD.md)). Every dimension below carries a provenance tag; a `[heuristic]` tag means model judgement from signals, not a measured fact.
+
 ## Key Insight
 
 Traditional SEO optimizes for search engine rankings. GEO optimizes for AI citation and recommendation. Sites that score high on GEO metrics see 30-115% more visibility in AI-generated responses (Georgia Tech / Princeton / IIT Delhi 2024 study). The two disciplines overlap but have distinct requirements.

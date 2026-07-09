@@ -44,17 +44,17 @@ Each prospect is stored as a JSON record:
 ```json
 {
   "id": "PRO-001",
-  "company": "Electron Srl",
-  "domain": "electron-srl.com",
-  "contact_email": "info@electron-srl.com",
+  "company": "Meridian Legal",
+  "domain": "meridianlegal.com.au",
+  "contact_email": "info@meridianlegal.com.au",
   "contact_name": "",
   "industry": "Educational Equipment Manufacturing",
   "country": "Italy",
   "status": "qualified",
   "geo_score": 32,
   "audit_date": "2026-03-12",
-  "audit_file": "~/.geo-prospects/audits/electron-srl.com-2026-03-12.md",
-  "proposal_file": "~/.geo-prospects/proposals/electron-srl.com-proposal.md",
+  "audit_file": "~/.geo-prospects/audits/meridianlegal.com.au-2026-03-12.md",
+  "proposal_file": "~/.geo-prospects/proposals/meridianlegal.com.au-proposal.md",
   "monthly_value": 0,
   "contract_start": null,
   "contract_months": 0,
@@ -76,7 +76,7 @@ Each prospect is stored as a JSON record:
 ### `/geo prospect new <domain>`
 
 1. Check if `~/.geo-prospects/prospects.json` exists, create if not (empty array)
-2. Auto-detect company name from domain (e.g., `electron-srl.com` → `Electron Srl`)
+2. Auto-detect company name from domain (e.g., `meridianlegal.com.au` → `Meridian Legal`)
 3. Assign next sequential ID: `PRO-001`, `PRO-002`, etc.
 4. Ask user for:
    - Contact name (optional)
@@ -84,7 +84,7 @@ Each prospect is stored as a JSON record:
    - Monthly contract value estimate (optional)
 5. Set status to `lead`
 6. Save to JSON file
-7. Suggest next step: "Run `/geo prospect audit electron-srl.com` to score this prospect"
+7. Suggest next step: "Run `/geo prospect audit meridianlegal.com.au` to score this prospect"
 
 ### `/geo prospect list`
 
@@ -96,13 +96,13 @@ GEO Prospect Pipeline — March 2026
 
 ID       Domain                  Company           Status      Score  Value
 ───────  ──────────────────────  ────────────────  ──────────  ─────  ──────
-PRO-001  electron-srl.com        Electron Srl      Qualified   32/100  €4.5K
+PRO-001  meridianlegal.com.au        Meridian Legal      Qualified   32/100  A$4.5K
 PRO-002  acme.com                ACME Corp         Lead        —       —
-PRO-003  bigshop.it              BigShop           Won         41/100  €6.0K
+PRO-003  coastalfitness.com.au              Coastal Fitness           Won         41/100  A$6.0K
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Pipeline: 1 lead | 1 qualified | 0 proposals | 1 won | 0 lost
-Committed MRR: €6,000 | Pipeline Value: €4,500
+Committed MRR: A$6,000 | Pipeline Value: A$4,500
 ```
 
 ### `/geo prospect audit <id-or-domain>`
@@ -119,7 +119,7 @@ Committed MRR: €6,000 | Pipeline Value: €4,500
 1. Find prospect by ID or domain
 2. Append note with current ISO date
 3. Save back to JSON
-4. Confirm: "Note added to Electron Srl (PRO-001)"
+4. Confirm: "Note added to Meridian Legal (PRO-001)"
 
 ### `/geo prospect status <id-or-domain> <status>`
 
@@ -140,19 +140,19 @@ GEO AGENCY PIPELINE SUMMARY — March 2026
 
 STAGE          COUNT   POTENTIAL VALUE   NOTES
 ─────────────  ─────   ───────────────   ─────────────────────
-Lead             2      €8,000/mo        New discoveries
-Qualified        1      €4,500/mo        Ready for proposal
-Proposal Sent    1      €6,000/mo        Awaiting signature
-Won              3      €18,500/mo       Active clients (MRR)
+Lead             2      A$8,000/mo        New discoveries
+Qualified        1      A$4,500/mo        Ready for proposal
+Proposal Sent    1      A$6,000/mo        Awaiting signature
+Won              3      A$18,500/mo       Active clients (MRR)
 Lost             1      —                Budget freeze
 
-COMMITTED MRR:        €18,500
-PIPELINE (qualified+): €10,500
-TOTAL POTENTIAL:      €29,000/mo → €348,000/yr
+COMMITTED MRR:        A$18,500
+PIPELINE (qualified+): A$10,500
+TOTAL POTENTIAL:      A$29,000/mo → A$348,000/yr
 
 Next actions:
 → PRO-003 (acme.com): Send proposal — score 38/100 (strong case)
-→ PRO-007 (shop.it): Follow up — proposal sent 8 days ago
+→ PRO-007 (coastalfitness.com.au): Follow up — proposal sent 8 days ago
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -165,9 +165,9 @@ All data stored in `~/.geo-prospects/`:
 ~/.geo-prospects/
 ├── prospects.json          # Main CRM database
 ├── audits/                 # Quick audit snapshots
-│   └── electron-srl.com-2026-03-12.md
+│   └── meridianlegal.com.au-2026-03-12.md
 └── proposals/              # Generated proposals
-    └── electron-srl.com-proposal.md
+    └── meridianlegal.com.au-proposal.md
 ```
 
 Create directory if it does not exist: `mkdir -p ~/.geo-prospects/audits ~/.geo-prospects/proposals`

@@ -22,3 +22,12 @@ This repository contains work under more than one copyright, all MIT-licensed an
 MIT requires the original copyright notice to be preserved regardless of how much
 is changed — so the `geo-*` suite is credited to its author here and in its own
 license file. Improvements don't remove attribution; they add to it.
+
+## Pattern prior art (no code copied)
+
+- **[`jdevalk/seo-graph`](https://github.com/jdevalk/seo-graph)** (MIT, **Joost de Valk**) —
+  the registry-ID mining and organization-subtype inference patterns in the
+  [areyoufoundbyai.com](https://areyoufoundbyai.com) scanner were independently
+  re-implemented after studying this project (we added live Australian Business
+  Register verification on top); no source was copied. Credited because good ideas
+  deserve a paper trail, not because the licence demands it.
