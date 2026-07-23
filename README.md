@@ -15,7 +15,7 @@ The open layer of how [**Tech Horizon Labs**](https://techhorizonlabs.com) runs 
 
 ### ⚡ [Are you found by AI? &nbsp;— run the free 60-second scan →](https://areyoufoundbyai.com)
 
-<sub>The live measurement: it asks ChatGPT · Claude · Perplexity · Google AI whether they actually name you, and who they name instead — no install, no Claude Code, just the answer. This repo is the readiness diagnosis behind that score.</sub>
+<sub>The live measurement: it asks all <b>seven</b> answer engines — ChatGPT · Claude · Gemini · Perplexity · Grok · DeepSeek · Google AI — whether they actually name you, and who they name instead. Up to 228 live answers per full measure, every one recorded verbatim, 2,100+ businesses on the <a href="https://areyoufoundbyai.com/benchmarks">public index</a>. This repo is the readiness diagnosis behind that score.</sub>
 
 <br>
 
@@ -39,7 +39,7 @@ Same method, three depths — start wherever you are:
 
 | | | |
 |---|---|---|
-| **⚡ Measure visibility** | **[areyoufoundbyai.com](https://areyoufoundbyai.com)** | Enter your URL → the live check of whether ChatGPT, Claude, Perplexity and Google's AI actually name you, in ~60 seconds. Free, hosted, nothing to install. The *outcome*. |
+| **⚡ Measure visibility** | **[areyoufoundbyai.com](https://areyoufoundbyai.com)** | Enter your URL → the live check of whether all seven answer engines (ChatGPT, Claude, Gemini, Perplexity, Grok, DeepSeek and Google's AI actually name you, in ~60 seconds. Free, hosted, nothing to install. The *outcome*. |
 | **🛠 Diagnose readiness** | **this repo** | Run the full six-dimension readiness audit in Claude Code — *why* you're visible or not, all the evidence, none of the black box. The *inputs* you control. |
 | **🤝 Done for you** | **[Tech Horizon Labs](https://techhorizonlabs.com)** | We deploy it on your stack, with the calibration data and client playbooks that stay proprietary. |
 
@@ -134,6 +134,8 @@ skill and one worked audit (fictional broker) you can read end to end.
 - **[How THL Open compares](docs/HOW-WE-COMPARE.md)** — an honest look at the other GEO tools (and where they're ahead).
 - **[Skill-Authoring Standard](docs/SKILL-AUTHORING-STANDARD.md)** — how we author skills, and the bar for PRs.
 - **[`evals/`](evals)** — how we keep the audit repeatable.
+- **Live research from the measurement engine** — [who wins the moment buyers compare you](https://areyoufoundbyai.com/research/high-intent-serps) (1,001 high-intent SERPs: brands lose 67% of their own "vs" searches) · [JS-injected schema is invisible to AI crawlers](https://areyoufoundbyai.com/research/schema-ai-crawlers) · [Microsoft's GEO model, measured](https://areyoufoundbyai.com/research/microsoft-geo-model).
+- **Free agent-era tools** — [AI crawler checker](https://areyoufoundbyai.com/tools/ai-crawler-checker) · [DNS-AID checker](https://areyoufoundbyai.com/tools/dns-aid-checker) (the emerging IETF agent-discovery record) · [IndexNow submitter](https://areyoufoundbyai.com/tools/indexnow).
 
 > **Heads up:** skills can run code and fetch the open web. Read a skill before you
 > install it, and treat fetched web content as data, not instructions. There's **no

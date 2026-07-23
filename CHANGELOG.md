@@ -8,6 +8,12 @@
 - **Honesty:** softened dated, asserted-as-fact research claims ("Dec 2025 QRG applies to ALL queries", etc.) to attributed wording, and added a **Research-figures provenance table** to [`docs/SOURCES.md`](docs/SOURCES.md) so every cited number traces to a source (the repo's own P2 rule).
 - **Reconciled duplicates:** the `audit-report-kit` sample now uses the method's **six** canonical dimensions (was five, missing Brand + Platform; composite recomputed from the fixed weights). `geo-report-pdf`'s broken script path fixed, and it now names the branded TS report-kit as the preferred deliverable.
 
+## 2026-07-23
+
+- README refreshed to match the live engine: **seven answer engines** (was four), up to 228 verbatim answers per full measure, 2,100+ businesses on the public index.
+- Linked the three live research pieces produced by the measurement engine (high-intent SERP ownership · schema delivery vs AI crawlers · the Microsoft GEO model, measured).
+- Linked the free agent-era tools, including the new **DNS-AID checker** (draft-mozleywilliams-dnsop-dnsaid / RFC 9460 discovery records).
+
 ## THL improvements to the forked GEO suite
 
 The `skills/geo*` suite is an improved fork of
