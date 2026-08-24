@@ -15,7 +15,15 @@ The open layer of how [**Tech Horizon Labs**](https://techhorizonlabs.com) runs 
 
 ### ⚡ [Are you found by AI? &nbsp;— run the free 60-second scan →](https://areyoufoundbyai.com)
 
-<sub>The live measurement: it asks all <b>seven</b> answer engines — ChatGPT · Claude · Gemini · Perplexity · Grok · DeepSeek · Google AI — whether they actually name you, and who they name instead. Up to 228 live answers per full measure, every one recorded verbatim, 2,100+ businesses on the <a href="https://areyoufoundbyai.com/benchmarks">public index</a>. This repo is the readiness diagnosis behind that score.</sub>
+<sub>The live measurement: the full measure asks all <b>seven</b> answer engines — ChatGPT · Claude · Gemini · Perplexity · Grok · DeepSeek · Google AI — whether they actually name you, and who they name instead. Up to 228 live answers per full measure, every one recorded verbatim, 3,500+ businesses on the <a href="https://areyoufoundbyai.com/benchmarks">public index</a>. The free scan is the on-ramp: two buyer questions on two engines, no signup. This repo is the readiness diagnosis behind that score.</sub>
+
+<br>
+
+**INSTALL** &nbsp;·&nbsp; 17 skills into Claude Code, Codex, Cursor, Gemini CLI or any SKILL.md agent:
+
+```bash
+npx skills add techhorizonlabs/thl-open
+```
 
 <br>
 
@@ -39,7 +47,7 @@ Same method, three depths — start wherever you are:
 
 | | | |
 |---|---|---|
-| **⚡ Measure visibility** | **[areyoufoundbyai.com](https://areyoufoundbyai.com)** | Enter your URL → the live check of whether all seven answer engines (ChatGPT, Claude, Gemini, Perplexity, Grok, DeepSeek and Google's AI actually name you, in ~60 seconds. Free, hosted, nothing to install. The *outcome*. |
+| **⚡ Measure visibility** | **[areyoufoundbyai.com](https://areyoufoundbyai.com)** | Enter your URL → a live check of what AI answers when your buyers ask, in ~60 seconds. Free, hosted, nothing to install: two buyer questions on ChatGPT + Gemini, every answer kept verbatim. The trial runs the full seven-engine measure. The *outcome*. |
 | **🛠 Diagnose readiness** | **this repo** | Run the full six-dimension readiness audit in Claude Code — *why* you're visible or not, all the evidence, none of the black box. The *inputs* you control. |
 | **🤝 Done for you** | **[Tech Horizon Labs](https://techhorizonlabs.com)** | We deploy it on your stack, with the calibration data and client playbooks that stay proprietary. |
 
@@ -72,6 +80,7 @@ The discipline that makes it repeatable: **every score traces to evidence, the c
 
 | Component | What it does |
 |---|---|
+| **[`skills/found-by-ai`](skills/found-by-ai)** | Wires any agent to the live measurement: run the free scan for a business, read the verdict and the rivals AI names instead, hand back the fix plan, and work the fix-and-re-measure loop over MCP for monitored sites. |
 | **[`skills/agent-readiness-scan`](skills/agent-readiness-scan)** | Turns Cloudflare's public `isitagentready.com` check into audit-grade artifacts — a fixed-schema CSV, the 0–100 score, and the evidence behind it. The independent benchmark the dimensional audit can't give itself. |
 | **[`tools/audit-report-kit`](tools/audit-report-kit)** | Turns an audit's JSON into a polished, branded **client PDF** (`react-pdf`) plus compile-checked **JSON-LD** (`schema-dts`) — the schema the audit recommends, ready to paste. *(That's the report pictured above.)* |
 | **[`docs/THL-GEO-METHOD.md`](docs/THL-GEO-METHOD.md)** | The orchestration + scoring discipline above. |
@@ -85,6 +94,20 @@ A comprehensive set of Claude Code skills for Generative Engine Optimization —
 ---
 
 ## Quickstart
+
+**As agent skills (Claude Code, Codex, Cursor, Gemini CLI, or any SKILL.md agent).** GitHub is the
+registry; this repo is the package:
+
+```bash
+# the whole suite
+npx skills add techhorizonlabs/thl-open
+
+# or just the live-measurement skill
+npx skills add techhorizonlabs/thl-open --skill found-by-ai
+
+# see what's in the box first
+npx skills add techhorizonlabs/thl-open --list
+```
 
 **As a Claude Code plugin (installs the whole suite).** Run these as **two separate
 commands** — paste the first, press Enter, then paste the second (pasting both at once

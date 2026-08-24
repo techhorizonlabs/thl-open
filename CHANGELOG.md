@@ -1,5 +1,19 @@
 # Changelog
 
+### 2026-08-24 — npx skills install path + the found-by-ai skill
+
+- **The repo is now an installable skills package**: `npx skills add techhorizonlabs/thl-open`
+  puts the suite into Claude Code, Codex, Cursor, Gemini CLI or any SKILL.md agent. Install block
+  added to the masthead and Quickstart; GitHub is the registry, this repo is the package.
+- **New skill: [`skills/found-by-ai`](skills/found-by-ai)** — wires any agent to the live
+  measurement: the free scan API (no auth), the verdict and the rivals AI names instead, the fix
+  plan, and the fix-and-re-measure loop over MCP for monitored sites. Packaged from the live agent
+  surface at `areyoufoundbyai.com/.well-known/agent-skills`.
+- **Corrected a stale free-tier claim**: the README described the free check as running all seven
+  engines. Since 29 July the free scan is two buyer questions on two engines (ChatGPT + Gemini),
+  once; the trial and paid tiers run the full seven-engine measure. The repo now says exactly that,
+  and the public index count is refreshed to 3,500+ measured businesses.
+
 ### 2026-07-09 — polish pass: Visibility-vs-Readiness reframe, health, honesty
 
 - **Reframed the whole method around Visibility ≠ Readiness** ([`docs/THL-GEO-METHOD.md`](docs/THL-GEO-METHOD.md)). This repo audits **Readiness** (the inputs, inferred from public signals); the live **Visibility** measurement (actually asking ChatGPT/Claude/Perplexity/Google's AI whether they name you) is the hosted scanner at [areyoufoundbyai.com](https://areyoufoundbyai.com). Added a public *"how to measure visibility honestly"* principles section (sample for stochasticity, anchor location, named-vs-cited, reject near-duplicate names, never fabricate a number).
