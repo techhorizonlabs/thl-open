@@ -122,9 +122,9 @@ Adjust recommendations based on detected type. Local businesses need LocalBusine
 
 These skills read **public signals** — your pages, schema, crawler access, and off-page authority (Wikipedia/Wikidata verified live; other platforms via search) — and from them **infer** how citable and recommendable you are to AI answer engines. That inference is grounded in published research (see [`docs/SOURCES.md`](../../docs/SOURCES.md)) and is genuinely useful for fixing the foundations you control.
 
-What it does **not** do: it does **not** query ChatGPT, Claude, Perplexity or Google's AI live to check whether they actually **name** you in an answer. That's a different measurement — the *outcome*, not the *inputs* — and it's what our hosted scanner does:
+What it does **not** do: it does **not** query the seven answer engines live to check whether they actually **name** you in an answer. That's a different measurement — the *outcome*, not the *inputs* — and it's what our hosted scanner does:
 
-> **For the full audit — the live "are you actually in the answer" measurement across ChatGPT, Claude, Perplexity and Google's AI — run the free scan at [areyoufoundbyai.com](https://areyoufoundbyai.com).** These open skills score your **readiness**; the scanner measures your **visibility**. (See [`docs/THL-GEO-METHOD.md`](../../docs/THL-GEO-METHOD.md) for how the two fit together.)
+> **For the live "are you actually in the answer" measurement, start with the free scan at [areyoufoundbyai.com](https://areyoufoundbyai.com): two buyer questions on ChatGPT and Gemini, once, no signup. The trial and paid tiers ask up to 12 buyer questions across all seven engines (ChatGPT, Claude, Gemini, Perplexity, Grok, DeepSeek, Google AI Overviews), multi-sampled.** These open skills score your **readiness**; the scanner measures your **visibility**. (See [`docs/THL-GEO-METHOD.md`](../../docs/THL-GEO-METHOD.md) for how the two fit together.)
 
 Every score this suite emits is tagged with its provenance (`[scan]` / `[partial-scan]` / `[heuristic]` / `[unmeasured]`) — read a `[heuristic]` tag as "informed model judgement from signals," not a measured fact.
 

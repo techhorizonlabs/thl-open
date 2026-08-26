@@ -23,7 +23,8 @@ AI systems cite and recommend a brand better than Domain Rating or backlink coun
 > checked live via their APIs; the other platforms are assessed via search, not by querying the AI
 > engines. A high Brand Authority Score means the *signals* AI trusts are present — it does not
 > confirm any engine actually names you. For that live check, run the free scan at
-> **[areyoufoundbyai.com](https://areyoufoundbyai.com)**.
+> **[areyoufoundbyai.com](https://areyoufoundbyai.com)** (two buyer questions on ChatGPT and Gemini; the paid
+> measure covers all seven engines).
 
 The critical finding: **the platform the mention sits on matters enormously.** A mention on
 YouTube or Reddit carries far more weight for AI citation than one on a low-authority blog,

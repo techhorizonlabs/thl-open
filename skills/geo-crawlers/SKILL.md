@@ -301,7 +301,7 @@ Generate a file called `GEO-CRAWLER-ACCESS.md`:
 | Bytespider | ByteDance | 3 | [Status] | [Impact] |
 | cohere-ai | Cohere | 3 | [Status] | [Impact] |
 
-## AI Visibility Score: [X]/100
+## AI Crawler Access Score: [X]/100
 
 **Tier 1 Access:** [X/5 crawlers allowed]
 **Tier 2 Access:** [X/5 crawlers allowed]

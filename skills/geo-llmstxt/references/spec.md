@@ -122,7 +122,7 @@ In addition to `llms.txt`, sites can provide `/llms-full.txt` — an extended ve
 | **Sections** | 3-6 sections | 8-15 sections |
 | **Key facts** | Business-level facts | Page-level facts and data points |
 
-Both files can coexist. AI systems check for `llms.txt` first, then may optionally load `llms-full.txt` for deeper understanding.
+Both files can coexist. Under the proposed convention, tools that support `llms.txt` read it first and may optionally load `llms-full.txt` for deeper understanding; no major answer engine has committed to consuming either file.
 
 ---
 
