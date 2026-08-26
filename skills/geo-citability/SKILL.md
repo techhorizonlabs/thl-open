@@ -306,11 +306,10 @@ Generate a file called `GEO-CITABILITY-SCORE.md`:
 ### Optimal Passage Characteristics (from GEO Research)
 
 - **Optimal length for AI citation:** 134-167 words (Bortolato 2025 analysis of AI Overview passages)
-- **Definition patterns increase citation rate by:** 2.1x (Georgia Tech 2024)
-- **Adding statistics to passages increases citation by:** 40% (Princeton GEO study 2024)
-- **Adding quotations from authorities increases citation by:** 115% in certain categories (IIT Delhi 2024)
-- **Fluency optimization increases visibility by:** 30% on average across all query types
-- **Content with source citations is cited:** 20-25% more often by Perplexity and ChatGPT search
+- **Adding statistics, authoritative quotations, source citations, or fluency optimization:** the
+  GEO study (Aggarwal et al., KDD 2024 — the joint Princeton / Georgia Tech / Allen AI / IIT Delhi
+  paper) reports 30-115% visibility improvements across these methods, varying by query category.
+  It is one study, not three; cite it as one.
 
 ### AI System Citation Preferences
 

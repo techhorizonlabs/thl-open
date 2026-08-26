@@ -117,25 +117,29 @@ authority in [INDUSTRY].
 
 | Metric | Value |
 |--------|-------|
-| AI-referred traffic growth (2025) | +527% YoY |
-| AI traffic conversion vs. organic | 4.4x higher |
-| ChatGPT weekly active users | 900M+ |
-| Google AI Overviews monthly reach | 1.5B users, 200+ countries |
-| Gartner: traditional search traffic drop by 2028 | -50% |
-| Marketers investing in GEO today | Only 23% |
+| Google AI Overviews monthly reach | 1.5B+ users (Google, 2025) |
+| Gartner: traditional search engine volume decline by 2026 | -25% (Gartner, 2024) |
+| ChatGPT weekly active users | Hundreds of millions (OpenAI, 2025) |
+
+Every number in a client proposal carries its source and year. If you cannot attribute a
+statistic, it does not go in the table.
 
 **First-mover advantage is real.** Companies that invest in GEO now will
 capture the AI search channel before competitors do.
 
 ### Your Current Position
 
-| Metric | [COMPANY] | Industry Average | Top Performers |
-|--------|-----------|------------------|----------------|
-| GEO Score | [SCORE]/100 | 45/100 | 75+/100 |
-| AI Crawlers Allowed | [X]/14 | 8/14 | 14/14 |
-| Brand Mentions (AI platforms) | [STATUS] | Moderate | High |
-| Schema Coverage | [STATUS] | Partial | Complete |
-| llms.txt | [Yes/No] | 12% have it | 78% have it |
+| Metric | [COMPANY] | Comparative (measured cohorts only) |
+|--------|-----------|-------------------------------------|
+| GEO Score | [SCORE]/100 | [fill from a cohort you can cite] |
+| AI Crawlers Allowed | [X]/14 | [fill from a cohort you can cite] |
+| Brand Mentions (AI platforms) | [STATUS] | [fill from a cohort you can cite] |
+| Schema Coverage | [STATUS] | [fill from a cohort you can cite] |
+| llms.txt | [Yes/No] | [fill from a cohort you can cite] |
+
+Populate the comparative column only from a measured cohort you can name (for example, the
+Found by AI index publishes cohort averages across 3,000+ measured businesses). Invented
+industry averages have no place in a client document.
 
 ---
 
@@ -234,8 +238,8 @@ Based on your current GEO score of [SCORE]/100 and industry benchmarks:
 
 **Assumptions:**
 - Based on estimated [X] monthly organic visitors to [DOMAIN]
-- AI search is projected to drive 25-40% of organic discovery by end of 2026
-- AI-referred traffic converts at 4.4x the rate of regular organic traffic
+- State your AI-discovery share assumption explicitly and label it as an assumption
+- If you use a conversion multiplier, attribute it to the specific published study it came from
 - Calculations use conservative estimates — actual results may vary
 
 **Payback period (Standard package):** [X] months based on current traffic

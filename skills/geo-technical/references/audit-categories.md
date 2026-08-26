@@ -354,7 +354,7 @@ Even Googlebot, which does execute JavaScript, deprioritizes JS-rendered content
 IndexNow is an open protocol that allows websites to notify search engines instantly when content is created, updated, or deleted. Supported by Bing, Yandex, Seznam, and Naver. Google does NOT support IndexNow but monitors the protocol.
 
 ### Why It Matters for GEO
-ChatGPT uses Bing's index. Bing Copilot uses Bing's index. Faster Bing indexing means faster AI visibility on two major platforms.
+ChatGPT draws partly on Bing's index alongside OpenAI's own crawling. Bing Copilot uses Bing's index. Faster Bing indexing means faster AI visibility on two major platforms.
 
 ### Implementation Check
 1. Check for IndexNow key file: `https://[domain]/.well-known/indexnow-key.txt` or similar

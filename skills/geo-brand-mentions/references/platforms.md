@@ -50,7 +50,7 @@ platform, then apply the composite weights in `SKILL.md`.
 **Why it matters:**
 - One of the most heavily indexed platforms in AI training data (confirmed by Google's $60M/year Reddit licensing deal, 2024).
 - AI systems heavily weight Reddit for product recommendations, comparisons, and sentiment.
-- An estimated 10–15% of Google searches now have "reddit" appended by users seeking authentic opinions.
+- A visible share of searchers append "reddit" to queries for authentic opinions; the exact share is unpublished, so do not quote a number for it.
 - Perplexity frequently cites Reddit threads; ChatGPT and Claude reference Reddit discussions for product/service questions.
 
 **What to check:**

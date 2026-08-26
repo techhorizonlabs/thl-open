@@ -291,8 +291,8 @@ After the action plan, include an impact estimate:
 
 Use conservative estimates. Base the dollar figure on:
 - Current estimated organic traffic value (from analytics if available, or estimate from industry benchmarks)
-- AI search is projected to drive 25-40% of organic discovery by end of 2026
-- A 10-point GEO score improvement typically correlates with a 15-25% increase in AI citation frequency
+- Any AI-discovery share figure must carry its source and date; with no source, present the calculation without it
+- No published study links composite-score deltas to citation frequency; never imply one
 
 ### Section 11: Competitor Comparison (if competitor URLs provided)
 
@@ -327,7 +327,7 @@ If competitor URLs were analyzed alongside the primary domain:
 ### Methodology
 This GEO audit was conducted using the following methodology:
 - **Pages analyzed**: [List of specific URLs audited]
-- **Platforms assessed**: Google AI Overviews, ChatGPT, Perplexity AI, Google Gemini, Bing Copilot
+- **Platforms assessed**: Google AI Overviews, ChatGPT, Perplexity AI, Google Gemini, Bing Copilot (readiness surfaces; live in-answer measurement runs on the seven answer engines at areyoufoundbyai.com)
 - **Technical checks**: HTTP headers, robots.txt, HTML source analysis, structured data validation
 - **Content assessment**: E-E-A-T framework (Experience, Expertise, Authoritativeness, Trustworthiness) per Google's Search Quality Rater Guidelines
 - **Schema validation**: JSON-LD parsing and Schema.org specification compliance
