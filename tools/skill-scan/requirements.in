@@ -1,0 +1,11 @@
+PyYAML
+python-frontmatter
+pydantic
+yara-x
+confusable-homoglyphs
+magika
+pdfid
+oletools
+protobuf
+rich
+httpx

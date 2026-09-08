@@ -1,0 +1,396 @@
+{
+  "scanned_at": "2026-09-08T14:14:42.227378+00:00",
+  "scanner_commit": "431cb58a5ac333bc0bb9aaa23f7c30ac628f59f8",
+  "target_commit": "563d77af09ba38a1dfd62b92486fc223bf2a6395",
+  "analyzers": [
+    "StaticAnalyzer",
+    "YARA"
+  ],
+  "boundary": "Python audit only; no OS boundary asserted by this invocation",
+  "results": [
+    {
+      "skill": "agent-readiness-scan",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/agent-readiness-scan/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "found-by-ai",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/found-by-ai/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "DATA_EXFIL_NETWORK_REQUESTS",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/scripts/llmstxt_generator.py",
+          "line_number": 58,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "DATA_EXFIL_NETWORK_REQUESTS",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/scripts/llmstxt_generator.py",
+          "line_number": 121,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "DATA_EXFIL_NETWORK_REQUESTS",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/scripts/llmstxt_generator.py",
+          "line_number": 144,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "DATA_EXFIL_NETWORK_REQUESTS",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/scripts/llmstxt_generator.py",
+          "line_number": 247,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "DATA_EXFIL_NETWORK_REQUESTS",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/scripts/fetch_page.py",
+          "line_number": 61,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "DATA_EXFIL_NETWORK_REQUESTS",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/scripts/fetch_page.py",
+          "line_number": 228,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "DATA_EXFIL_NETWORK_REQUESTS",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/scripts/fetch_page.py",
+          "line_number": 318,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "DATA_EXFIL_NETWORK_REQUESTS",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/scripts/fetch_page.py",
+          "line_number": 406,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "DATA_EXFIL_NETWORK_REQUESTS",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/scripts/fetch_page.py",
+          "line_number": 418,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "DATA_EXFIL_NETWORK_REQUESTS",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/scripts/fetch_page.py",
+          "line_number": 472,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "TOOL_ABUSE_UNDECLARED_NETWORK",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "ALLOWED_TOOLS_NETWORK_USAGE",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "SUPPLY_CHAIN_UNPINNED_DEPENDENCY",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/requirements.txt",
+          "line_number": 1,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "SUPPLY_CHAIN_UNPINNED_DEPENDENCY",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/requirements.txt",
+          "line_number": 2,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "SUPPLY_CHAIN_UNPINNED_DEPENDENCY",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/requirements.txt",
+          "line_number": 3,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "SUPPLY_CHAIN_UNPINNED_DEPENDENCY",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/requirements.txt",
+          "line_number": 4,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "SUPPLY_CHAIN_UNPINNED_DEPENDENCY",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/requirements.txt",
+          "line_number": 5,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "SUPPLY_CHAIN_UNPINNED_DEPENDENCY",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/requirements.txt",
+          "line_number": 6,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "SUPPLY_CHAIN_UNPINNED_DEPENDENCY",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/requirements.txt",
+          "line_number": 7,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "SUPPLY_CHAIN_UNPINNED_DEPENDENCY",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/requirements.txt",
+          "line_number": 8,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "SUPPLY_CHAIN_UNPINNED_DEPENDENCY",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/requirements.txt",
+          "line_number": 9,
+          "analyzer": "static"
+        },
+        {
+          "rule_id": "SUPPLY_CHAIN_UNPINNED_DEPENDENCY",
+          "severity": "MEDIUM",
+          "file_path": "skills/geo/requirements.txt",
+          "line_number": 10,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo-audit",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo-audit/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo-brand-mentions",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo-brand-mentions/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo-citability",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo-citability/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo-compare",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo-compare/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo-content",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo-content/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo-crawlers",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo-crawlers/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo-llmstxt",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo-llmstxt/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo-platform-optimizer",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo-platform-optimizer/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo-proposal",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo-proposal/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo-prospect",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo-prospect/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo-report",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo-report/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo-report-pdf",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo-report-pdf/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo-schema",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo-schema/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    },
+    {
+      "skill": "geo-technical",
+      "status": "complete",
+      "findings": [
+        {
+          "rule_id": "MANIFEST_MISSING_LICENSE",
+          "severity": "INFO",
+          "file_path": "skills/geo-technical/SKILL.md",
+          "line_number": null,
+          "analyzer": "static"
+        }
+      ]
+    }
+  ],
+  "severity_counts": {
+    "INFO": 17,
+    "MEDIUM": 22
+  },
+  "errors": 0,
+  "positive_control": {
+    "high_or_critical_detected": true,
+    "target_execution_marker_absent": true
+  }
+}
