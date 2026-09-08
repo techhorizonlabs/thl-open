@@ -20,13 +20,17 @@ def deny_network_and_processes(event, _args):
         raise RuntimeError("Static analysis forbids Python network and child-process operations")
 
 
-def check_linux_network_namespace():
+def check_linux_network_namespace(parent_namespace):
     """Fail closed unless a separate namespace has only a down loopback interface."""
     import fcntl
     import struct
     if sys.platform != "linux":
         raise RuntimeError("Linux network namespace required")
-    if os.readlink("/proc/self/ns/net") == os.readlink("/proc/1/ns/net"):
+    # The launcher records its own namespace before unshare. Reading PID 1's
+    # namespace after dropping privileges can fail Linux ptrace/procfs checks.
+    if not re.fullmatch(r"net:\[\d+\]", parent_namespace or ""):
+        raise RuntimeError("Missing or invalid parent network namespace")
+    if os.readlink("/proc/self/ns/net") == parent_namespace:
         raise RuntimeError("Scanner is still in the host network namespace")
     if [name for _, name in socket.if_nameindex()] != ["lo"]:
         raise RuntimeError("Unexpected network interfaces")
@@ -121,6 +125,7 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--boundary", choices=["linux-netns", "python-audit-only"], default="linux-netns")
     parser.add_argument("--minimum-skills", type=int, default=17)
+    parser.add_argument("--parent-netns", help="Launcher namespace ID captured before unshare")
     args = parser.parse_args()
     if not re.fullmatch(r"[0-9a-f]{40}", args.target_commit):
         parser.error("target commit must be a full Git SHA")
@@ -129,22 +134,27 @@ def main():
                "target_commit": args.target_commit, "analyzers": ["StaticAnalyzer", "YARA"], "boundary": "not established",
                "results": [], "severity_counts": {}, "errors": 0}
     try:
-        payload["boundary"] = check_linux_network_namespace() if args.boundary == "linux-netns" else "Python audit only; no OS boundary asserted by this invocation"
+        payload["phase"] = "os-boundary"
+        payload["boundary"] = check_linux_network_namespace(args.parent_netns) if args.boundary == "linux-netns" else "Python audit only; no OS boundary asserted by this invocation"
         sys.addaudithook(deny_network_and_processes)
         sys.path.insert(0, str(args.source.resolve()))
         logging.disable(logging.CRITICAL)
+        payload["phase"] = "analyzer-initialization"
         from skill_scanner.core.loader import SkillLoader
         from skill_scanner.core.analyzers.static import StaticAnalyzer
         analyzer = StaticAnalyzer(use_yara=True)
         if analyzer.yara_scanner is None:
             raise RuntimeError("YARA is required")
         loader = SkillLoader()
+        payload["phase"] = "positive-control"
         payload["positive_control"] = positive_control(loader, analyzer, args.output)
+        payload["phase"] = "skill-analysis"
         payload["results"] = scan_skills(args.target.resolve(), loader, analyzer)
         payload["errors"] = sum(result["status"] == "error" for result in payload["results"])
         if len(payload["results"]) < args.minimum_skills:
             payload["errors"] += 1
             payload["inventory_error"] = "Fewer skills than expected minimum"
+        payload["phase"] = "completed"
         payload["severity_counts"] = dict(collections.Counter(f["severity"] for r in payload["results"] for f in r.get("findings", [])))
     except Exception as error:
         payload["errors"] += 1

@@ -16,6 +16,8 @@ git -C "$SOURCE" diff --quiet HEAD -- .
 git -C "$TARGET" diff --quiet HEAD -- skills
 [[ -z $(git -C "$TARGET" ls-files --others --exclude-standard -- skills) ]]
 TARGET_COMMIT=$(git -C "$TARGET" rev-parse HEAD)
+# Reading our own namespace is permitted without cross-process ptrace access.
+PARENT_NETNS=$(readlink /proc/self/ns/net)
 # Setup/preflight failures still leave a separately identifiable error artifact.
 printf '%s\n' '{"errors":1,"phase":"network-isolation-launch","results":[]}' > "$OUTPUT/results.json"
 # Hosted Linux job needs sudo only to create the namespace; analysis returns to
@@ -24,4 +26,4 @@ exec sudo -n unshare --net -- \
   setpriv --reuid="$(id -u)" --regid="$(id -g)" --clear-groups --bounding-set=-all --no-new-privs \
   env -i PATH="$VENV/bin:/usr/bin:/bin" HOME="$OUTPUT/home" PYTHONDONTWRITEBYTECODE=1 \
   "$VENV/bin/python" "$SCRIPT_DIR/scan.py" --source "$SOURCE" --target "$TARGET" \
-    --target-commit "$TARGET_COMMIT" --output "$OUTPUT" --boundary linux-netns
+    --target-commit "$TARGET_COMMIT" --output "$OUTPUT" --boundary linux-netns --parent-netns "$PARENT_NETNS"

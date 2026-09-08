@@ -2,7 +2,7 @@ import importlib.util
 from pathlib import Path
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 
 spec = importlib.util.spec_from_file_location("scan", Path(__file__).with_name("scan.py"))
 scan = importlib.util.module_from_spec(spec)
@@ -56,7 +56,28 @@ class ScannerContracts(unittest.TestCase):
 
     def test_linux_boundary_does_not_silently_fall_back(self):
         with patch.object(scan.sys, "platform", "darwin"):
-            with self.assertRaises(RuntimeError): scan.check_linux_network_namespace()
+            with self.assertRaises(RuntimeError): scan.check_linux_network_namespace("net:[123]")
+
+    def test_linux_namespace_check_never_reads_another_process_procfs(self):
+        import fcntl
+        import struct
+        def own_namespace_only(path):
+            if path != "/proc/self/ns/net":
+                raise PermissionError("Other-process namespace is protected")
+            return "net:[456]"
+        with patch.object(scan.sys, "platform", "linux"), \
+             patch.object(scan.os, "readlink", side_effect=own_namespace_only) as readlink, \
+             patch.object(scan.socket, "if_nameindex", return_value=[(1, "lo")]), \
+             patch.object(scan.socket, "socket", return_value=MagicMock()), \
+             patch.object(fcntl, "ioctl", return_value=b"lo".ljust(16, b"\0") + struct.pack("H", 0)):
+            self.assertIn("namespace", scan.check_linux_network_namespace("net:[123]"))
+            readlink.assert_called_once_with("/proc/self/ns/net")
+
+    def test_namespace_same_as_parent_or_missing_identity_fails_closed(self):
+        with patch.object(scan.sys, "platform", "linux"), \
+             patch.object(scan.os, "readlink", return_value="net:[123]"):
+            for identity in ["net:[123]", None, "invalid"]:
+                with self.assertRaises(RuntimeError): scan.check_linux_network_namespace(identity)
 
     def test_positive_control_detects_attempted_target_execution(self):
         class Loader:

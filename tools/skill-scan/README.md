@@ -20,7 +20,7 @@ observation/report, not an automatic security approval or merge gate.
   pinned upstream lock. Preparation accesses GitHub/PyPI; analysis does not.
 - Linux launcher uses `sudo unshare --net` only to create a separate namespace,
   then drops to the original UID/GID, clears supplementary groups/capabilities and
-  enables no-new-privileges. Python verifies a namespace different from PID 1's,
+  enables no-new-privileges. Python verifies a namespace different from the launcher's pre-unshare namespace,
   only loopback present, and loopback down. Failure stops the scan; no CI fallback.
 - The scanner receives an empty environment except a dedicated HOME, PATH and
   bytecode setting. A Python audit hook additionally rejects network connections,
