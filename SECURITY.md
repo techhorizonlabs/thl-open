@@ -30,3 +30,11 @@ shell commands and fetch the open web. Two things follow:
   validator (`scripts/validate.sh` §5) enforces that no login-gating ships.
 - **No secrets in the repo.** The validator leak-checks for client names and secret
   shapes before anything ships.
+
+## Dated static skill analysis
+
+The [9 September 2026 static scan](docs/security/static-skill-scan-2026-09-09.md)
+completed with **22 MEDIUM and 17 INFO findings**, not a clean certification. The
+[weekly workflow](.github/workflows/skill-scan.yml) publishes counts, relative-file
+results and scan errors separately. Its scope is bundled static signatures and
+YARA; it does not execute target skill scripts or test installed MCPs/websites.
