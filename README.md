@@ -15,7 +15,7 @@ The open layer of how [**Tech Horizon Labs**](https://techhorizonlabs.com) runs 
 
 ### ⚡ [Are you found by AI? &nbsp;— run the free 60-second scan →](https://areyoufoundbyai.com)
 
-<sub>The live measurement: the full measure asks all <b>seven</b> answer engines — ChatGPT · Claude · Gemini · Perplexity · Grok · DeepSeek · Google AI — whether they actually name you, and who they name instead. Up to 228 live answers per full measure, every one recorded verbatim, 3,500+ businesses on the <a href="https://areyoufoundbyai.com/benchmarks">public index</a>. The free scan is the on-ramp: two buyer questions on two engines, no signup. This repo is the readiness diagnosis behind that score.</sub>
+<sub>The live measurement asks the major AI engines whether they name you, and who they name instead, every week. We've measured more than 4,400 businesses, and the <a href="https://areyoufoundbyai.com/benchmarks">public benchmarks</a> are free to read. The free scan is the on-ramp: two buyer questions, no signup. This repo is the readiness diagnosis behind that score.</sub>
 
 <br>
 
@@ -47,7 +47,7 @@ Same method, three depths — start wherever you are:
 
 | | | |
 |---|---|---|
-| **⚡ Measure visibility** | **[areyoufoundbyai.com](https://areyoufoundbyai.com)** | Enter your URL → a live check of what AI answers when your buyers ask, in ~60 seconds. Free, hosted, nothing to install: two buyer questions on ChatGPT + Gemini, every answer kept verbatim. The trial runs the full seven-engine measure. The *outcome*. |
+| **⚡ Measure visibility** | **[areyoufoundbyai.com](https://areyoufoundbyai.com)** | Enter your URL → a live check of what AI answers when your buyers ask, in about a minute. Free, hosted, nothing to install: two buyer questions. The trial runs the full weekly measure. The *outcome*. |
 | **🛠 Diagnose readiness** | **this repo** | Run the full six-dimension readiness audit in Claude Code — *why* you're visible or not, all the evidence, none of the black box. The *inputs* you control. |
 | **🤝 Done for you** | **[Tech Horizon Labs](https://techhorizonlabs.com)** | We deploy it on your stack, with the calibration data and client playbooks that stay proprietary. |
 
