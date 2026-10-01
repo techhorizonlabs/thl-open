@@ -6,7 +6,7 @@ metadata:
   origin: the live agent surface at areyoufoundbyai.com/.well-known/agent-skills, packaged for npx skills
 ---
 
-# Found by AI, from your agent
+# Are you found by AI?
 
 Use this skill when a user asks whether a business shows up in AI answers, who ChatGPT or Gemini recommend instead of them, or how to improve AI visibility (GEO). Every number this skill returns is measured from live engine answers at request time; nothing is estimated.
 
