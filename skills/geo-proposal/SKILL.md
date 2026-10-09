@@ -79,7 +79,7 @@ Generate the following document, filling all `[PLACEHOLDERS]` with real audit da
 
 ```markdown
 # GEO Optimization Proposal
-## [COMPANY NAME] — AI Search Visibility
+## [COMPANY NAME]: AI Search Visibility
 
 **Prepared by:** [YOUR AGENCY NAME]
 **Prepared for:** [CONTACT NAME], [COMPANY NAME]
@@ -95,15 +95,15 @@ Generate the following document, filling all `[PLACEHOLDERS]` with real audit da
 Our GEO audit of [DOMAIN], conducted on [DATE], reveals a GEO Readiness Score
 of **[SCORE]/100 ([TIER LABEL])**.
 
-This means your website currently has [TIER DESCRIPTION — use score interpretation table].
+This means your website currently has [TIER DESCRIPTION: use score interpretation table].
 As AI-powered search (ChatGPT, Google AI Overviews, Perplexity) now influences
 **[X]% of online discovery** and is growing at 527% year-over-year, this gap
 represents a measurable risk to your pipeline.
 
 The three most urgent issues are:
-1. **[CRITICAL FINDING 1]** — [Business impact in one sentence]
-2. **[CRITICAL FINDING 2]** — [Business impact in one sentence]
-3. **[CRITICAL FINDING 3]** — [Business impact in one sentence]
+1. **[CRITICAL FINDING 1]**: [Business impact in one sentence]
+2. **[CRITICAL FINDING 2]**: [Business impact in one sentence]
+3. **[CRITICAL FINDING 3]**: [Business impact in one sentence]
 
 We recommend the **[TIER NAME] package** at **A$[PRICE]/month**, which addresses
 all critical issues within 90 days and positions [COMPANY] as an AI-visible
@@ -138,7 +138,8 @@ capture the AI search channel before competitors do.
 | llms.txt | [Yes/No] | [fill from a cohort you can cite] |
 
 Populate the comparative column only from a measured cohort you can name (for example, the
-Found by AI index publishes cohort averages across 3,000+ measured businesses). Invented
+public AI Visibility Index at areyoufoundbyai.com/benchmarks publishes dated category averages
+for 271 Australian, 134 US and 105 UK businesses as of 29 September 2026). Invented
 industry averages have no place in a client document.
 
 ---
@@ -175,7 +176,7 @@ We offer three engagement models based on the scope of optimization needed.
 
 ---
 
-### BASIC — A$2,500/month
+### BASIC: A$2,500/month
 *Best for: Sites with score 61-75 needing targeted improvements*
 
 **What's included:**
@@ -191,7 +192,7 @@ We offer three engagement models based on the scope of optimization needed.
 
 ---
 
-### STANDARD — A$5,000/month ⭐ Recommended for [COMPANY]
+### STANDARD: A$5,000/month ⭐ Recommended for [COMPANY]
 *Best for: Sites with score 40-60 needing structured monthly work*
 
 **Everything in Basic, plus:**
@@ -208,7 +209,7 @@ We offer three engagement models based on the scope of optimization needed.
 
 ---
 
-### PREMIUM — A$9,500/month
+### PREMIUM: A$9,500/month
 *Best for: Sites with score 0-40 with critical issues, or competitive industries*
 
 **Everything in Standard, plus:**
@@ -240,7 +241,7 @@ Based on your current GEO score of [SCORE]/100 and industry benchmarks:
 - Based on estimated [X] monthly organic visitors to [DOMAIN]
 - State your AI-discovery share assumption explicitly and label it as an assumption
 - If you use a conversion multiplier, attribute it to the specific published study it came from
-- Calculations use conservative estimates — actual results may vary
+- Calculations use conservative estimates; actual results may vary
 
 **Payback period (Standard package):** [X] months based on current traffic
 
@@ -248,26 +249,26 @@ Based on your current GEO score of [SCORE]/100 and industry benchmarks:
 
 ## Engagement Timeline
 
-### Month 1 — Foundation
+### Month 1: Foundation
 - Kick-off call and onboarding (Week 1)
 - Full technical audit + baseline metrics capture
 - Quick wins implementation: robots.txt, schema, llms.txt, meta descriptions
 - Expected score improvement: +5-10 points
 
-### Month 2-3 — Optimization
+### Months 2-3: Optimization
 - Content citability rewrites (top 10 pages)
 - E-E-A-T improvements: author pages, credentials, dates
 - Platform-specific optimization (Google AIO, ChatGPT, Perplexity)
 - Brand presence: LinkedIn, Wikipedia/Wikidata groundwork
 - Expected score improvement: +15-25 points cumulative
 
-### Month 4-6 — Authority Building
+### Months 4-6: Authority Building
 - Brand mention campaigns (Reddit, industry sites, YouTube)
 - Topical authority content strategy
 - Monthly reports showing score improvements
 - Expected score improvement: +30-45 points cumulative
 
-### Month 6 — Review
+### Month 6: Review
 - Full re-audit with before/after comparison
 - ROI report
 - Renewal discussion
@@ -335,7 +336,7 @@ are based on current industry best practices for Generative Engine Optimization.
    ```
    ✓ Proposal generated: ~/.geo-prospects/proposals/meridianlegal.com.au-proposal-2026-03-12.md
    ✓ Prospect status updated: Qualified → Proposal
-   ✓ Recommended package: STANDARD (A$5,000/month) — Score 32/100
+   ✓ Recommended package: STANDARD (A$5,000/month), Score 32/100
 
    Next: Share the proposal file or run `/geo report-pdf` for a visual version.
    ```
