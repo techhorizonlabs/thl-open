@@ -2,7 +2,7 @@
 
 The THL GEO Method and the scoring in these skills are grounded in primary sources,
 each scoped to where it actually has authority. No single source covers the whole AI
-search landscape — the engines have different owners, indexes, and ranking signals —
+search landscape (the engines have different owners, indexes, and ranking signals),
 so we say which source backs which claim, and what we *don't* claim.
 
 This is the same standard we hold on [attribution](../NOTICE.md): a recommendation
@@ -15,9 +15,9 @@ should trace to a source you can check.
 | [Google AI Optimization Guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) | **Google AI Overviews + AI Mode** | First-party guidance from the engine owner |
 | [Aggarwal et al., "GEO: Generative Engine Optimization" (KDD 2024)](https://arxiv.org/abs/2311.09735) | **Cross-engine GEO tactics** | Peer-reviewed (ACM SIGKDD 2024), tested on a multi-engine benchmark |
 | [Schema.org](https://schema.org/) + [Google structured data docs](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) | **Structured-data syntax + rich-result eligibility** | Standards body + engine-owner docs |
-| [llms.txt proposal](https://llmstxt.org/) (Howard, 2024) | **The `llms.txt` format only** | A community proposal — *not* a ratified standard |
-| Crawler operator docs — [GPTBot](https://platform.openai.com/docs/gptbot), [ClaudeBot](https://support.anthropic.com/en/articles/8896518), [PerplexityBot](https://docs.perplexity.ai/guides/bots), [Google-Extended](https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers) | **Which crawler reads what, and how to allow/deny it** | First-party from each operator |
-| [Cloudflare — Is It Agent Ready](https://isitagentready.com/) | **The external agent-readiness benchmark** | The third-party 0–100 our `agent-readiness-scan` reads |
+| [llms.txt proposal](https://llmstxt.org/) (Howard, 2024) | **The `llms.txt` format only** | A community proposal, *not* a ratified standard |
+| Crawler operator docs: [GPTBot](https://platform.openai.com/docs/gptbot), [ClaudeBot](https://support.anthropic.com/en/articles/8896518), [PerplexityBot](https://docs.perplexity.ai/guides/bots), [Google-Extended](https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers) | **Which crawler reads what, and how to allow/deny it** | First-party from each operator |
+| [Cloudflare: Is It Agent Ready](https://isitagentready.com/) | **The external agent-readiness benchmark** | The third-party 0-100 score our `agent-readiness-scan` reads |
 
 ## What the GEO paper actually supports
 
@@ -25,24 +25,24 @@ The cross-engine rewrite tactics in `geo-citability` / `optimize-page` come from
 KDD 2024 paper, which proposes GEO and tests it on a multi-engine benchmark. The
 methods it found effective are well-defined and are what we implement:
 
-- **Cite sources** — attribute claims to credible references.
-- **Add quotations** — include relevant quoted material.
-- **Add statistics** — support claims with specific numbers.
-- **Improve fluency / authoritative tone** — clear, confident, well-structured prose.
+- **Cite sources:** attribute claims to credible references.
+- **Add quotations:** include relevant quoted material.
+- **Add statistics:** support claims with specific numbers.
+- **Improve fluency / authoritative tone:** clear, confident, well-structured prose.
 
 The paper also reports that naive **keyword stuffing did not help and tended to hurt**
-generative-engine visibility — which is why none of these skills recommend it.
+generative-engine visibility, which is why none of these skills recommend it.
 
 We implement the *tactics the paper validated*. We do **not** claim the paper validated
-this repo, or that any specific percentage lift transfers to a given site — treat the
+this repo, or that any specific percentage lift transfers to a given site. Treat the
 paper as the rationale for the tactics, not a performance guarantee.
 
 ## Where sources agree
 
 - **Helpful, people-first, well-structured content wins.** All sources.
-- **Crawlable, indexable pages are foundational** — if an engine can't fetch and parse
+- **Crawlable, indexable pages are foundational.** If an engine can't fetch and parse
   the page, nothing else matters.
-- **Manipulation backfires** — keyword stuffing, bought mentions, and scaled thin
+- **Manipulation backfires:** keyword stuffing, bought mentions, and scaled thin
   content are rejected by Google's spam guidance and unsupported by the research.
 
 ## Where they diverge (and our stance)
@@ -59,31 +59,31 @@ paper as the rationale for the tactics, not a performance guarantee.
 - We don't claim to *directly query* ChatGPT / Claude / Gemini / Perplexity / Copilot.
   The dimensional audit reads public signals; the external benchmark reads Cloudflare's
   check. Live per-engine citation tracking is a different (paid, commercial) category.
-- We don't treat any vendor's per-engine percentage as a model internal — engine
+- We don't treat any vendor's per-engine percentage as a model internal; engine
   ranking systems are not public.
 
 ## How to verify
 
 Every substantive claim in a skill should trace to a source above (or to the underlying
-primary source it cites). If you find one that doesn't, that's a bug —
+primary source it cites). If you find one that doesn't, that's a bug:
 [open an issue](https://github.com/techhorizonlabs/thl-open/issues).
 
-## Research figures cited across the skills — provenance
+## Research figures cited across the skills: provenance
 
 Numbers that appear in skill bodies, and where they come from. Some are from peer-reviewed
 work; others are vendor studies cited **as reported** (we haven't independently reproduced
-them). Treat percentages as directional, not guarantees — engine behaviour shifts, and any
+them). Treat percentages as directional, not guarantees. Engine behaviour shifts, and any
 "expected lift" a skill emits is a research-informed estimate, never a promise.
 
 | Figure (as it appears) | Source | Status |
 |---|---|---|
-| GEO tactics lift visibility ~30–115% depending on method (cite sources, quotations, statistics, fluency) | Aggarwal et al., **"GEO: Generative Engine Optimization," KDD 2024** (authors at Princeton / Georgia Tech / IIT Delhi / Allen AI) | Peer-reviewed; the figures vary by tactic and query set — cite the range, not a point number |
-| "134–167 words" optimal answer-block length | Reported in GEO practitioner analysis (Bortolato, 2025) | Vendor/practitioner; cited as reported |
+| GEO tactics lift visibility ~30-115% depending on method (cite sources, quotations, statistics, fluency) | Aggarwal et al., **"GEO: Generative Engine Optimization," KDD 2024** (authors at Princeton / Georgia Tech / IIT Delhi / Allen AI) | Peer-reviewed; the figures vary by tactic and query set; cite the range, not a point number |
+| "134-167 words" optimal answer-block length | Reported in GEO practitioner analysis (Bortolato, 2025) | Vendor/practitioner; cited as reported |
 | Brand-authority platform correlations (e.g. YouTube ≈ 0.737, backlinks/DR ≈ 0.266) | Ahrefs brand-study (2025, ~75K brands), as reported | Vendor study; cited as reported, not reproduced |
-| E-E-A-T applies well beyond YMYL | Google Search Quality Rater Guidelines (ongoing; Google revises periodically — check the current PDF for the live wording) | Primary, but undated on purpose — do not assert a specific release month as fact |
-| AI-referred traffic growth figures (e.g. large YoY %) | Various 2025 analytics vendor reports, as reported | Directional; rot-prone — prefer "growing fast," verify before quoting a specific % to a client |
+| E-E-A-T applies well beyond YMYL | Google Search Quality Rater Guidelines (ongoing; Google revises periodically; check the current PDF for the live wording) | Primary, but undated on purpose; do not assert a specific release month as fact |
+| AI-referred traffic growth figures (e.g. large YoY %) | Various 2025 analytics vendor reports, as reported | Directional; rot-prone. Prefer "growing fast," verify before quoting a specific % to a client |
 
 **Rule for contributors:** if you add a figure to a skill body, add its row here first. A bare
 percentage with no provenance is exactly the kind of "reads like hard data" claim the
-[authoring standard](SKILL-AUTHORING-STANDARD.md) (P2) tells us to keep out of skill bodies —
-put the number here, and reference it.
+[authoring standard](SKILL-AUTHORING-STANDARD.md) (P2) tells us to keep out of skill bodies.
+Put the number here, and reference it.

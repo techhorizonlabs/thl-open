@@ -1,5 +1,5 @@
 // THL-branded audit report → PDF via @react-pdf/renderer.
-// Charts use react-pdf native primitives (View bars), not embedded SVG —
+// Charts use react-pdf native primitives (View bars), not embedded SVG,
 // reliable across the renderer's Flexbox layout (no echarts-embed gotcha).
 // THL design language: white ground, charcoal ink, blue accent, numbered
 // methodology, no gradients.
@@ -85,7 +85,7 @@ function CategoryBar({ cat }: { cat: CategoryScore }) {
           <View style={{ width: `${cat.score}%`, height: 12, backgroundColor: barColor(cat.score as number), borderRadius: 2 }} />
         )}
       </View>
-      <Text style={styles.barScore}>{measured ? cat.score : "—"}</Text>
+      <Text style={styles.barScore}>{measured ? cat.score : "n/a"}</Text>
       {cat.provenance && <Text style={styles.prov}>{PROV_LABEL[cat.provenance]}</Text>}
     </View>
   );
@@ -93,7 +93,7 @@ function CategoryBar({ cat }: { cat: CategoryScore }) {
 
 function ReportDoc({ audit }: { audit: AuditReport }) {
   return (
-    <Document title={`${audit.client.name} — AI-Visibility Audit`} author="Tech Horizon Labs">
+    <Document title={`${audit.client.name}: AI-Visibility Audit`} author="Tech Horizon Labs">
       <Page size="A4" style={styles.page}>
         <View style={styles.brandRow}>
           <View style={{ flexDirection: "row", alignItems: "baseline" }}>

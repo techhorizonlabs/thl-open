@@ -62,7 +62,7 @@ Use public HTTP(S) domain inputs that are in the audit's authorized scope. The s
 3. Extract key pages from sitemap.xml or internal links (up to 50 pages)
 
 **Phase 2: Dimensional analysis (delegate to the specialised skills)**
-The canonical orchestrator is [`skills/geo-audit`](../geo-audit/SKILL.md) — it runs the five analysis dimensions in parallel under a fixed return contract and composite. This umbrella skill defers to it; don't re-implement the orchestration here. The dimensions and the skills that measure them:
+The canonical orchestrator is [`skills/geo-audit`](../geo-audit/SKILL.md): it runs the five analysis dimensions in parallel under a fixed return contract and composite. This umbrella skill defers to it; don't re-implement the orchestration here. The dimensions and the skills that measure them:
 
 | Dimension | Skill | Measures |
 |-----------|-------|----------|
@@ -102,7 +102,7 @@ Analyze homepage for patterns:
 | **E-commerce** | Product pages, cart, "Add to cart", price elements, product schema |
 | **Publisher** | Blog, articles, bylines, publication dates, article schema |
 | **Agency** | Portfolio, case studies, "Our services", client logos, testimonials |
-| **Other** | Default — apply general GEO best practices |
+| **Other** | Default: apply general GEO best practices |
 
 Adjust recommendations based on detected type. Local businesses need LocalBusiness schema and Google Business Profile optimization. SaaS needs SoftwareApplication schema and comparison page strategy. E-commerce needs Product schema and review aggregation.
 
@@ -128,15 +128,15 @@ Adjust recommendations based on detected type. Local businesses need LocalBusine
 
 ---
 
-## What this measures — and what it can't
+## What this measures, and what it can't
 
-These skills read **public signals** — your pages, schema, crawler access, and off-page authority (Wikipedia/Wikidata verified live; other platforms via search) — and from them **infer** how citable and recommendable you are to AI answer engines. That inference is grounded in published research (see [`docs/SOURCES.md`](../../docs/SOURCES.md)) and is genuinely useful for fixing the foundations you control.
+These skills read **public signals** (your pages, schema, crawler access, and off-page authority: Wikipedia/Wikidata verified live, other platforms via search) and from them **infer** how citable and recommendable you are to AI answer engines. That inference is grounded in published research (see [`docs/SOURCES.md`](../../docs/SOURCES.md)) and is genuinely useful for fixing the foundations you control.
 
-What it does **not** do: it does **not** query the seven answer engines live to check whether they actually **name** you in an answer. That's a different measurement — the *outcome*, not the *inputs* — and it's what our hosted scanner does:
+What it does **not** do: it does **not** query the answer engines live to check whether they actually **name** you in an answer. That's a different measurement (the *outcome*, not the *inputs*), and it's what our hosted scanner does:
 
-> **For the live "are you actually in the answer" measurement, start with the free scan at [areyoufoundbyai.com](https://areyoufoundbyai.com): two buyer questions on ChatGPT and Gemini, once, no signup. The trial and paid tiers ask up to 12 buyer questions across all seven engines (ChatGPT, Claude, Gemini, Perplexity, Grok, DeepSeek, Google AI Overviews), multi-sampled.** These open skills score your **readiness**; the scanner measures your **visibility**. (See [`docs/THL-GEO-METHOD.md`](../../docs/THL-GEO-METHOD.md) for how the two fit together.)
+> **For the live "are you actually in the answer" measurement, start with the free scan at [areyoufoundbyai.com](https://areyoufoundbyai.com): two buyer questions on ChatGPT and Gemini, no signup. Pro, including its 14-day trial, re-asks up to 25 buyer questions every week across seven engines (ChatGPT, Claude, Gemini, Perplexity, Grok, DeepSeek, Google AI Overviews); the one-off Snapshot asks 12. Its headline measure is the named share: saved answers that name you, divided by all countable saved answers.** These open skills score your **readiness** with their own composite, which is not the same formula as the product's AI Readiness score; the scanner measures your **visibility**. (See [`docs/THL-GEO-METHOD.md`](../../docs/THL-GEO-METHOD.md) for how the two fit together.)
 
-Every score this suite emits is tagged with its provenance (`[scan]` / `[partial-scan]` / `[heuristic]` / `[unmeasured]`) — read a `[heuristic]` tag as "informed model judgement from signals," not a measured fact.
+Every score this suite emits is tagged with its provenance (`[scan]` / `[partial-scan]` / `[heuristic]` / `[unmeasured]`). Read a `[heuristic]` tag as "informed model judgement from signals," not a measured fact.
 
 ---
 

@@ -1,11 +1,30 @@
 # Changelog
 
-### 2026-08-24 — npx skills install path + the found-by-ai skill
+### 2026-10-09: aligned with the live product after its V5 release
+
+- **Live facts corrected.** The free scan asks two buyer questions on ChatGPT and Gemini. Pro,
+  including its 14-day trial, re-asks up to 25 buyer questions every week across seven engines;
+  the US$29 Snapshot asks 12. The `found-by-ai` skill, `geo` umbrella skill, `geo-audit` and
+  `llms.txt` previously said 12 for the trial and paid tiers.
+- **Named share.** The product's public headline measure is the named share of saved answers
+  (every saved repetition counts, a link alone is not a name, missing evidence is left out). The
+  `found-by-ai` skill now explains it and treats `visibility` as an older diagnostic score.
+- **Readiness is not this repo's formula.** The open `geo-audit` composite is this repo's own audit.
+  The hosted product's AI Readiness score is built differently, with the off-site Footprint scored
+  separately. The README, method and skills now say so.
+- **Agent surfaces.** `/api/agent/scan` and `/api/agent/sov` are paid per call over x402. MCP access
+  comes with the free plan too, and the public demo installs with
+  `claude mcp add --transport http found-by-ai https://areyoufoundbyai.com/mcp/demo`.
+- **Counts.** "4,400+ websites measured" counts hostnames, not businesses.
+- **House style.** Em and en dashes removed throughout; an unmeasured score is now shown as `n/a`
+  (previously a dash), including in the audit-report-kit PDF.
+
+### 2026-08-24: npx skills install path + the found-by-ai skill
 
 - **The repo is now an installable skills package**: `npx skills add techhorizonlabs/thl-open`
   puts the suite into Claude Code, Codex, Cursor, Gemini CLI or any SKILL.md agent. Install block
   added to the masthead and Quickstart; GitHub is the registry, this repo is the package.
-- **New skill: [`skills/found-by-ai`](skills/found-by-ai)** — wires any agent to the live
+- **New skill: [`skills/found-by-ai`](skills/found-by-ai)** wires any agent to the live
   measurement: the free scan API (no auth), the verdict and the rivals AI names instead, the fix
   plan, and the fix-and-re-measure loop over MCP for monitored sites. Packaged from the live agent
   surface at `areyoufoundbyai.com/.well-known/agent-skills`.
@@ -14,11 +33,11 @@
   once; the trial and paid tiers run the full seven-engine measure. The repo now says exactly that,
   and the public index count is refreshed to 3,500+ measured businesses.
 
-### 2026-07-09 — polish pass: Visibility-vs-Readiness reframe, health, honesty
+### 2026-07-09: polish pass: Visibility-vs-Readiness reframe, health, honesty
 
 - **Reframed the whole method around Visibility ≠ Readiness** ([`docs/THL-GEO-METHOD.md`](docs/THL-GEO-METHOD.md)). This repo audits **Readiness** (the inputs, inferred from public signals); the live **Visibility** measurement (actually asking ChatGPT/Claude/Perplexity/Google's AI whether they name you) is the hosted scanner at [areyoufoundbyai.com](https://areyoufoundbyai.com). Added a public *"how to measure visibility honestly"* principles section (sample for stochasticity, anchor location, named-vs-cited, reject near-duplicate names, never fabricate a number).
-- **Every inferring skill now states its own limits** and points to the scanner for the live check (`geo-audit`, `geo-citability`, `geo-brand-mentions`, and the `geo` umbrella). Reconciled the README triptych and `llms.txt`; `HOW-WE-COMPARE.md` no longer *concedes* live citation checking to a competitor — we have it (as the hosted scanner), and the open/closed boundary is stated as a deliberate choice.
-- **Health / de-rot:** fixed the `geo` umbrella skill's broken delegation to non-existent `agents/*.md` (now points at the real `geo-audit` orchestrator + specialised skills). Removed orphan fork-residue scripts (`crm_dashboard.py` + `webapp/` — Italian comments, EUR; `citability_scorer.py` — regex duplicate; `brand_scanner.py` — redundant). De-Italianised / AUD-ified the customer-facing examples in `geo-prospect`/`geo-compare`/`geo-proposal`.
+- **Every inferring skill now states its own limits** and points to the scanner for the live check (`geo-audit`, `geo-citability`, `geo-brand-mentions`, and the `geo` umbrella). Reconciled the README triptych and `llms.txt`; `HOW-WE-COMPARE.md` no longer *concedes* live citation checking to a competitor. We have it (as the hosted scanner), and the open/closed boundary is stated as a deliberate choice.
+- **Health / de-rot:** fixed the `geo` umbrella skill's broken delegation to non-existent `agents/*.md` (now points at the real `geo-audit` orchestrator + specialised skills). Removed orphan fork-residue scripts (`crm_dashboard.py` + `webapp/`: Italian comments, EUR; `citability_scorer.py`: regex duplicate; `brand_scanner.py`: redundant). De-Italianised / AUD-ified the customer-facing examples in `geo-prospect`/`geo-compare`/`geo-proposal`.
 - **Honesty:** softened dated, asserted-as-fact research claims ("Dec 2025 QRG applies to ALL queries", etc.) to attributed wording, and added a **Research-figures provenance table** to [`docs/SOURCES.md`](docs/SOURCES.md) so every cited number traces to a source (the repo's own P2 rule).
 - **Reconciled duplicates:** the `audit-report-kit` sample now uses the method's **six** canonical dimensions (was five, missing Brand + Platform; composite recomputed from the fixed weights). `geo-report-pdf`'s broken script path fixed, and it now names the branded TS report-kit as the preferred deliverable.
 
@@ -32,7 +51,7 @@
 
 The `skills/geo*` suite is an improved fork of
 [geo-seo-claude](https://github.com/zubair-trabzada/geo-seo-claude) by Zubair Trabzada
-(MIT — see [`NOTICE.md`](NOTICE.md)). Changes Tech Horizon Labs has made on top:
+(MIT; see [`NOTICE.md`](NOTICE.md)). Changes Tech Horizon Labs has made on top:
 
 ### 2026-06-15
 - **De-rotted** baked-in dates / time-sensitive facts from skill bodies (they go stale and
@@ -41,7 +60,7 @@ The `skills/geo*` suite is an improved fork of
   skills work on any machine and on project-level installs.
 - **Integrated THL-original tools into the audit flow:**
   - `geo-audit` now references **`agent-readiness-scan`** (THL-original) for an independent
-    Cloudflare 0–100 benchmark alongside the dimensional composite.
+    Cloudflare 0-100 benchmark alongside the dimensional composite.
   - `geo-audit` now references **`tools/audit-report-kit`** (THL-original) as the
     branded-PDF + JSON-LD deliverable layer.
 - **Added** the [THL GEO Method](docs/THL-GEO-METHOD.md) (orchestration of the three layers)
@@ -54,49 +73,49 @@ The `skills/geo*` suite is an improved fork of
   - `geo-technical` 448 → 69 lines (`references/audit-categories.md`, `output-template.md`)
   - `geo-llmstxt` 432 → 111 lines (`references/spec.md`, `output-template.md`)
 
-### 2026-06-15 (later) — adoption + credibility layer
-- **Added [`examples/`](examples)** — a prompt cheat-sheet for every skill plus a worked
+### 2026-06-15 (later): adoption + credibility layer
+- **Added [`examples/`](examples)**: a prompt cheat-sheet for every skill plus a worked
   end-to-end audit on a fictional broker (numbers consistent with the sample report and
   the committed `harborview.jsonld`).
 - **Published the [THL Skill-Authoring Standard](docs/SKILL-AUTHORING-STANDARD.md)**
-  (P1–P10 + the security rule + a pre-publish gate) and baked its checklist into
+  (P1 to P10 + the security rule + a pre-publish gate) and baked its checklist into
   [`CONTRIBUTING.md`](CONTRIBUTING.md) as the PR gate.
-- **Packaged as a Claude Code plugin** — `.claude-plugin/marketplace.json` +
+- **Packaged as a Claude Code plugin**: `.claude-plugin/marketplace.json` +
   `plugin.json`, so the whole suite installs via
   `/plugin marketplace add techhorizonlabs/thl-open`.
-- **Added [`evals/`](evals)** — the eval-harness shape (frozen sites, expected ranges,
+- **Added [`evals/`](evals)**: the eval-harness shape (frozen sites, expected ranges,
   must-flag findings, tier-aware runs) with one fictional worked fixture. The real
   client regression set stays proprietary.
-- **Added [`docs/HOW-WE-COMPARE.md`](docs/HOW-WE-COMPARE.md)** — an honest landscape
+- **Added [`docs/HOW-WE-COMPARE.md`](docs/HOW-WE-COMPARE.md)**: an honest landscape
   comparison (incl. where alternatives like GEO Optimizer are ahead) and the permissive
   building blocks worth adopting, with licence traps flagged.
 
-### 2026-06-15 (later still) — hardening, drawn from a competitor teardown
+### 2026-06-15 (later still): hardening, drawn from a competitor teardown
 Studied a mature same-category plugin (Akii's SEO/AEO/GEO optimizer) and adopted the
 on-brand parts (honest sourcing, provenance, a CI gate) while deliberately skipping its
 telemetry/CTA growth machinery.
-- **CI validator** — `scripts/validate.sh` + `.github/workflows/validate.yml`: validates
+- **CI validator**: `scripts/validate.sh` + `.github/workflows/validate.yml`: validates
   the manifests + version lockstep, skill frontmatter, resolving local links,
   no-login/no-telemetry posture, a client-name/secret leak-check, and a skill
   trigger-phrase-overlap warning. A second CI job typechecks `audit-report-kit`.
-- **[`docs/SOURCES.md`](docs/SOURCES.md)** — grounds the method in primary sources
+- **[`docs/SOURCES.md`](docs/SOURCES.md)** grounds the method in primary sources
   (Google AI Optimization Guide, the KDD 2024 GEO paper, Schema.org, the llms.txt
   proposal, crawler-operator docs, Cloudflare) with an explicit "what we don't claim."
-- **Provenance tags** — `[scan]` / `[partial-scan]` / `[heuristic]` / `[unmeasured]` are
+- **Provenance tags**: `[scan]` / `[partial-scan]` / `[heuristic]` / `[unmeasured]` are
   now part of the GEO Method's scoring discipline, the `geo-audit` output template, the
-  worked example, and authoring-standard P7, with the rule "emit `—`, never a number,
+  worked example, and authoring-standard P7, with the rule "emit a dash placeholder, never a number,
   when unmeasured." `audit-report-kit` gained an optional `provenance` field + null-score
   rendering (the committed sample sets none, so the sample PDF is unchanged).
-- **Governance** — `SECURITY.md` (private disclosure + the no-telemetry stance),
+- **Governance**: `SECURITY.md` (private disclosure + the no-telemetry stance),
   `.github/ISSUE_TEMPLATE/`, and a hardened plugin-install path in the README (full
   `https://` URL, two-separate-commands caveat).
 
-### 2026-06-16 — improvements surfaced by a live dogfood audit
+### 2026-06-16: improvements surfaced by a live dogfood audit
 Ran the whole package end to end on a real site; these are the gaps that run exposed.
 - **Provenance is now intrinsic to every dimension skill.** Added the
-  `[scan]/[partial-scan]/[heuristic]/[unmeasured]` tag (and "emit `—`, not a number")
+  `[scan]/[partial-scan]/[heuristic]/[unmeasured]` tag (and "emit a dash placeholder, not a number")
   to all seven sub-skills' output sections (`geo-citability`, `-content`, `-schema`,
-  `-technical`, `-platform-optimizer`, `-brand-mentions`, `-crawlers`) — previously only
+  `-technical`, `-platform-optimizer`, `-brand-mentions`, `-crawlers`). Previously only
   the orchestrator carried it, so standalone runs lost it.
 - **Subagent return contract** (geo-audit Phase 2): every subagent must return the
   orchestrator's named dimensions + a provenance tag, and **not** invent its own blended
@@ -105,8 +124,8 @@ Ran the whole package end to end on a real site; these are the gaps that run exp
 - **New business type: Professional / financial services (YMYL)** in `geo-audit`, with
   its schema (`FinancialService`/`ProfessionalService`/`Person`) + E-E-A-T expectations
   (displayed credentials, regulatory IDs) and an **entity-reconciliation** step (legal
-  entity vs trading/brand name) — also added to the audit checklist.
-- **`audit-report-kit`** — `generateOrgJsonLd` now takes a `type` (Organization /
+  entity vs trading/brand name), also added to the audit checklist.
+- **`audit-report-kit`**: `generateOrgJsonLd` now takes a `type` (Organization /
   LocalBusiness / FinancialService / ProfessionalService) so the deliverable's schema
   matches the audit's own recommendation; the report `summary` is now a field instead of
   hardcoded boilerplate. Both default to prior behaviour, so the committed sample is

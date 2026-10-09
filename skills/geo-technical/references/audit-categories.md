@@ -1,4 +1,4 @@
-# Technical audit categories — checks + per-category scoring
+# Technical audit categories: checks + per-category scoring
 
 The eight categories that make up the 100-point technical score, plus the IndexNow check. Work
 through each, score it against its rubric, and carry the totals back to the Overall Scoring table
@@ -43,7 +43,7 @@ Check robots.txt for directives targeting these AI crawlers:
 - Fetch sitemap (check robots.txt for location, or try `/sitemap.xml`, `/sitemap_index.xml`)
 - Validate XML syntax
 - Check for `<lastmod>` dates (should be present and accurate)
-- Count URLs — compare to expected number of indexable pages
+- Count URLs and compare to expected number of indexable pages
 - Check for sitemap index if large site (50,000+ URLs per sitemap max)
 - Verify all sitemap URLs return 200 status codes (sample check)
 
@@ -74,7 +74,7 @@ Check robots.txt for directives targeting these AI crawlers:
 - Every indexable page must have a `<link rel="canonical" href="...">` tag
 - Canonical must point to itself (self-referencing) for the authoritative version
 - Check for conflicting canonicals (canonical in HTML vs. HTTP header)
-- Check for canonical chains (A canonicals to B, B canonicals to C — should be A to C)
+- Check for canonical chains (A canonicals to B, B canonicals to C; should be A to C)
 
 ### 2.2 Duplicate Content
 - Check for www vs. non-www (both should resolve, one should redirect)
@@ -152,7 +152,7 @@ Check HTTP response headers for:
 
 ### 4.2 Logical Hierarchy
 - URL path should reflect site architecture: `/category/subcategory/page`
-- Flat where appropriate — avoid unnecessarily deep nesting
+- Flat where appropriate; avoid unnecessarily deep nesting
 - Consistent pattern across the site
 
 ### 4.3 Redirect Chains
@@ -179,7 +179,7 @@ Check HTTP response headers for:
 ## Category 5: Mobile Optimization (10 points)
 
 ### Critical Context
-Google crawls ALL sites exclusively with mobile Googlebot — there is no desktop crawling. If your site does not work on mobile, it does not work for Google.
+Google crawls ALL sites exclusively with mobile Googlebot. There is no desktop crawling. If your site does not work on mobile, it does not work for Google.
 
 ### 5.1 Responsive Design
 - Check for `<meta name="viewport" content="width=device-width, initial-scale=1">`
@@ -218,9 +218,9 @@ Core Web Vitals use the **75th percentile** of real user data (field data) as th
 
 | Metric | Good | Needs Improvement | Poor | Notes |
 |---|---|---|---|---|
-| **LCP** (Largest Contentful Paint) | < 2.5s | 2.5s - 4.0s | > 4.0s | Measures loading — time until largest visible element renders |
+| **LCP** (Largest Contentful Paint) | < 2.5s | 2.5s - 4.0s | > 4.0s | Measures loading: time until largest visible element renders |
 | **INP** (Interaction to Next Paint) | < 200ms | 200ms - 500ms | > 500ms | Replaced FID in March 2024. Measures ALL interactions, not just first |
-| **CLS** (Cumulative Layout Shift) | < 0.1 | 0.1 - 0.25 | > 0.25 | Measures visual stability — unexpected layout movements |
+| **CLS** (Cumulative Layout Shift) | < 0.1 | 0.1 - 0.25 | > 0.25 | Measures visual stability: unexpected layout movements |
 
 ### How to Assess Without CrUX Data
 When real user data is unavailable, estimate from page characteristics:
@@ -255,7 +255,7 @@ When real user data is unavailable, estimate from page characteristics:
 
 ---
 
-## Category 7: Server-Side Rendering (15 points) — CRITICAL FOR GEO
+## Category 7: Server-Side Rendering (15 points): CRITICAL FOR GEO
 
 ### Why SSR Is Mandatory for AI Visibility
 AI crawlers (GPTBot, PerplexityBot, ClaudeBot, etc.) do **NOT execute JavaScript**. They fetch the raw HTML and parse it. If your content is rendered client-side by React, Vue, Angular, or any other JavaScript framework, AI crawlers see an empty page.

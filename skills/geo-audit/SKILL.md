@@ -16,7 +16,7 @@ allowed-tools:
 
 This skill performs a comprehensive Generative Engine Optimization (GEO) audit of any website. GEO is the practice of optimizing web content so that AI systems (ChatGPT, Claude, Perplexity, Gemini, etc.) can discover, understand, cite, and recommend it. This audit measures how well a site performs across all GEO dimensions and produces an actionable improvement plan.
 
-> **What this composite is — and isn't.** This score is a **readiness** measure: it reads public signals (content, schema, crawler access, off-page authority) and infers how citable and recommendable the site is. It does **not** query the AI engines to confirm the business is actually named in their answers. Read it as "how well-built for AI is this site," not "is this site in the answer right now." For the live outcome, run the free scan at **[areyoufoundbyai.com](https://areyoufoundbyai.com)**: two buyer questions on ChatGPT and Gemini, once, no signup; the trial and paid tiers ask up to 12 buyer questions across all seven engines, multi-sampled (the two are complementary: readiness here, visibility there; see [`docs/THL-GEO-METHOD.md`](../../docs/THL-GEO-METHOD.md)). Every dimension below carries a provenance tag; a `[heuristic]` tag means model judgement from signals, not a measured fact.
+> **What this composite is, and what it isn't.** This score is a **readiness** measure: it reads public signals (content, schema, crawler access, off-page authority) and infers how citable and recommendable the site is. It does **not** query the AI engines to confirm the business is actually named in their answers. Read it as "how well-built for AI is this site," not "is this site in the answer right now." For the live outcome, run the free scan at **[areyoufoundbyai.com](https://areyoufoundbyai.com)**: two buyer questions on ChatGPT and Gemini, no signup; Pro, including its 14-day trial, re-asks up to 25 buyer questions every week across seven engines, and its headline measure is the named share of saved answers (the two are complementary: readiness here, visibility there; see [`docs/THL-GEO-METHOD.md`](../../docs/THL-GEO-METHOD.md)). This composite is the open audit's own formula. It is not the product's AI Readiness score, which is built differently (five site signals, with the off-site Footprint scored separately). Every dimension below carries a provenance tag; a `[heuristic]` tag means model judgement from signals, not a measured fact.
 
 ## Key Insight
 
@@ -28,9 +28,9 @@ Traditional SEO optimizes for search engine rankings. GEO optimizes for AI citat
 
 Tech Horizon Labs runs this audit as part of a three-layer method (see [`docs/THL-GEO-METHOD.md`](../../docs/THL-GEO-METHOD.md)):
 
-- **External benchmark.** Alongside the dimensional composite below, run the `agent-readiness-scan` skill (THL-original) for Cloudflare's independent `isitagentready.com` 0–100 score. Record both; on a re-audit, track the delta on each — the movement is the proof, not the first number.
+- **External benchmark.** Alongside the dimensional composite below, run the `agent-readiness-scan` skill (THL-original) for Cloudflare's independent `isitagentready.com` 0 to 100 score. Record both; on a re-audit, track the delta on each: the movement is the proof, not the first number.
 - **Checklist.** Work through [`references/thl-audit-checklist.md`](references/thl-audit-checklist.md) so no dimension is silently skipped and the same facts/scores stay consistent across every section.
-- **Deliverable.** Assemble the audit data and run `tools/audit-report-kit` (THL-original) to produce a branded client PDF + compile-checked JSON-LD for the schema fixes — instead of leaving a raw markdown file.
+- **Deliverable.** Assemble the audit data and run `tools/audit-report-kit` (THL-original) to produce a branded client PDF + compile-checked JSON-LD for the schema fixes, instead of leaving a raw markdown file.
 
 ---
 
@@ -99,10 +99,10 @@ For each page in the crawl set, record:
 
 Delegate analysis to 5 specialized subagents. Each subagent operates on the collected page data and produces a category score (0-100) plus findings.
 
-**Return contract — every subagent follows it (THL):** return your dimension score(s) as a number `0–100`, a **provenance tag** (`[scan]` = data fetched this run · `[partial-scan]` · `[heuristic]` = judgement, no data · `[unmeasured]` = source unavailable → emit `—`, not a number), and findings each tied to the evidence that justifies it. Return the orchestrator's named dimensions directly — do **not** invent your own blended sub-composite or your own weights (that breaks the fixed composite formula below).
+**Return contract (THL), every subagent follows it:** return your dimension score(s) as a number `0-100`, a **provenance tag** (`[scan]` = data fetched this run · `[partial-scan]` · `[heuristic]` = judgement, no data · `[unmeasured]` = source unavailable → emit `n/a`, not a number), and findings each tied to the evidence that justifies it. Return the orchestrator's named dimensions directly. Do **not** invent your own blended sub-composite or your own weights (that breaks the fixed composite formula below).
 
 **Subagent 1: AI Visibility Analysis (geo-ai-visibility)**
-- Return **two separate** dimension scores: **AI Citability** (quotability/extractability) and **Brand Authority** (entity recognition) — not one blended "AI visibility" number, since the composite weights them differently (25% vs 20%).
+- Return **two separate** dimension scores: **AI Citability** (quotability/extractability) and **Brand Authority** (entity recognition), not one blended "AI visibility" number, since the composite weights them differently (25% vs 20%).
 - Analyze content blocks for quotability by AI systems (citability scoring)
 - Check AI crawler access via robots.txt and llms.txt presence (these also inform Technical GEO)
 - Scan brand presence across YouTube, Reddit, Wikipedia, LinkedIn for the Brand Authority score
@@ -233,11 +233,11 @@ Generate a file called `GEO-AUDIT-REPORT.md` with the following structure:
 | Platform Optimization | [X]/100 | 10% | [X] | [scan] |
 | **Overall GEO Score** | | | **[X]/100** | |
 
-**Provenance vocabulary (THL enhancement — every row carries one):** `[scan]` = scored
+**Provenance vocabulary (THL enhancement, every row carries one):** `[scan]` = scored
 from data actually fetched this run · `[partial-scan]` = some pages sampled, others
 inferred · `[heuristic]` = model judgement, no underlying data fetched · `[unmeasured]`
 = the data source needed was unavailable. When a category is `[unmeasured]` or pure
-`[heuristic]`, emit `—` for its score, **never a number** — a number with weak
+`[heuristic]`, emit `n/a` for its score, **never a number**: a number with weak
 provenance still reads as hard data. This is how the audit stays honest about what it
 actually measured.
 

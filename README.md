@@ -15,7 +15,7 @@ The open layer of how [**Tech Horizon Labs**](https://techhorizonlabs.com) runs 
 
 ### ⚡ [Are you found by AI? Run the free scan →](https://areyoufoundbyai.com)
 
-<sub>The live measurement asks the major AI engines whether they name you, and who they name instead, every week. We've measured more than 4,400 businesses, and the <a href="https://areyoufoundbyai.com/benchmarks">public benchmarks</a> are free to read. The free scan is the on-ramp: two buyer questions, no signup. This repo is the readiness diagnosis behind that score.</sub>
+<sub>The live measurement asks the major AI engines whether they name you, and who they name instead, every week. More than 4,400 websites measured so far (<a href="https://areyoufoundbyai.com/methodology/website-counts">we count hostnames, not businesses</a>), and the <a href="https://areyoufoundbyai.com/benchmarks">public benchmarks</a> are free to read. The free scan is the on-ramp: two buyer questions on ChatGPT and Gemini, no signup. This repo is the open readiness audit that sits beside that measurement: it diagnoses why, but it is not the formula behind the product's scores.</sub>
 
 <br>
 
@@ -35,7 +35,7 @@ npx skills add techhorizonlabs/thl-open
 
 ---
 
-> **Search is splitting in two.** A growing share of your future customers will never click a blue link. They'll get an answer straight from ChatGPT, Claude, Perplexity, or Google's AI Overview. **GEO (Generative Engine Optimization) is how you stay inside that answer.** This repo is how we measure it, engineer it, and prove the movement.
+> **Search is splitting in two.** A growing share of your future customers will never click a blue link. They'll get an answer straight from ChatGPT, Claude, Perplexity, or Google's AI Overview. **GEO (Generative Engine Optimisation) is how you stay inside that answer.** This repo is how we measure it, engineer it, and prove the movement.
 
 We're an Australian AI-visibility agency. This is the *open* layer of our practice: the method we actually use on client work, the tools we built ourselves, and our improvements to the open-source GEO suite we build on. The calibration data, client playbooks, and full engagement pack stay proprietary, but the method and the utilities are here, for free.
 
@@ -47,7 +47,7 @@ Same method, three depths. Start wherever you are:
 
 | | | |
 |---|---|---|
-| **⚡ Measure visibility** | **[areyoufoundbyai.com](https://areyoufoundbyai.com)** | Enter your URL → a live check of what AI answers when your buyers ask, in about a minute. Free, hosted, nothing to install: two buyer questions. The trial runs the full weekly measure. The *outcome*. |
+| **⚡ Measure visibility** | **[areyoufoundbyai.com](https://areyoufoundbyai.com)** | Enter your URL → a live check of what AI answers when your buyers ask, in about a minute. Free, hosted, nothing to install: two buyer questions on ChatGPT and Gemini. Pro and its 14-day trial run the full weekly measure across seven engines. The *outcome*. |
 | **🛠 Diagnose readiness** | **this repo** | Run the full six-dimension readiness audit in Claude Code: *why* you're visible or not, all the evidence, none of the black box. The *inputs* you control. |
 | **🤝 Done for you** | **[Tech Horizon Labs](https://techhorizonlabs.com)** | We deploy it on your stack, with the calibration data and client playbooks that stay proprietary. |
 
@@ -87,7 +87,7 @@ The discipline that makes it repeatable: **every score traces to evidence, the c
 
 ### The GEO skill suite
 
-A comprehensive set of Claude Code skills for Generative Engine Optimization: full audits, citability scoring, AI-crawler analysis, `llms.txt`, schema markup, brand-mention scanning, platform-specific optimization, technical SEO, content E-E-A-T, and report generation.
+A comprehensive set of Claude Code skills for Generative Engine Optimisation: full audits, citability scoring, AI-crawler analysis, `llms.txt`, schema markup, brand-mention scanning, platform-specific optimisation, technical SEO, content E-E-A-T, and report generation.
 
 > **Honest attribution:** the `geo-*` skills are an **improved fork** of [`geo-seo-claude`](https://github.com/zubair-trabzada/geo-seo-claude) by **Zubair Trabzada** (MIT). We've de-rotted them, fixed portability, and wired them into our method and tools, but the foundation is his good open-source work, and we credit it. See [`NOTICE.md`](NOTICE.md) and [`CHANGELOG.md`](CHANGELOG.md). Improving and crediting open source *is* the standard we hold ourselves to.
 
@@ -169,7 +169,7 @@ skill and one worked audit (fictional broker) you can read end to end.
 
 ## Who's behind this
 
-[**Tech Horizon Labs**](https://techhorizonlabs.com) is a Claude-native GTM + AI-visibility studio. We deploy this infrastructure for real clients (insurance brokers, professional-services firms and scale-ups) on Cloudflare, into the workspace they already run. This repo is the readiness diagnosis we can give away, and [**areyoufoundbyai.com**](https://areyoufoundbyai.com) is the live visibility measurement, free for anyone to run in about a minute. Readiness here; visibility there. ([How they fit together.](docs/THL-GEO-METHOD.md))
+[**Tech Horizon Labs**](https://techhorizonlabs.com) is a Claude-native GTM + AI-visibility studio. We deploy this infrastructure for real clients (insurance brokers, professional-services firms and scale-ups) on Cloudflare, into the workspace they already run. This repo is the open readiness audit we can give away, and [**areyoufoundbyai.com**](https://areyoufoundbyai.com) is the live visibility measurement, free for anyone to run in about a minute. Readiness here; visibility there. ([How they fit together.](docs/THL-GEO-METHOD.md))
 
 If it's useful, a ⭐ helps. Issues and PRs welcome: see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 

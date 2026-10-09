@@ -11,7 +11,7 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 
 ## Purpose
 
-This skill aggregates outputs from all GEO audit skills into a single, professional report that can be delivered directly to a client or stakeholder. The report is written for **business owners and marketing leaders**, not developers — technical findings are translated into business impact and clear action items with priority levels.
+This skill aggregates outputs from all GEO audit skills into a single, professional report that can be delivered directly to a client or stakeholder. The report is written for **business owners and marketing leaders**, not developers. Technical findings are translated into business impact and clear action items with priority levels.
 
 ## How to Use This Skill
 
@@ -82,7 +82,7 @@ Write exactly ONE paragraph (4-6 sentences) covering:
 Present the overall score prominently:
 
 ```
-## GEO Readiness Score: XX/100 — [Label]
+## GEO Readiness Score: XX/100 ([Label])
 ```
 
 Then break down by component in a table:
@@ -145,14 +145,14 @@ Present entity presence across platforms:
 
 | Platform | Presence | Status | Impact on AI Visibility |
 |---|---|---|---|
-| Wikipedia | Yes/No | [Detail] | Very High — 47.9% of ChatGPT citations are Wikipedia |
-| Wikidata | Yes/No | [Detail] | High — machine-readable entity data |
-| LinkedIn | Yes/No | [Detail] | High — Bing Copilot and ChatGPT signal |
-| YouTube | Yes/No | [Detail] | High — Gemini and Perplexity signal |
-| Reddit | Yes/No | [Detail] | Very High — 46.7% of Perplexity citations are Reddit |
-| Google Knowledge Panel | Yes/No | [Detail] | High — Gemini entity recognition |
-| Crunchbase | Yes/No | [Detail] | Medium — entity validation |
-| GitHub | Yes/No | [Detail] | Medium — tech brand signal |
+| Wikipedia | Yes/No | [Detail] | Very High: 47.9% of ChatGPT citations are Wikipedia |
+| Wikidata | Yes/No | [Detail] | High: machine-readable entity data |
+| LinkedIn | Yes/No | [Detail] | High: Bing Copilot and ChatGPT signal |
+| YouTube | Yes/No | [Detail] | High: Gemini and Perplexity signal |
+| Reddit | Yes/No | [Detail] | Very High: 46.7% of Perplexity citations are Reddit |
+| Google Knowledge Panel | Yes/No | [Detail] | High: Gemini entity recognition |
+| Crunchbase | Yes/No | [Detail] | Medium: entity validation |
+| GitHub | Yes/No | [Detail] | Medium: tech brand signal |
 ```
 
 **Translate for the client**: "AI platforms build trust by cross-referencing your brand across multiple authoritative sources. Each platform where your brand has an accurate, consistent presence increases the likelihood of being cited in AI answers."
@@ -200,12 +200,12 @@ Present the key technical findings in business-friendly language:
 ### Current Implementation
 | Schema Type | Present | Status | AI Impact |
 |---|---|---|---|
-| Organization | Yes/No | [Valid/Issues] | Critical — entity recognition |
-| Article + Author | Yes/No | [Valid/Issues] | High — E-E-A-T signal |
-| sameAs (entity links) | Yes/No | [Count] links | Critical — cross-platform entity graph |
+| Organization | Yes/No | [Valid/Issues] | Critical: entity recognition |
+| Article + Author | Yes/No | [Valid/Issues] | High: E-E-A-T signal |
+| sameAs (entity links) | Yes/No | [Count] links | Critical: cross-platform entity graph |
 | [Business-specific] | Yes/No | [Valid/Issues] | [Impact] |
-| WebSite + SearchAction | Yes/No | [Valid/Issues] | Medium — sitelinks |
-| BreadcrumbList | Yes/No | [Valid/Issues] | Low-Medium — navigation context |
+| WebSite + SearchAction | Yes/No | [Valid/Issues] | Medium: sitelinks |
+| BreadcrumbList | Yes/No | [Valid/Issues] | Low-Medium: navigation context |
 ```
 
 If schemas are missing, note: "Ready-to-use structured data code has been prepared and is included in the technical appendix. Your development team can add this to your site with minimal effort."
@@ -213,7 +213,7 @@ If schemas are missing, note: "Ready-to-use structured data code has been prepar
 ### Section 9: llms.txt Status
 
 ```markdown
-## llms.txt — AI Content Guide
+## llms.txt: AI Content Guide
 
 | File | Status | Recommendation |
 |---|---|---|
@@ -231,7 +231,7 @@ This is the most important section of the report. Organize actions by timeline a
 ## Prioritized Action Plan
 
 ### Quick Wins (This Week)
-*High impact, low effort — can be implemented immediately*
+*High impact, low effort: can be implemented immediately*
 
 | # | Action | Impact | Effort | Platforms Affected |
 |---|---|---|---|---|
@@ -249,7 +249,7 @@ This is the most important section of the report. Organize actions by timeline a
 
 ```markdown
 ### Medium-Term Improvements (This Month)
-*Significant impact, moderate effort — requires content or technical changes*
+*Significant impact, moderate effort: requires content or technical changes*
 
 | # | Action | Impact | Effort | Platforms Affected |
 |---|---|---|---|---|
@@ -344,19 +344,19 @@ This GEO audit was conducted using the following methodology:
 
 | Term | Definition |
 |---|---|
-| GEO | Generative Engine Optimization — optimizing content to be cited by AI search platforms |
-| AIO | AI Overviews — Google's AI-generated answer boxes at the top of search results |
-| E-E-A-T | Experience, Expertise, Authoritativeness, Trustworthiness — Google's content quality framework |
-| SSR | Server-Side Rendering — generating HTML on the server so crawlers can read content without JavaScript |
-| CWV | Core Web Vitals — Google's page experience metrics (LCP, INP, CLS) |
-| LCP | Largest Contentful Paint — time to render the largest visible element |
-| INP | Interaction to Next Paint — responsiveness metric (replaced FID in March 2024) |
-| CLS | Cumulative Layout Shift — visual stability metric |
-| JSON-LD | JavaScript Object Notation for Linked Data — preferred structured data format |
+| GEO | Generative Engine Optimization: optimizing content to be cited by AI search platforms |
+| AIO | AI Overviews: Google's AI-generated answer boxes at the top of search results |
+| E-E-A-T | Experience, Expertise, Authoritativeness, Trustworthiness: Google's content quality framework |
+| SSR | Server-Side Rendering: generating HTML on the server so crawlers can read content without JavaScript |
+| CWV | Core Web Vitals: Google's page experience metrics (LCP, INP, CLS) |
+| LCP | Largest Contentful Paint: time to render the largest visible element |
+| INP | Interaction to Next Paint: responsiveness metric (replaced FID in March 2024) |
+| CLS | Cumulative Layout Shift: visual stability metric |
+| JSON-LD | JavaScript Object Notation for Linked Data: preferred structured data format |
 | sameAs | Schema.org property linking an entity to its profiles on other platforms |
 | IndexNow | Protocol for instantly notifying search engines of content changes |
 | llms.txt | Proposed standard file for guiding AI systems about a site's content |
-| YMYL | Your Money or Your Life — topics requiring highest E-E-A-T standards |
+| YMYL | Your Money or Your Life: topics requiring highest E-E-A-T standards |
 | SERP | Search Engine Results Page |
 | Topical Authority | The depth and breadth of a site's coverage of its core topic area |
 ```
@@ -373,17 +373,17 @@ This GEO audit was conducted using the following methodology:
 - All URLs should be absolute (not relative)
 
 ### Tone
-- **Professional but accessible** — written for a business owner, not a developer
-- **Confident and direct** — state findings as conclusions, not possibilities
-- **Action-oriented** — every finding should connect to a specific action
-- **Business-impact focused** — translate technical issues into business outcomes
+- **Professional but accessible:** written for a business owner, not a developer
+- **Confident and direct:** state findings as conclusions, not possibilities
+- **Action-oriented:** every finding should connect to a specific action
+- **Business-impact focused:** translate technical issues into business outcomes
 - Avoid: jargon without explanation, hedging language, passive voice, excessive caveats
 - Use: "Your site [does/does not]...", "We recommend...", "This impacts..."
 
 ### Dollar-Value Framing
 Where possible, connect recommendations to business value:
 - "Improving your Google AIO readiness from 35 to 70 could increase your presence in AI Overviews by an estimated 50%, which at current search volumes represents approximately 2,000 additional monthly visitors"
-- "Server-side rendering would make your content accessible to ChatGPT, Perplexity, and other AI platforms — collectively representing an audience your competitors are already reaching"
+- "Server-side rendering would make your content accessible to ChatGPT, Perplexity, and other AI platforms, collectively representing an audience your competitors are already reaching"
 - "The investment in Schema.org markup (estimated 8-16 hours of developer time) could increase your entity recognition score from 20 to 75, significantly improving citation probability"
 
 Be conservative with estimates. State assumptions clearly. Never guarantee specific results.
@@ -395,5 +395,5 @@ Be conservative with estimates. State assumptions clearly. Never guarantee speci
 Generate **GEO-CLIENT-REPORT.md** using the complete template above, filled with actual audit data. The report should be:
 - 40-80 pages equivalent in detail (3,000-6,000 words)
 - Ready to send to a client without editing
-- Self-contained (no references to other report files — all relevant data is included)
+- Self-contained (no references to other report files; all relevant data is included)
 - Printable and presentable (clean markdown formatting)

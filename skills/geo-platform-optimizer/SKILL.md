@@ -1,6 +1,6 @@
 ---
 name: geo-platform-optimizer
-description: Platform-specific AI search optimization — audit and optimize for Google AI Overviews, ChatGPT, Perplexity, Gemini, and Bing Copilot individually
+description: Platform-specific AI search optimization: audit and optimize for Google AI Overviews, ChatGPT, Perplexity, Gemini, and Bing Copilot individually
 version: 1.0.0
 author: geo-seo-claude
 tags: [geo, ai-search, platform-optimization, chatgpt, perplexity, gemini, aio]
@@ -11,7 +11,7 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 
 ## Core Insight
 
-Only **11% of domains** are cited by BOTH ChatGPT and Google AI Overviews for the same query. Each AI search platform uses different indexes, ranking logic, and source preferences. A page optimized for Google AI Overviews may be invisible to ChatGPT, and vice versa. Platform-specific optimization is not optional — it is the foundation of any serious GEO strategy.
+Only **11% of domains** are cited by BOTH ChatGPT and Google AI Overviews for the same query. Each AI search platform uses different indexes, ranking logic, and source preferences. A page optimized for Google AI Overviews may be invisible to ChatGPT, and vice versa. Platform-specific optimization is not optional; it is the foundation of any serious GEO strategy.
 
 ## How to Use This Skill
 
@@ -25,11 +25,11 @@ Only **11% of domains** are cited by BOTH ChatGPT and Google AI Overviews for th
 ## Platform 1: Google AI Overviews (AIO)
 
 ### How AIO Selects Sources
-- 92% of AIO citations come from pages already ranking in the **top 10 organic results** — traditional SEO is the gateway
-- However, 47% of citations come from pages ranking **below position 5** — AIO has its own selection logic favoring clarity and directness over raw rank
+- 92% of AIO citations come from pages already ranking in the **top 10 organic results**; traditional SEO is the gateway
+- However, 47% of citations come from pages ranking **below position 5**, so AIO has its own selection logic favoring clarity and directness over raw rank
 - AIO strongly favors pages with **clean structure, direct answers, and scannable formatting**
 - Featured snippet optimization has ~70% overlap with AIO optimization
-- AIO prefers **concise, factual, unambiguous answers** — hedging and filler reduce citation probability
+- AIO prefers **concise, factual, unambiguous answers**; hedging and filler reduce citation probability
 
 ### Optimization Checklist
 
@@ -66,7 +66,7 @@ Only **11% of domains** are cited by BOTH ChatGPT and Google AI Overviews for th
 ### How ChatGPT Selects Sources
 - Uses **Bing's search index** as its foundation (not Google)
 - Top citation sources by domain share: **Wikipedia (47.9%)**, Reddit (11.3%), YouTube, major news outlets
-- ChatGPT heavily weights **entity recognition** — if your brand exists as a structured entity (Wikipedia, Wikidata, Crunchbase), it is far more likely to be cited
+- ChatGPT heavily weights **entity recognition**. If your brand exists as a structured entity (Wikipedia, Wikidata, Crunchbase), it is far more likely to be cited
 - Prefers **authoritative, well-established sources** over new or niche sites
 - Longer, more comprehensive articles get cited more often than short pieces
 - ChatGPT tends to cite **the most canonical source** for a claim rather than the original
@@ -106,16 +106,16 @@ Only **11% of domains** are cited by BOTH ChatGPT and Google AI Overviews for th
 - Top citation sources: **Reddit (46.7%)**, Wikipedia, YouTube, major publications
 - Perplexity places the **heaviest emphasis on community validation** of all AI search platforms
 - Strongly favors **discussion threads** where claims are debated, validated, or expanded by multiple participants
-- Prefers recent content — publication date is a strong ranking signal
+- Prefers recent content; publication date is a strong ranking signal
 - Cites **multiple sources per answer** (typically 5-15), so there is more opportunity for mid-authority sites to appear
 - Uses its own crawling infrastructure in addition to search APIs
 
 ### Optimization Checklist
 
-1. **Active Reddit Presence**: The brand or its representatives should participate authentically in relevant subreddit discussions. Not promotional — helpful, specific, and community-oriented.
+1. **Active Reddit Presence**: The brand or its representatives should participate authentically in relevant subreddit discussions. Not promotional: helpful, specific, and community-oriented.
 2. **Reddit AMAs and Threads**: Encourage or participate in AMAs, detailed discussion threads, and community Q&As. Perplexity treats these as high-signal content.
 3. **Forum and Community Presence**: Beyond Reddit, check Hacker News, Stack Overflow, Quora, and niche industry forums. Perplexity indexes these heavily.
-4. **Discussion-Friendly Content**: Publish content that invites discussion — opinion pieces, research findings, contrarian takes, original data. Content that gets shared and debated in communities ranks higher.
+4. **Discussion-Friendly Content**: Publish content that invites discussion: opinion pieces, research findings, contrarian takes, original data. Content that gets shared and debated in communities ranks higher.
 5. **Freshness Signals**: Publish content with clear dates. Update content regularly. Perplexity deprioritizes stale content more aggressively than other platforms.
 6. **Multiple Source Validation**: Claims in your content should be supported by other sources. Perplexity cross-references and prefers claims it can verify from multiple origins.
 7. **YouTube Video Content**: Create video content that Perplexity can reference. Ensure video titles, descriptions, and transcripts contain target information.
@@ -145,7 +145,7 @@ Only **11% of domains** are cited by BOTH ChatGPT and Google AI Overviews for th
 - Uses **Google's search index** plus strong weighting toward **Google-owned properties**
 - YouTube content is weighted significantly more heavily than in standard Google Search
 - Google Business Profile data is directly accessible to Gemini
-- Gemini uses Google's Knowledge Graph directly — entity presence in Knowledge Graph is a major advantage
+- Gemini uses Google's Knowledge Graph directly; entity presence in Knowledge Graph is a major advantage
 - Structured data (Schema.org) is consumed directly by Gemini for entity understanding
 - Gemini multi-modal: can reference images, videos, and text together
 
@@ -240,12 +240,12 @@ Only **11% of domains** are cited by BOTH ChatGPT and Google AI Overviews for th
 
 ## Output Format
 
-> **Provenance (THL):** tag the score `[scan]` (data fetched this run), `[partial-scan]`, `[heuristic]` (judgement, no data), or `[unmeasured]` — and emit `—` instead of a number when `[unmeasured]` or pure `[heuristic]`. A number with weak provenance still reads as hard data. See [the GEO Method](../../docs/THL-GEO-METHOD.md).
+> **Provenance (THL):** tag the score `[scan]` (data fetched this run), `[partial-scan]`, `[heuristic]` (judgement, no data), or `[unmeasured]`, and emit `n/a` instead of a number when `[unmeasured]` or pure `[heuristic]`. A number with weak provenance still reads as hard data. See [the GEO Method](../../docs/THL-GEO-METHOD.md).
 
 Generate **GEO-PLATFORM-OPTIMIZATION.md** with the following structure:
 
 ```markdown
-# GEO Platform Optimization Report — [Domain]
+# GEO Platform Optimization Report: [Domain]
 Date: [Date]
 
 ## Overall Platform Readiness

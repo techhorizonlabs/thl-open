@@ -15,7 +15,7 @@ What you asked, and what the skill did.
 
 **Evidence / output**
 Paste the relevant output. If a score looks wrong, include the evidence the skill
-cited for it (every score should trace to evidence — if it didn't, say so).
+cited for it (every score should trace to evidence; if it didn't, say so).
 
 **Environment**
 - `claude --version`:

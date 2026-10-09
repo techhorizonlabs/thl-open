@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Agent-readiness scan: official API + supplementary curl evidence.
 # Usage: run_scan.sh <url> <raw-data-outdir>
-# 404s are expected outcomes, not errors — so no `set -e`.
+# 404s are expected outcomes, not errors, so no `set -e`.
 set -uo pipefail
 
 URL="${1:?usage: run_scan.sh <url> <outdir>}"
@@ -16,7 +16,7 @@ curl -s -X POST "https://isitagentready.com/api/scan" \
 
 CANON=$(jq -r '.url // empty' "$OUT/iar_scan.json")
 if [ -z "$CANON" ]; then
-  echo "ERROR: scan returned no canonical url — inspect $OUT/iar_scan.json" >&2
+  echo "ERROR: scan returned no canonical url; inspect $OUT/iar_scan.json" >&2
   head -c 400 "$OUT/iar_scan.json" >&2; exit 1
 fi
 HOST=$(echo "$CANON" | sed -E 's#https?://##; s#/.*##')

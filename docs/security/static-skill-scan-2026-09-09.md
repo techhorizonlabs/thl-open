@@ -1,8 +1,8 @@
-# Static skill scan — 9 September 2026 AEST
+# Static skill scan: 9 September 2026 AEST
 
 **17 skills scanned; 22 MEDIUM findings, 17 INFO findings, zero HIGH/CRITICAL
 findings, zero scan errors.** This is a completed static scan, not a clean verdict
-or security certification. [Sanitized results](static-skill-scan-2026-09-09.json).
+or security certification. [Sanitised results](static-skill-scan-2026-09-09.json).
 
 Target: `techhorizonlabs/thl-open` commit
 `563d77af09ba38a1dfd62b92486fc223bf2a6395`. Scanner: [Cisco AI Defense skill-scanner](https://github.com/cisco-ai-defense/skill-scanner)
@@ -13,8 +13,8 @@ The MEDIUM findings comprise 10 outbound-network primitives, 2 network/tool
 declaration warnings and 10 dependency version-range warnings in the GEO skill.
 Website-fetching primitives are expected capabilities, but remain relevant to
 runtime isolation. The version-range warnings require a reviewed deployment lock.
-The 17 INFO findings concern per-skill license metadata, not absence of a repository
-license. No findings were suppressed to make this report look clean.
+The 17 INFO findings concern per-skill licence metadata, not absence of a repository
+licence. No findings were suppressed to make this report look clean.
 
 Analysis ran locally with network and process creation denied by macOS sandbox
 policy, plus a Python audit guard. The JSON conservatively labels the portable

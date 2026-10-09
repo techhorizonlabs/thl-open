@@ -2,13 +2,13 @@
 """Convert isitagentready.com /api/scan JSON to the fixed Theo-audit CSV schema.
 
 Usage: scan_to_csv.py <iar_scan.json> --score N [--out checks.csv] [--date YYYY-MM-DD]
-The 0-100 score comes from the web UI dial (Playwright), not the JSON — pass it in.
+The 0-100 score comes from the web UI dial (Playwright), not the JSON. Pass it in.
 """
 import argparse, csv, json, sys
 from datetime import date
 from pathlib import Path
 
-# Fixed display names — cross-client comparability depends on these exact labels.
+# Fixed display names: cross-client comparability depends on these exact labels.
 CATEGORY_NAMES = {
     "discoverability": "Discoverability",
     "contentAccessibility": "Content Accessibility",
@@ -64,7 +64,7 @@ def main():
             detail = (chk.get("message") or "").replace("\n", " ").strip()
             cat_rows.append([CHECK_NAMES.get(chk_key, title_from_key(chk_key)), result, detail,
                              f"isitagentready.com + curl {args.date}"])
-        # Tally counts scored checks only — `neutral`/`skip` are excluded.
+        # Tally counts scored checks only; `neutral`/`skip` are excluded.
         tally = f"{cat_name} ({cat_pass}/{cat_scored})"
         rows.extend((tally, *r) for r in cat_rows)
 
@@ -94,7 +94,7 @@ def main():
         w.writerow(["category", "check", "result", "detail", "source"])
         w.writerow(overall)
         w.writerows(rows)
-    print(f"{out}: OVERALL {args.score}/100 Level {level} {level_name} — {passes} pass / {fails} fails, {len(rows)} rows")
+    print(f"{out}: OVERALL {args.score}/100 Level {level} {level_name}: {passes} pass / {fails} fails, {len(rows)} rows")
 
 if __name__ == "__main__":
     sys.exit(main())

@@ -15,13 +15,13 @@ allowed-tools:
 ## Core Insight
 
 Brand mentions correlate more strongly with AI visibility than traditional backlinks. An Ahrefs
-brand study (2025, ~75,000 brands, cited as reported — see [`docs/SOURCES.md`](../../docs/SOURCES.md))
-found **unlinked brand mentions** — references to a brand name with no hyperlink — predict whether
+brand study (2025, ~75,000 brands, cited as reported; see [`docs/SOURCES.md`](../../docs/SOURCES.md))
+found **unlinked brand mentions** (references to a brand name with no hyperlink) predict whether
 AI systems cite and recommend a brand better than Domain Rating or backlink count.
 
 > **This measures off-page authority signals, not answer-engine outcomes.** Wikipedia/Wikidata are
 > checked live via their APIs; the other platforms are assessed via search, not by querying the AI
-> engines. A high Brand Authority Score means the *signals* AI trusts are present — it does not
+> engines. A high Brand Authority Score means the *signals* AI trusts are present. It does not
 > confirm any engine actually names you. For that live check, run the free scan at
 > **[areyoufoundbyai.com](https://areyoufoundbyai.com)** (two buyer questions on ChatGPT and Gemini; the paid
 > measure covers all seven engines).
@@ -37,20 +37,20 @@ backlink from a DR 70 blog.
 ## Platforms that matter
 
 AI systems weight a handful of platforms far above backlinks. Each platform's rationale, scan
-recipe, and 0–100 scoring rubric live in **[`references/platforms.md`](references/platforms.md)** —
-read it before scoring. Ranked by correlation with AI citation:
+recipe, and 0-100 scoring rubric live in **[`references/platforms.md`](references/platforms.md)**.
+Read it before scoring. Ranked by correlation with AI citation:
 
-1. **YouTube** (~0.737, strongest) — channel + third-party video/description/transcript mentions
-2. **Reddit** — subreddit discussion, recommendation threads, sentiment
-3. **Wikipedia / Wikidata** — the entity-recognition foundation
-4. **LinkedIn** — professional / B2B authority signals
-5. **Other** — Quora, Stack Overflow, GitHub, forums, news, podcasts (scored as one basket)
+1. **YouTube** (~0.737, strongest): channel + third-party video/description/transcript mentions
+2. **Reddit**: subreddit discussion, recommendation threads, sentiment
+3. **Wikipedia / Wikidata**: the entity-recognition foundation
+4. **LinkedIn**: professional / B2B authority signals
+5. **Other**: Quora, Stack Overflow, GitHub, forums, news, podcasts (scored as one basket)
 
 ---
 
 ## Composite Brand Authority Score
 
-Score each platform 0–100 (rubrics in `references/platforms.md`), then weight:
+Score each platform 0-100 (rubrics in `references/platforms.md`), then weight:
 
 | Platform | Weight | Rationale |
 |---|---|---|
@@ -76,22 +76,22 @@ Brand_Authority_Score = (YouTube * 0.25) + (Reddit * 0.25) + (Wikipedia * 0.20) 
 
 ## Analysis Procedure
 
-### Step 1 — Identify the brand
+### Step 1: Identify the brand
 
 Gather from the user or the website: exact **brand name** (and official variants),
 **founder/CEO name(s)**, **domain**, **industry**, top 3 **products/services**, and key
 **competitors** (for comparison context).
 
-### Step 2 — Scan each platform
+### Step 2: Scan each platform
 
 Work through every platform using the scan recipes in
-[`references/platforms.md`](references/platforms.md), and score each 0–100 against its rubric there.
+[`references/platforms.md`](references/platforms.md), and score each 0-100 against its rubric there.
 
 > **Wikipedia is the one trap:** web search alone produces false negatives. Run the Python API
-> check in `references/platforms.md` **first** — if the API says a page exists, it exists; never
+> check in `references/platforms.md` **first**. If the API says a page exists, it exists; never
 > override that with a failed search result.
 
-### Step 3 — Assess sentiment
+### Step 3: Assess sentiment
 
 For Reddit and other discussion platforms, judge sentiment from the most recent and most prominent mentions:
 
@@ -100,16 +100,16 @@ For Reddit and other discussion platforms, judge sentiment from the most recent 
 | **Positive** | Recommendations ("I love [brand]", "we switched to [brand]", "highly recommend"), upvoted mentions, favourable comparisons |
 | **Neutral** | Factual mentions ("we use [brand] for…", "[brand] offers…"), questions, balanced comparisons |
 | **Negative** | Complaints ("avoid [brand]", "terrible support"), downvoted recommendations, unfavourable comparisons |
-| **Mixed** | Both — note the ratio and the primary themes |
+| **Mixed** | Both; note the ratio and the primary themes |
 
-### Step 4 — Competitive comparison (optional)
+### Step 4: Competitive comparison (optional)
 
 If competitors are known, quick-scan their platform presence for context. It calibrates the score:
 "moderate" Reddit presence in an industry where competitors have none is relatively strong.
 
-### Step 5 — Calculate and recommend
+### Step 5: Calculate and recommend
 
-1. Score each platform 0–100 using the rubrics.
+1. Score each platform 0-100 using the rubrics.
 2. Apply the weights for the composite Brand Authority Score.
 3. Identify the strongest and weakest platforms.
 4. Turn the weakest platforms into specific actions using the presence-building tips in
@@ -119,10 +119,10 @@ If competitors are known, quick-scan their platform presence for context. It cal
 
 ## Output
 
-> **Provenance (THL):** tag the score `[scan]` (data fetched this run), `[partial-scan]`, `[heuristic]` (judgement, no data), or `[unmeasured]` — and emit `—` instead of a number when `[unmeasured]` or pure `[heuristic]`. A number with weak provenance still reads as hard data. See [the GEO Method](../../docs/THL-GEO-METHOD.md).
+> **Provenance (THL):** tag the score `[scan]` (data fetched this run), `[partial-scan]`, `[heuristic]` (judgement, no data), or `[unmeasured]`, and emit `n/a` instead of a number when `[unmeasured]` or pure `[heuristic]`. A number with weak provenance still reads as hard data. See [the GEO Method](../../docs/THL-GEO-METHOD.md).
 
 Write `GEO-BRAND-MENTIONS.md` using the template in
-[`references/output-template.md`](references/output-template.md) — score header, platform
+[`references/output-template.md`](references/output-template.md): score header, platform
 breakdown table, per-platform detail, tiered recommendations, competitive context, and a
 one-line key takeaway. Fill every placeholder or mark it `N/A`.
 

@@ -1,6 +1,6 @@
 ---
 name: geo-schema
-description: Schema.org structured data audit and generation optimized for AI discoverability — detect, validate, and generate JSON-LD markup
+description: Schema.org structured data audit and generation optimized for AI discoverability: detect, validate, and generate JSON-LD markup
 version: 1.0.0
 author: geo-seo-claude
 tags: [geo, schema, structured-data, json-ld, entity-recognition, ai-discoverability]
@@ -33,13 +33,13 @@ python3 scripts/fetch_page.py <url> page
 The output includes a `structured_data` array with all parsed JSON-LD blocks from the page.
 
 ### Scan for JSON-LD
-Look for `<script type="application/ld+json">` blocks in the HTML. Parse each block as JSON. A page may contain multiple JSON-LD blocks — collect all of them.
+Look for `<script type="application/ld+json">` blocks in the HTML. Parse each block as JSON. A page may contain multiple JSON-LD blocks; collect all of them.
 
 ### Scan for Microdata
 Look for elements with `itemscope`, `itemtype`, and `itemprop` attributes. Map the hierarchy of nested items. Note: Microdata is harder for AI crawlers to parse than JSON-LD. Flag a recommendation to migrate to JSON-LD if Microdata is the only format found.
 
 ### Scan for RDFa
-Look for elements with `typeof`, `property`, and `vocab` attributes. Similar to Microdata — recommend migration to JSON-LD.
+Look for elements with `typeof`, `property`, and `vocab` attributes. Similar to Microdata; recommend migration to JSON-LD.
 
 ### Priority Order
 JSON-LD is the **strongly recommended format** for GEO. Google, Bing, and AI platforms all process JSON-LD most reliably. If the site uses Microdata or RDFa exclusively, flag this as a high-priority migration.
@@ -63,7 +63,7 @@ For each detected schema block, validate:
 
 ## Step 3: Schema Types for GEO
 
-### Organization (CRITICAL — every business site)
+### Organization (CRITICAL: every business site)
 Essential for entity recognition across all AI platforms. This is how AI models identify WHAT the business is.
 
 **Required properties:**
@@ -136,7 +136,7 @@ The Author schema is one of the strongest E-E-A-T signals for AI platforms.
 - `material`, `weight`, `width`, `height` (where applicable)
 
 ### FAQPage
-**Status as of 2024**: Google restricts FAQ rich results to government and health sites. However, the FAQPage schema still serves GEO purposes — AI platforms parse FAQ structured data for question-answer extraction. Implement it for AI readability even though rich results may not appear.
+**Status as of 2024**: Google restricts FAQ rich results to government and health sites. However, the FAQPage schema still serves GEO purposes: AI platforms parse FAQ structured data for question-answer extraction. Implement it for AI readability even though rich results may not appear.
 
 **Structure:**
 - `@type`: "FAQPage"
@@ -174,7 +174,7 @@ The Author schema is one of the strongest E-E-A-T signals for AI platforms.
 }
 ```
 
-### Person (standalone — for personal brands, authors, thought leaders)
+### Person (standalone, for personal brands, authors, thought leaders)
 Use as a standalone schema on About/Bio pages. This builds the entity graph for individual expertise.
 
 **Required:** `name`, `url`
@@ -217,20 +217,20 @@ The `sameAs` property is the single most important structured data property for 
 
 ### Recommended sameAs Links (in priority order)
 
-1. **Wikipedia article** — highest authority entity link
-2. **Wikidata item** — machine-readable entity identifier (e.g., `https://www.wikidata.org/wiki/Q12345`)
-3. **LinkedIn** — company page or personal profile
-4. **YouTube** — channel URL
-5. **Twitter/X** — profile URL
-6. **Facebook** — page URL
-7. **Crunchbase** — company profile (for startups/tech)
-8. **GitHub** — organization or personal profile (for tech)
-9. **Google Scholar** — author profile (for researchers/academics)
-10. **ORCID** — researcher identifier (for academics)
-11. **Instagram** — profile URL
-12. **Apple App Store / Google Play** — app listings (for software)
-13. **BBB** — Better Business Bureau listing (for US businesses)
-14. **Industry directories** — relevant vertical directories
+1. **Wikipedia article**: highest authority entity link
+2. **Wikidata item**: machine-readable entity identifier (e.g., `https://www.wikidata.org/wiki/Q12345`)
+3. **LinkedIn**: company page or personal profile
+4. **YouTube**: channel URL
+5. **Twitter/X**: profile URL
+6. **Facebook**: page URL
+7. **Crunchbase**: company profile (for startups/tech)
+8. **GitHub**: organization or personal profile (for tech)
+9. **Google Scholar**: author profile (for researchers/academics)
+10. **ORCID**: researcher identifier (for academics)
+11. **Instagram**: profile URL
+12. **Apple App Store / Google Play**: app listings (for software)
+13. **BBB**: Better Business Bureau listing (for US businesses)
+14. **Industry directories**: relevant vertical directories
 
 ### sameAs Audit Process
 1. Collect all known web presences for the entity
@@ -245,10 +245,10 @@ The `sameAs` property is the single most important structured data property for 
 
 Based on the detected business type, generate ready-to-paste JSON-LD blocks. Always generate:
 
-1. **Organization or Person** (depending on entity type) — always
-2. **WebSite with SearchAction** — always for the homepage
-3. **Business-type-specific** — Article for publishers, Product for e-commerce, LocalBusiness for local, SoftwareApplication for SaaS
-4. **BreadcrumbList** — for any page deeper than homepage
+1. **Organization or Person** (depending on entity type): always
+2. **WebSite with SearchAction**: always for the homepage
+3. **Business-type-specific**: Article for publishers, Product for e-commerce, LocalBusiness for local, SoftwareApplication for SaaS
+4. **BreadcrumbList**: for any page deeper than homepage
 
 ### Generation Rules
 - Use the `@graph` pattern to include multiple schemas in one JSON-LD block
@@ -256,7 +256,7 @@ Based on the detected business type, generate ready-to-paste JSON-LD blocks. Alw
 - Include `@id` properties for cross-referencing between schemas
 - Use ISO 8601 for all dates
 - Include `speakable` on Article schemas with CSS selectors pointing to key content sections
-- Place JSON-LD in `<head>` section — NOT injected via JavaScript
+- Place JSON-LD in `<head>` section, NOT injected via JavaScript
 
 ### Template: Organization with Full GEO Signals
 ```json
@@ -314,7 +314,7 @@ Based on the detected business type, generate ready-to-paste JSON-LD blocks. Alw
 
 ## Scoring Rubric (0-100)
 
-> **Provenance (THL):** tag the score `[scan]` (data fetched this run), `[partial-scan]`, `[heuristic]` (judgement, no data), or `[unmeasured]` — and emit `—` instead of a number when `[unmeasured]` or pure `[heuristic]`. A number with weak provenance still reads as hard data. See [the GEO Method](../../docs/THL-GEO-METHOD.md).
+> **Provenance (THL):** tag the score `[scan]` (data fetched this run), `[partial-scan]`, `[heuristic]` (judgement, no data), or `[unmeasured]`, and emit `n/a` instead of a number when `[unmeasured]` or pure `[heuristic]`. A number with weak provenance still reads as hard data. See [the GEO Method](../../docs/THL-GEO-METHOD.md).
 
 | Criterion | Points | How to Score |
 |---|---|---|
@@ -338,7 +338,7 @@ Based on the detected business type, generate ready-to-paste JSON-LD blocks. Alw
 Generate **GEO-SCHEMA-REPORT.md** with:
 
 ```markdown
-# GEO Schema & Structured Data Report — [Domain]
+# GEO Schema & Structured Data Report: [Domain]
 Date: [Date]
 
 ## Schema Score: XX/100

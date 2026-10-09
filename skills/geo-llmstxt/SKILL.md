@@ -14,17 +14,17 @@ allowed-tools:
 
 ## Purpose
 
-This skill handles everything related to the `llms.txt` standard — an emerging convention (proposed
+This skill handles everything related to the `llms.txt` standard, an emerging convention (proposed
 by Jeremy Howard in September 2024) that lets a website give AI systems structured guidance about
 its content, structure, and key information. It is analogous to `robots.txt` (which tells crawlers
 what NOT to access) but instead tells AI systems what IS most useful to understand about the site.
 
 The full format spec, the `llms-full.txt` variant, a fill-in template, and best practices live in
-**[`references/spec.md`](references/spec.md)** — read it before validating or generating a file.
+**[`references/spec.md`](references/spec.md)**: read it before validating or generating a file.
 
 ## Why llms.txt Matters
 
-AI models must work out which pages matter, what a site is about, and how content is organized —
+AI models must work out which pages matter, what a site is about, and how content is organized,
 usually by crawling many pages and inferring structure. `llms.txt` solves this with an explicit,
 machine- and human-readable summary.
 
@@ -107,5 +107,5 @@ Verify all URLs return 200; entry count is 10-30; no description exceeds 50 word
 ## Output
 
 Use the templates in [`references/output-template.md`](references/output-template.md):
-- **Analysis mode:** `GEO-LLMSTXT-ANALYSIS.md` — score, format-validation table, missing pages, recommendations, and a suggested rewrite if needed.
+- **Analysis mode:** `GEO-LLMSTXT-ANALYSIS.md`: score, format-validation table, missing pages, recommendations, and a suggested rewrite if needed.
 - **Generation mode:** the complete `llms.txt`, plus a short `GEO-LLMSTXT-GENERATION.md` noting pages discovered vs. selected, prioritization rationale, borderline pages, and recommended update frequency.

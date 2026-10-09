@@ -24,7 +24,7 @@ observation/report, not an automatic security approval or merge gate.
   only loopback present, and loopback down. Failure stops the scan; no CI fallback.
 - The scanner receives an empty environment except a dedicated HOME, PATH and
   bytecode setting. A Python audit hook additionally rejects network connections,
-  DNS resolution and process creation. This hook is defense in depth, not an OS
+  DNS resolution and process creation. This hook is defence in depth, not an OS
   sandbox against malicious native extensions. There is no claimed filesystem
   isolation, separate trust domain from the hosted runner, or adversarial-host
   protection. Dependencies/scanner code are trusted executable inputs; skills are

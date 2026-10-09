@@ -1,11 +1,11 @@
-// Fictional sample audit — anonymized broker. No real client data.
+// Fictional sample audit: anonymised broker. No real client data.
 // This is the shape Theo's audit pipeline would emit and the report renders.
 
 // `provenance` is optional and, when set, renders as a small muted tag beside the bar.
 // [scan] = scored from data fetched this run · [partial-scan] = some pages sampled ·
 // [heuristic] = model judgement, no data fetched · [unmeasured] = data source unavailable.
 // When a category is [unmeasured] or pure [heuristic], set `score: null` and the bar
-// renders "—" instead of an invented number (see THL GEO Method, scoring discipline).
+// renders "n/a" instead of an invented number (see THL GEO Method, scoring discipline).
 export type Provenance = "scan" | "partial-scan" | "heuristic" | "unmeasured";
 export type CategoryScore = {
   key: string;
@@ -22,7 +22,7 @@ export type FixStep = { rank: number; action: string; impact: string };
 
 export type AuditReport = {
   client: { name: string; domain: string; location: string };
-  composite: number; // 0–100
+  composite: number; // 0 to 100
   band: string;
   summary?: string; // optional headline sentence; falls back to a default in the report
 
@@ -44,7 +44,7 @@ export const sampleAudit: AuditReport = {
   band: "Critical",
   generatedAt: "2026-06-14",
   // The six canonical readiness dimensions (same as skills/geo-audit). Crawler access is a
-  // sub-component of Technical, not a top-level dimension. Platform is [heuristic] here → null → "—".
+  // sub-component of Technical, not a top-level dimension. Platform is [heuristic] here → null → "n/a".
   categories: [
     { key: "citability", label: "AI Citability", score: 31, provenance: "scan" },
     { key: "brand", label: "Brand Authority", score: 22, provenance: "partial-scan" },
@@ -58,7 +58,7 @@ export const sampleAudit: AuditReport = {
       severity: "critical",
       title: "No Organization or Service JSON-LD",
       detail:
-        "AI engines cannot resolve the firm as an entity. This is the single highest-leverage fix and gates citability.",
+        "AI engines cannot resolve the firm as an entity. This is the single fix with the most impact and gates citability.",
     },
     {
       severity: "high",
@@ -77,7 +77,7 @@ export const sampleAudit: AuditReport = {
     },
   ],
   fixSequence: [
-    { rank: 1, action: "Deploy Organization + Service JSON-LD", impact: "Unlocks entity resolution; largest citability gain" },
+    { rank: 1, action: "Deploy Organization + Service JSON-LD", impact: "Enables entity resolution; largest citability gain" },
     { rank: 2, action: "Open robots.txt to GPTBot + ClaudeBot", impact: "Restores presence in two answer engines" },
     { rank: 3, action: "Expand the six core service pages", impact: "Makes pages citable; lifts content E-E-A-T" },
     { rank: 4, action: "Publish a DMARC policy (p=quarantine)", impact: "Improves sender trust + deliverability" },

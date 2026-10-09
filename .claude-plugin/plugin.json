@@ -1,7 +1,7 @@
 {
   "name": "thl-open",
   "version": "0.1.0",
-  "description": "AI-visibility engineering, the open way — the THL GEO / AI-search audit skill suite (citability, AI-crawler access, llms.txt, schema, brand mentions, technical, content, reporting) plus the THL-original agent-readiness-scan, organised around the THL GEO Method.",
+  "description": "AI-visibility engineering, the open way: the THL GEO / AI-search audit skill suite (citability, AI-crawler access, llms.txt, schema, brand mentions, technical, content, reporting) plus the THL-original agent-readiness-scan, organised around the THL GEO Method.",
   "author": {
     "name": "Tech Horizon Labs",
     "url": "https://techhorizonlabs.com"

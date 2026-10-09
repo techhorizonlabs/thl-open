@@ -1,10 +1,10 @@
-# Output template — `GEO-TECHNICAL-AUDIT.md`
+# Output template: `GEO-TECHNICAL-AUDIT.md`
 
 Generate `GEO-TECHNICAL-AUDIT.md` in this shape. Fill every placeholder; cite specific page URLs
 in the issue lists so each finding is verifiable.
 
 ```markdown
-# GEO Technical SEO Audit — [Domain]
+# GEO Technical SEO Audit: [Domain]
 Date: [Date]
 
 ## Technical Score: XX/100
