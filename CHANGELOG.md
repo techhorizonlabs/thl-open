@@ -1,5 +1,17 @@
 # Changelog
 
+### 2026-10-09: Pro now runs on shared tokens
+
+- **Pricing and cadence.** Pro is US$79 a month for 14,000 tokens (or US$869 a year), shared
+  across every site on the account, and the customer chooses how often checks run: weekly,
+  monthly or whenever they like. A check of 25 buyer questions plus a fresh site read uses 3,150
+  tokens. The `found-by-ai` skill, `geo` umbrella skill, `geo-audit`, `THL-GEO-METHOD.md`, the
+  README and `llms.txt` previously said Pro re-asks its questions every week.
+- **MCP.** The public demo still lists twenty tools. The `found-by-ai` skill no longer gives a
+  fixed count for a customer's own token, which now also lists the shared token balance and saved
+  client reports, and it notes that `request_rescan` on a token account asks for the price to be
+  confirmed in the workspace instead of queuing.
+
 ### 2026-10-09: aligned with the live product after its V5 release
 
 - **Live facts corrected.** The free scan asks two buyer questions on ChatGPT and Gemini. Pro,

@@ -15,7 +15,7 @@ The open layer of how [**Tech Horizon Labs**](https://techhorizonlabs.com) runs 
 
 ### ⚡ [Are you found by AI? Run the free scan →](https://areyoufoundbyai.com)
 
-<sub>The live measurement asks the major AI engines whether they name you, and who they name instead, every week. More than 4,400 websites measured so far (<a href="https://areyoufoundbyai.com/methodology/website-counts">we count hostnames, not businesses</a>), and the <a href="https://areyoufoundbyai.com/benchmarks">public benchmarks</a> are free to read. The free scan is the on-ramp: two buyer questions on ChatGPT and Gemini, no signup. This repo is the open readiness audit that sits beside that measurement: it diagnoses why, but it is not the formula behind the product's scores.</sub>
+<sub>The live measurement asks the major AI engines whether they name you, and who they name instead, on the schedule you choose. More than 4,400 websites measured so far (<a href="https://areyoufoundbyai.com/methodology/website-counts">we count hostnames, not businesses</a>), and the <a href="https://areyoufoundbyai.com/benchmarks">public benchmarks</a> are free to read. The free scan is the on-ramp: two buyer questions on ChatGPT and Gemini, no signup. This repo is the open readiness audit that sits beside that measurement: it diagnoses why, but it is not the formula behind the product's scores.</sub>
 
 <br>
 
@@ -47,7 +47,7 @@ Same method, three depths. Start wherever you are:
 
 | | | |
 |---|---|---|
-| **⚡ Measure visibility** | **[areyoufoundbyai.com](https://areyoufoundbyai.com)** | Enter your URL → a live check of what AI answers when your buyers ask, in about a minute. Free, hosted, nothing to install: two buyer questions on ChatGPT and Gemini. Pro and its 14-day trial run the full weekly measure across seven engines. The *outcome*. |
+| **⚡ Measure visibility** | **[areyoufoundbyai.com](https://areyoufoundbyai.com)** | Enter your URL → a live check of what AI answers when your buyers ask, in about a minute. Free, hosted, nothing to install: two buyer questions on ChatGPT and Gemini. Pro and its 14-day trial run the full measure across seven engines, as often as you choose, from a token balance shared across your sites. The *outcome*. |
 | **🛠 Diagnose readiness** | **this repo** | Run the full six-dimension readiness audit in Claude Code: *why* you're visible or not, all the evidence, none of the black box. The *inputs* you control. |
 | **🤝 Done for you** | **[Tech Horizon Labs](https://techhorizonlabs.com)** | We deploy it on your stack, with the calibration data and client playbooks that stay proprietary. |
 

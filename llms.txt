@@ -4,7 +4,7 @@
 
 ## Start here
 
-- [Are you found by AI?, the free scan](https://areyoufoundbyai.com): the live visibility measurement, hosted, no install. The free scan asks two buyer questions on ChatGPT and Gemini and shows whether they name you and who they name instead. Pro re-asks up to 25 buyer questions every week across seven engines. The headline measure is the named share of saved answers. This repo is the open readiness audit that sits beside it; it is not the formula behind the product's scores.
+- [Are you found by AI?, the free scan](https://areyoufoundbyai.com): the live visibility measurement, hosted, no install. The free scan asks two buyer questions on ChatGPT and Gemini and shows whether they name you and who they name instead. Pro asks up to 25 buyer questions across seven engines on the schedule the customer chooses, from 14,000 tokens a month (US$79) shared across every site on the account. The headline measure is the named share of saved answers. This repo is the open readiness audit that sits beside it; it is not the formula behind the product's scores.
 - [The THL GEO Method](https://github.com/techhorizonlabs/thl-open/blob/main/docs/THL-GEO-METHOD.md): the three-layer workflow (dimensional audit, external benchmark, deliverable) and the scoring discipline that makes it repeatable.
 
 ## Tools (built by THL)
