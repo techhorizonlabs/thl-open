@@ -30,7 +30,7 @@ do a GEO audit of example.com
 Replace `example.com` with your client's website. GEO means Generative Engine
 Optimisation: helping AI systems find, read and understand a site's content.
 
-[Quickstart](#quickstart) · [Who this is for](#who-this-is-for) · [Compare approaches](#compare-approaches) · [Examples](examples/README.md)
+[Quickstart](#quickstart) · [Who this is for](#who-this-is-for) · [Works with](#works-with) · [Compare approaches](#compare-approaches) · [Examples](examples/README.md)
 
 ## See the report output
 
@@ -71,6 +71,21 @@ website signals. To check whether AI answers actually name a business, use the
 separate [Are you found by AI? service](https://areyoufoundbyai.com). Its measurement
 and scoring are separate from this repository's audit composite. A higher readiness
 score does not establish that a business will be named or cited more often.
+
+## Works with
+
+These optional connections add evidence to your audit. Each linked skill contains
+the setup and workflow.
+
+| Connection | What it adds | Setup |
+| --- | --- | --- |
+| [Are you found by AI? free scan](skills/found-by-ai/SKILL.md) | A sample of live AI answers about a business, with a shareable report. | Install `found-by-ai` and ask your agent to run a free scan of `example.com`; no account or key is needed. |
+| [Cloudflare agent-readiness check](skills/agent-readiness-scan/SKILL.md) | An independent website-readiness result, with saved evidence and CSV output. | Install `agent-readiness-scan`, provide `curl`, `jq`, Python 3 and Playwright, then ask your agent to run an agent-readiness scan on `example.com`. |
+| [Are you found by AI? MCP](skills/found-by-ai/SKILL.md#the-loop-for-monitored-sites) | Your own site's saved answers, rivals and cited sources inside your AI assistant. | Get the site's token from your account console, then configure your HTTP MCP client for `https://areyoufoundbyai.com/mcp` with `Authorization: Bearer <your-token>`. |
+
+For the MCP workflow, ask your agent to read saved results only. A new paid check
+requires you to review and agree to its quoted price. Available tools depend on the
+owner's permissions; see the [connection guide](https://areyoufoundbyai.com/for-agents).
 
 ## Quickstart
 
