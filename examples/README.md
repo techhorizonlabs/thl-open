@@ -2,7 +2,7 @@
 
 Copy-paste prompts for every skill, plus one worked end-to-end audit you can read
 start to finish. All sample data is fictional (a made-up broker, **Harborview
-Insurance Brokers**) — no real client appears here.
+Insurance Brokers**). No real client appears here.
 
 > New here? Read [the THL GEO Method](../docs/THL-GEO-METHOD.md) first. It explains
 > the three layers the walkthrough below moves through.
@@ -13,7 +13,7 @@ Insurance Brokers**) — no real client appears here.
 
 Once the skills are installed (see the [root README](../README.md#quickstart)), you
 drive them in plain language inside Claude Code. The skill fires on the intent, so
-phrasing is flexible — these are just reliable starting points.
+phrasing is flexible; these are just reliable starting points.
 
 | You want to… | Say something like | Skill |
 |---|---|---|
@@ -26,11 +26,11 @@ phrasing is flexible — these are just reliable starting points.
 | Check content E-E-A-T | `assess the content E-E-A-T on harborview-brokers.com.au` | `geo-content` |
 | Technical-SEO pass | `run a technical SEO audit of harborview-brokers.com.au` | `geo-technical` |
 | Scan brand authority | `scan brand mentions and authority for Harborview Insurance Brokers` | `geo-brand-mentions` |
-| Tune for one engine | `optimize harborview-brokers.com.au for Perplexity` | `geo-platform-optimizer` |
+| Tune for one engine | `optimise harborview-brokers.com.au for Perplexity` | `geo-platform-optimizer` |
 | Produce the client report | `generate a GEO report from this audit` | `geo-report` / `geo-report-pdf` |
 | Track month-over-month | `compare this month's audit against last month` | `geo-compare` |
 
-(`geo-proposal` and `geo-prospect` exist for the agency sales side — proposal
+(`geo-proposal` and `geo-prospect` exist for the agency sales side: proposal
 generation and a lightweight pipeline. They're part of the forked suite; the audit
 core above is what most people come for.)
 
@@ -41,15 +41,15 @@ core above is what most people come for.)
 A realistic run, end to end. The numbers below match the sample report in the
 [root README](../README.md) and the committed
 [`harborview.jsonld`](../tools/audit-report-kit/examples/harborview.jsonld), so you
-can see exactly where each artifact comes from.
+can see exactly where each artefact comes from.
 
-### 1 · Dimensional audit — `geo-audit`
+### 1 · Dimensional audit: `geo-audit`
 
 ```
 do a GEO audit of harborview-brokers.com.au
 ```
 
-The audit crawls the site, scores six dimensions into a 0–100 composite, and ranks
+The audit crawls the site, scores six dimensions into a 0-100 composite, and ranks
 the fixes by impact. For Harborview it lands at **38/100 (Critical)**:
 
 | Dimension | Score | Provenance | Why |
@@ -60,28 +60,28 @@ the fixes by impact. For Harborview it lands at **38/100 (Critical)**:
 | Content E-E-A-T | 44 | `[partial-scan]` | Service pages too thin to cite; little first-hand expertise signalled |
 | Technical SEO | 57 | `[scan]` | Indexable, but slow and light on structure |
 
-Every row carries a **provenance tag** — `[scan]` (fetched this run), `[partial-scan]`,
+Every row carries a **provenance tag**: `[scan]` (fetched this run), `[partial-scan]`,
 `[heuristic]`, or `[unmeasured]`. A category the audit couldn't actually measure shows
-`—`, never an invented number. (Core Web Vitals, for instance, reads `[unmeasured]`
+`n/a`, never an invented number. (Core Web Vitals, for instance, reads `[unmeasured]`
 unless a PageSpeed key is set.)
 
-Top ranked fixes: **(1)** deploy `Organization` + `Service` JSON-LD (unlocks the
+Top ranked fixes: **(1)** deploy `Organization` + `Service` JSON-LD (opens the way to the
 biggest citability gain), **(2)** open `robots.txt` to GPTBot and ClaudeBot, **(3)**
 deepen the service pages so models have something worth quoting.
 
-### 2 · External benchmark — `agent-readiness-scan`
+### 2 · External benchmark: `agent-readiness-scan`
 
 ```
 run an agent-readiness scan on harborview-brokers.com.au
 ```
 
 This runs Cloudflare's public `isitagentready.com` check and returns an independent
-0–100 score plus a fixed-schema CSV of evidence. It's the cross-check the
-dimensional audit can't give itself — a third-party number you record and re-run, so
+0-100 score plus a fixed-schema CSV of evidence. It's the cross-check the
+dimensional audit can't give itself: a third-party number you record and re-run, so
 the **delta** across audits is auditable rather than self-reported. Treat a low
 readiness score as corroboration of the crawler-access and schema findings above.
 
-### 3 · Deliverable — `audit-report-kit`
+### 3 · Deliverable: `audit-report-kit`
 
 The audit's findings become a branded client PDF plus the exact schema to paste:
 
@@ -106,13 +106,13 @@ can't drift from what the audit recommended:
 
 ### 4 · Re-audit on a cadence
 
-Re-run steps 1–2 monthly with `geo-compare`:
+Re-run steps 1 and 2 monthly with `geo-compare`:
 
 ```
 compare this month's Harborview audit against last month
 ```
 
-The first score is the baseline. The movement is the proof — that's the whole point
+The first score is the baseline. The movement is the proof. That's the whole point
 of keeping the formula fixed and every score evidenced.
 
 ---
@@ -121,4 +121,4 @@ of keeping the formula fixed and every score evidenced.
 
 Every score in a real run should trace to evidence you can point at, and the
 composite is a fixed formula (see the [audit checklist](../skills/geo-audit/references/thl-audit-checklist.md)).
-If a skill ever hands you a number it can't justify, that's a bug — open an issue.
+If a skill ever hands you a number it can't justify, that's a bug. Open an issue.

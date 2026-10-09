@@ -11,9 +11,9 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 
 ## Purpose
 
-This skill generates a professional, visually polished PDF report from GEO audit data. The PDF includes score gauges, bar charts, platform readiness visualizations, color-coded tables, and a prioritized action plan — ready to deliver directly to clients.
+This skill generates a professional, visually polished PDF report from GEO audit data. The PDF includes score gauges, bar charts, platform readiness visualizations, color-coded tables, and a prioritized action plan, ready to deliver directly to clients.
 
-> **Two PDF paths — pick one.** For a **branded, client-ready** deliverable, prefer the TypeScript [`tools/audit-report-kit`](../../tools/audit-report-kit) (react-pdf, THL brand tokens, provenance tags, `—` for null scores, compile-checked JSON-LD alongside). The ReportLab script below is the lightweight Python path when you don't want a Node toolchain. They render the same audit JSON; don't run both.
+> **Two PDF paths: pick one.** For a **branded, client-ready** deliverable, prefer the TypeScript [`tools/audit-report-kit`](../../tools/audit-report-kit) (react-pdf, THL brand tokens, provenance tags, `n/a` for null scores, compile-checked JSON-LD alongside). The ReportLab script below is the lightweight Python path when you don't want a Node toolchain. They render the same audit JSON; don't run both.
 
 ## Prerequisites
 
@@ -95,14 +95,14 @@ python3 skills/geo/scripts/generate_pdf_report.py /tmp/geo-audit-data.json GEO-R
 ```
 
 The script will produce a professional PDF report with:
-- **Cover Page** — Brand name, URL, date, overall GEO score with visual gauge
-- **Executive Summary** — Key findings and top recommendations
-- **Score Breakdown** — Table and bar chart of all 6 scoring categories
-- **AI Platform Readiness** — Visual horizontal bar chart per platform with scores
-- **AI Crawler Access** — Color-coded table (green=allowed, red=blocked)
-- **Key Findings** — Severity-coded findings list (critical/high/medium/low)
-- **Prioritized Action Plan** — Quick wins, medium-term, and strategic initiatives
-- **Appendix** — Methodology, data sources, and glossary
+- **Cover Page:** Brand name, URL, date, overall GEO score with visual gauge
+- **Executive Summary:** Key findings and top recommendations
+- **Score Breakdown:** Table and bar chart of all 6 scoring categories
+- **AI Platform Readiness:** Visual horizontal bar chart per platform with scores
+- **AI Crawler Access:** Color-coded table (green=allowed, red=blocked)
+- **Key Findings:** Severity-coded findings list (critical/high/medium/low)
+- **Prioritized Action Plan:** Quick wins, medium-term, and strategic initiatives
+- **Appendix:** Methodology, data sources, and glossary
 
 ### Step 4: Return the PDF Path
 
@@ -112,14 +112,14 @@ After generation, tell the user where the PDF was saved and its file size.
 
 When the user runs this skill, follow this exact sequence:
 
-1. **Check for existing audit data** — Look for recent GEO audit reports in the current directory:
+1. **Check for existing audit data.** Look for recent GEO audit reports in the current directory:
    - `GEO-CLIENT-REPORT.md`
    - `GEO-AUDIT-REPORT.md`
    - Or any `GEO-*.md` files from a recent audit
 
-2. **If no audit data exists** — Tell the user to run `/geo-audit <url>` first, then come back for the PDF.
+2. **If no audit data exists:** tell the user to run `/geo-audit <url>` first, then come back for the PDF.
 
-3. **If audit data exists** — Parse the markdown report to extract:
+3. **If audit data exists:** parse the markdown report to extract:
    - Overall GEO score
    - Category scores (citability, brand authority, content/E-E-A-T, technical, schema, platform)
    - Platform readiness scores (Google AIO, ChatGPT, Perplexity, Gemini, Bing Copilot)
@@ -128,16 +128,16 @@ When the user runs this skill, follow this exact sequence:
    - Quick wins, medium-term, and strategic action items
    - Executive summary
 
-4. **Build the JSON** — Structure all data into the JSON schema shown above.
+4. **Build the JSON.** Structure all data into the JSON schema shown above.
 
-5. **Write JSON to temp file** — Save to `/tmp/geo-audit-data.json`
+5. **Write JSON to temp file.** Save to `/tmp/geo-audit-data.json`
 
 6. **Run the PDF generator**:
    ```bash
    python3 skills/geo/scripts/generate_pdf_report.py /tmp/geo-audit-data.json "GEO-REPORT-[brand_name].pdf"
    ```
 
-7. **Report success** — Tell the user the PDF was generated, its location, and file size.
+7. **Report success.** Tell the user the PDF was generated, its location, and file size.
 
 ## If the User Provides a URL
 

@@ -420,7 +420,7 @@ def generate_report(data, output_path="GEO-REPORT.pdf"):
     details_data = [
         ["Website", url],
         ["Analysis Date", datetime.strptime(date, "%Y-%m-%d").strftime("%B %d, %Y") if "-" in date else date],
-        ["GEO Score", f"{geo_score}/100 — {get_score_label(geo_score)}"],
+        ["GEO Score", f"{geo_score}/100 ({get_score_label(geo_score)})"],
     ]
 
     details_table = Table(details_data, colWidths=[120, 350])
@@ -685,14 +685,14 @@ def generate_report(data, output_path="GEO-REPORT.pdf"):
     # Quick Wins
     elements.append(Paragraph("Quick Wins (This Week)", styles['SubHeader']))
     elements.append(Paragraph(
-        "High impact, low effort — can be implemented immediately.",
+        "High impact, low effort: can be implemented immediately.",
         styles['SmallText']
     ))
 
     if quick_wins:
         for i, action in enumerate(quick_wins, 1):
             if isinstance(action, dict):
-                text = f"<b>{i}.</b> {action.get('action', '')} — <i>{action.get('impact', '')}</i>"
+                text = f"<b>{i}.</b> {action.get('action', '')}: <i>{action.get('impact', '')}</i>"
             else:
                 text = f"<b>{i}.</b> {action}"
             elements.append(Paragraph(text, styles['Recommendation']))
@@ -712,14 +712,14 @@ def generate_report(data, output_path="GEO-REPORT.pdf"):
     # Medium-Term
     elements.append(Paragraph("Medium-Term Improvements (This Month)", styles['SubHeader']))
     elements.append(Paragraph(
-        "Significant impact, moderate effort — requires content or technical changes.",
+        "Significant impact, moderate effort: requires content or technical changes.",
         styles['SmallText']
     ))
 
     if medium_term:
         for i, action in enumerate(medium_term, 1):
             if isinstance(action, dict):
-                text = f"<b>{i}.</b> {action.get('action', '')} — <i>{action.get('impact', '')}</i>"
+                text = f"<b>{i}.</b> {action.get('action', '')}: <i>{action.get('impact', '')}</i>"
             else:
                 text = f"<b>{i}.</b> {action}"
             elements.append(Paragraph(text, styles['Recommendation']))
@@ -739,14 +739,14 @@ def generate_report(data, output_path="GEO-REPORT.pdf"):
     # Strategic
     elements.append(Paragraph("Strategic Initiatives (This Quarter)", styles['SubHeader']))
     elements.append(Paragraph(
-        "Long-term competitive advantage — requires ongoing investment.",
+        "Long-term competitive advantage: requires ongoing investment.",
         styles['SmallText']
     ))
 
     if strategic:
         for i, action in enumerate(strategic, 1):
             if isinstance(action, dict):
-                text = f"<b>{i}.</b> {action.get('action', '')} — <i>{action.get('impact', '')}</i>"
+                text = f"<b>{i}.</b> {action.get('action', '')}: <i>{action.get('impact', '')}</i>"
             else:
                 text = f"<b>{i}.</b> {action}"
             elements.append(Paragraph(text, styles['Recommendation']))
@@ -799,13 +799,13 @@ def generate_report(data, output_path="GEO-REPORT.pdf"):
 
     glossary = [
         ["Term", "Definition"],
-        ["GEO", "Generative Engine Optimization — optimizing content for AI search citation"],
-        ["AIO", "AI Overviews — Google's AI-generated answer boxes in search results"],
+        ["GEO", "Generative Engine Optimization: optimizing content for AI search citation"],
+        ["AIO", "AI Overviews: Google's AI-generated answer boxes in search results"],
         ["E-E-A-T", "Experience, Expertise, Authoritativeness, Trustworthiness"],
-        ["SSR", "Server-Side Rendering — generating HTML on the server for crawler access"],
-        ["CWV", "Core Web Vitals — Google's page experience metrics (LCP, INP, CLS)"],
-        ["INP", "Interaction to Next Paint — responsiveness metric (replaced FID March 2024)"],
-        ["JSON-LD", "JavaScript Object Notation for Linked Data — preferred structured data format"],
+        ["SSR", "Server-Side Rendering: generating HTML on the server for crawler access"],
+        ["CWV", "Core Web Vitals: Google's page experience metrics (LCP, INP, CLS)"],
+        ["INP", "Interaction to Next Paint: responsiveness metric (replaced FID March 2024)"],
+        ["JSON-LD", "JavaScript Object Notation for Linked Data: preferred structured data format"],
         ["sameAs", "Schema.org property linking an entity to its profiles on other platforms"],
         ["llms.txt", "Proposed standard file for guiding AI systems about site content"],
         ["IndexNow", "Protocol for instantly notifying search engines of content changes"],

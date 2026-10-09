@@ -91,13 +91,13 @@ Each prospect is stored as a JSON record:
 Read `~/.geo-prospects/prospects.json` and render a summary table:
 
 ```
-GEO Prospect Pipeline — March 2026
+GEO Prospect Pipeline: March 2026
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ID       Domain                  Company           Status      Score  Value
 ───────  ──────────────────────  ────────────────  ──────────  ─────  ──────
 PRO-001  meridianlegal.com.au        Meridian Legal      Qualified   32/100  A$4.5K
-PRO-002  acme.com                ACME Corp         Lead        —       —
+PRO-002  acme.com                ACME Corp         Lead        n/a     n/a
 PRO-003  coastalfitness.com.au              Coastal Fitness           Won         41/100  A$6.0K
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -135,7 +135,7 @@ Visual revenue-focused pipeline summary:
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-GEO AGENCY PIPELINE SUMMARY — March 2026
+GEO AGENCY PIPELINE SUMMARY: March 2026
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 STAGE          COUNT   POTENTIAL VALUE   NOTES
@@ -144,15 +144,15 @@ Lead             2      A$8,000/mo        New discoveries
 Qualified        1      A$4,500/mo        Ready for proposal
 Proposal Sent    1      A$6,000/mo        Awaiting signature
 Won              3      A$18,500/mo       Active clients (MRR)
-Lost             1      —                Budget freeze
+Lost             1      n/a              Budget freeze
 
 COMMITTED MRR:        A$18,500
 PIPELINE (qualified+): A$10,500
 TOTAL POTENTIAL:      A$29,000/mo → A$348,000/yr
 
 Next actions:
-→ PRO-003 (acme.com): Send proposal — score 38/100 (strong case)
-→ PRO-007 (coastalfitness.com.au): Follow up — proposal sent 8 days ago
+→ PRO-003 (acme.com): Send proposal (score 38/100, strong case)
+→ PRO-007 (coastalfitness.com.au): Follow up: proposal sent 8 days ago
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 

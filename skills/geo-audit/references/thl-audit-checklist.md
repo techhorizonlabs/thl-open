@@ -1,12 +1,12 @@
 # THL Audit Checklist + QA
 
-A copy-able checklist for a GEO audit run. Tick each item — its purpose is to stop a
+A copy-able checklist for a GEO audit run. Tick each item. Its purpose is to stop a
 dimension being silently skipped and to catch inconsistent facts before a report reaches
 a client. (THL-original addition to this fork.)
 
-## Per-dimension — every one must be scored, with evidence
+## Per-dimension: every one must be scored, with evidence
 
-- [ ] **AI Citability** scored 0–100, with 2–3 quoted passages that justify the score
+- [ ] **AI Citability** scored 0-100, with 2 to 3 quoted passages that justify the score
 - [ ] **Brand Authority** scored, with the platform-presence map (YouTube/Reddit/Wikipedia/LinkedIn)
 - [ ] **Content E-E-A-T** scored, with author/credential/citation evidence
 - [ ] **Technical GEO** scored, with the robots.txt / llms.txt / rendering findings
@@ -16,12 +16,12 @@ a client. (THL-original addition to this fork.)
 
 ## External benchmark (THL)
 
-- [ ] `agent-readiness-scan` run → Cloudflare 0–100 captured as an independent cross-check
+- [ ] `agent-readiness-scan` run → Cloudflare 0-100 captured as an independent cross-check
 - [ ] On a re-audit: both the composite and the readiness score recorded as a **delta** vs last cycle
 
 ## Cross-check before delivery (consistency catches real errors)
 
-- [ ] **Entity reconciliation:** the legal entity name and the trading/brand/domain name are both identified, and where they differ both are stated — so schema and findings name one consistent entity
+- [ ] **Entity reconciliation:** the legal entity name and the trading/brand/domain name are both identified, and where they differ both are stated, so schema and findings name one consistent entity
 - [ ] The same entity facts (name, address, ABN/registration, phone) appear verbatim in every section
 - [ ] The same citation positions appear across the citability, benchmark, and platform sections
 - [ ] The same technical numbers (LCP, crawler status) appear across the technical section and any chart

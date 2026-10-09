@@ -114,7 +114,7 @@ def fetch_page(url: str, timeout: int = 30) -> dict:
                 if level == 1:
                     result["h1_tags"].append(text)
 
-        # Structured data (JSON-LD) — extract before decompose() mutates the tree
+        # Structured data (JSON-LD): extract before decompose() mutates the tree
         for script in soup.find_all("script", type="application/ld+json"):
             try:
                 data = json.loads(script.string)
@@ -122,7 +122,7 @@ def fetch_page(url: str, timeout: int = 30) -> dict:
             except (json.JSONDecodeError, TypeError):
                 result["errors"].append("Invalid JSON-LD detected")
 
-        # SSR check — must run BEFORE decompose() mutates the tree
+        # SSR check: must run BEFORE decompose() mutates the tree
         js_app_roots = soup.find_all(
             id=re.compile(r"(app|root|__next|__nuxt)", re.I)
         )
@@ -137,7 +137,7 @@ def fetch_page(url: str, timeout: int = 30) -> dict:
                 "text_length": len(inner_text),
             })
 
-        # Text content — decompose non-content elements (destructive)
+        # Text content: decompose non-content elements (destructive)
         for element in soup.find_all(["script", "style", "nav", "footer", "header"]):
             element.decompose()
         text = soup.get_text(separator=" ", strip=True)
@@ -167,7 +167,7 @@ def fetch_page(url: str, timeout: int = 30) -> dict:
             }
             result["images"].append(img_data)
 
-        # SSR assessment — use pre-decompose measurements + overall content
+        # SSR assessment: use pre-decompose measurements + overall content
         if js_app_roots:
             for check in ssr_check_results:
                 # Only flag as client-rendered if both the root div has

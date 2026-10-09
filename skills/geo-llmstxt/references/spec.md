@@ -1,6 +1,6 @@
 # The llms.txt specification + file template
 
-Everything about what a good `llms.txt` file looks like — the format rules, the extended
+Everything about what a good `llms.txt` file looks like: the format rules, the extended
 `llms-full.txt` variant, a ready-to-fill template, and best practices. The procedure in `SKILL.md`
 points here for both analysis (validating against these rules) and generation (assembling a file).
 
@@ -48,9 +48,9 @@ The file uses Markdown formatting with specific conventions:
 - Use Markdown blockquote format (`>`).
 - Keep under 200 characters.
 - Should clearly state what the business does and who it serves.
-- Avoid marketing fluff — be factual and specific.
+- Avoid marketing fluff; be factual and specific.
 
-**3. Main Sections (Required — at least one)**
+**3. Main Sections (Required, at least one)**
 
 Use H2 headings (`##`) to organize pages by category. Common section names:
 
@@ -109,7 +109,7 @@ This section provides quick reference data that AI systems frequently need to an
 
 ## llms-full.txt (Extended Version)
 
-In addition to `llms.txt`, sites can provide `/llms-full.txt` — an extended version with more detail.
+In addition to `llms.txt`, sites can provide `/llms-full.txt`, an extended version with more detail.
 
 **Differences from llms.txt:**
 

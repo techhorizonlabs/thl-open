@@ -1,5 +1,5 @@
 // Compile-checked JSON-LD via schema-dts. If a property is wrong, `tsc`
-// fails — that's the point: the schema THL's GEO fixes deploy is type-safe.
+// fails. That's the point: the schema THL's GEO fixes deploy is type-safe.
 
 import type { Organization, WithContext } from "schema-dts";
 

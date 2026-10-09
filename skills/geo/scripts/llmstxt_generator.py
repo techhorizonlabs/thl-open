@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-llms.txt Generator — Creates and validates llms.txt files for AI crawler guidance.
+llms.txt Generator: creates and validates llms.txt files for AI crawler guidance.
 
 The llms.txt standard is an emerging specification that helps AI crawlers
 understand your site structure and find your most important content.

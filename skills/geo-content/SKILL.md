@@ -1,6 +1,6 @@
 ---
 name: geo-content
-description: Content quality and E-E-A-T assessment for AI citability — evaluate experience, expertise, authoritativeness, trustworthiness, and content structure
+description: Content quality and E-E-A-T assessment for AI citability: evaluate experience, expertise, authoritativeness, trustworthiness, and content structure
 version: 1.0.0
 author: geo-seo-claude
 tags: [geo, content-quality, eeat, citability, ai-content, topical-authority]
@@ -11,15 +11,15 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 
 ## Purpose
 
-AI search platforms do not just find content — they evaluate whether content deserves to be cited. The primary framework for this evaluation is **E-E-A-T** (Experience, Expertise, Authoritativeness, Trustworthiness), from Google's Search Quality Rater Guidelines. E-E-A-T began as a YMYL (Your Money Your Life) lens but is now widely applied by raters well beyond YMYL topics; treat strong E-E-A-T as table stakes for any competitive query. Content that scores high on E-E-A-T is materially more likely to be cited by AI platforms. (See [`docs/SOURCES.md`](../../docs/SOURCES.md) for the guidelines reference and dates.)
+AI search platforms do not just find content; they evaluate whether content deserves to be cited. The primary framework for this evaluation is **E-E-A-T** (Experience, Expertise, Authoritativeness, Trustworthiness), from Google's Search Quality Rater Guidelines. E-E-A-T began as a YMYL (Your Money Your Life) lens but is now widely applied by raters well beyond YMYL topics; treat strong E-E-A-T as table stakes for any competitive query. Content that scores high on E-E-A-T is materially more likely to be cited by AI platforms. (See [`docs/SOURCES.md`](../../docs/SOURCES.md) for the guidelines reference and dates.)
 
 This skill evaluates content through two lenses:
-1. **E-E-A-T signals** — does the content demonstrate real expertise and trust?
-2. **AI citability** — is the content structured so AI platforms can extract and cite specific claims?
+1. **E-E-A-T signals:** does the content demonstrate real expertise and trust?
+2. **AI citability:** is the content structured so AI platforms can extract and cite specific claims?
 
 ## How to Use This Skill
 
-1. Fetch the target page(s) — homepage, key blog posts, service/product pages
+1. Fetch the target page(s): homepage, key blog posts, service/product pages
 2. Evaluate E-E-A-T across the 4 dimensions (25% each)
 3. Assess content quality metrics (structure, readability, depth)
 4. Check for AI content quality signals
@@ -30,7 +30,7 @@ This skill evaluates content through two lenses:
 
 ## E-E-A-T Framework (100 points total)
 
-### Experience — 25 points
+### Experience: 25 points
 First-hand knowledge and direct involvement with the topic. AI platforms increasingly distinguish between content that reports on a topic and content from someone who has DONE it.
 
 **Signals to evaluate:**
@@ -50,7 +50,7 @@ First-hand knowledge and direct involvement with the topic. AI platforms increas
 - No mention of actual usage, testing, or direct involvement
 - Hedging language that suggests lack of direct knowledge ("reportedly", "supposedly", "some say")
 
-### Expertise — 25 points
+### Expertise: 25 points
 Demonstrated knowledge depth and professional competence in the subject matter.
 
 **Signals to evaluate:**
@@ -71,7 +71,7 @@ Demonstrated knowledge depth and professional competence in the subject matter.
 - No visible author or author without relevant credentials
 - Content that is broad and generic rather than deep and specific
 
-### Authoritativeness — 25 points
+### Authoritativeness: 25 points
 Recognition by others as a credible source on the topic.
 
 **Signals to evaluate:**
@@ -92,7 +92,7 @@ Recognition by others as a credible source on the topic.
 - No backlinks from authoritative sources
 - Claims of authority without evidence (self-proclaimed "expert")
 
-### Trustworthiness — 25 points
+### Trustworthiness: 25 points
 Signals that the content and its publisher are reliable and transparent.
 
 **Signals to evaluate:**
@@ -135,7 +135,7 @@ These are **floors, not targets**. More words does not mean better content. The 
 
 ### Readability Assessment
 - **Target Flesch Reading Ease**: 60-70 (8th-9th grade level)
-- This is NOT a direct ranking factor but affects citability — AI platforms prefer content that is clear and unambiguous
+- This is NOT a direct ranking factor but affects citability; AI platforms prefer content that is clear and unambiguous
 - Overly academic writing (score < 30) reduces citability for general queries
 - Overly simple writing (score > 80) may lack the depth needed for expertise signals
 
@@ -150,18 +150,18 @@ AI platforms extract content at the paragraph level. Each paragraph should be a 
 
 **Optimal paragraph structure:**
 - **2-4 sentences** per paragraph (1-sentence paragraphs are weak; 5+ sentences are hard to extract)
-- **One idea per paragraph** — do not mix topics within a paragraph
-- **Lead with the key claim** — first sentence should contain the main point
-- **Support with evidence** — remaining sentences provide data, examples, or context
-- **Quotable standalone** — each paragraph should make sense if extracted in isolation
+- **One idea per paragraph**: do not mix topics within a paragraph
+- **Lead with the key claim**: first sentence should contain the main point
+- **Support with evidence**: remaining sentences provide data, examples, or context
+- **Quotable standalone**: each paragraph should make sense if extracted in isolation
 
 ### Heading Structure
-- **One H1 per page** — the primary topic/title
-- **H2 for major sections** — should represent distinct subtopics
-- **H3 for subsections** — nested under relevant H2
-- **No skipped levels** — do not go from H1 to H3 without an H2
-- **Descriptive headings** — "How to Optimize for AI Search" not "Section 2"
-- **Question-based headings** where appropriate — these map directly to AI queries
+- **One H1 per page**: the primary topic/title
+- **H2 for major sections**: should represent distinct subtopics
+- **H3 for subsections**: nested under relevant H2
+- **No skipped levels**: do not go from H1 to H3 without an H2
+- **Descriptive headings**: "How to Optimize for AI Search" not "Section 2"
+- **Question-based headings** where appropriate; these map directly to AI queries
 
 ### Internal Linking
 - Every content page should link to 3-5 related pages on the same site
@@ -217,11 +217,11 @@ AI-generated content is **acceptable** per Google's guidance (March 2024 clarifi
 
 | Criterion | Score |
 |---|---|
-| Updated within 3 months | Excellent — current and relevant |
-| Updated within 6 months | Good — still reasonably current |
-| Updated within 12 months | Acceptable — may need refresh |
-| Updated 12-24 months ago | Warning — review for accuracy |
-| No date or 24+ months old | Critical — AI platforms may deprioritize |
+| Updated within 3 months | Excellent: current and relevant |
+| Updated within 6 months | Good: still reasonably current |
+| Updated within 12 months | Acceptable: may need refresh |
+| Updated 12-24 months ago | Warning: review for accuracy |
+| No date or 24+ months old | Critical: AI platforms may deprioritize |
 
 ### Evergreen Indicators
 Some content remains relevant regardless of age. Flag content as evergreen if:
@@ -268,22 +268,22 @@ Topical authority measures whether a site comprehensively covers a topic rather 
 | **Final Score** | | **Capped at 100** |
 
 ### Score Interpretation
-- **85-100**: Exceptional — strong AI citation candidate across platforms
-- **70-84**: Good — solid foundation, specific improvements will increase citability
-- **55-69**: Average — multiple E-E-A-T gaps reducing AI visibility
-- **40-54**: Below Average — significant content quality and trust issues
-- **0-39**: Poor — fundamental content strategy overhaul needed
+- **85-100**: Exceptional. Strong AI citation candidate across platforms
+- **70-84**: Good. Solid foundation; specific improvements will increase citability
+- **55-69**: Average. Multiple E-E-A-T gaps reducing AI visibility
+- **40-54**: Below Average. Significant content quality and trust issues
+- **0-39**: Poor. Fundamental content strategy overhaul needed
 
 ---
 
 ## Output Format
 
-> **Provenance (THL):** tag the score `[scan]` (data fetched this run), `[partial-scan]`, `[heuristic]` (judgement, no data), or `[unmeasured]` — and emit `—` instead of a number when `[unmeasured]` or pure `[heuristic]`. A number with weak provenance still reads as hard data. See [the GEO Method](../../docs/THL-GEO-METHOD.md).
+> **Provenance (THL):** tag the score `[scan]` (data fetched this run), `[partial-scan]`, `[heuristic]` (judgement, no data), or `[unmeasured]`, and emit `n/a` instead of a number when `[unmeasured]` or pure `[heuristic]`. A number with weak provenance still reads as hard data. See [the GEO Method](../../docs/THL-GEO-METHOD.md).
 
 Generate **GEO-CONTENT-ANALYSIS.md** with:
 
 ```markdown
-# GEO Content Quality & E-E-A-T Analysis — [Domain]
+# GEO Content Quality & E-E-A-T Analysis: [Domain]
 Date: [Date]
 
 ## Content Score: XX/100

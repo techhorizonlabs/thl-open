@@ -28,17 +28,17 @@ Use these to turn the report's weakest-platform findings into concrete recommend
 - Create a channel and upload 3-5 explainer videos on your core topics.
 - Put the brand name in video titles, descriptions, and spoken content.
 - Pursue guest appearances on relevant industry channels.
-- Make comparison / "alternatives" videos — these get cited by AI for comparison queries.
+- Make comparison / "alternatives" videos; these get cited by AI for comparison queries.
 
 **Reddit quick wins:**
 - Identify 3-5 subreddits where the target audience is active.
-- Participate authentically — do not shill; communities detect and punish it.
+- Participate authentically. Do not shill; communities detect and punish it.
 - Run an AMA if appropriate.
 - Monitor and respond to brand mentions.
 - Post genuinely helpful content that naturally surfaces the brand's expertise.
 
 **Wikipedia strategy:**
-- Hire a Wikipedia-knowledgeable consultant — do NOT edit your own article (conflict of interest).
+- Hire a Wikipedia-knowledgeable consultant; do NOT edit your own article (conflict of interest).
 - Build notability first through press coverage, academic citations, and industry recognition.
 - Complete the Wikidata entry even without a Wikipedia article.
 - Contribute to industry articles where the brand can be naturally cited as a source.

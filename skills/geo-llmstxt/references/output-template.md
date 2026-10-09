@@ -1,4 +1,4 @@
-# Output templates — analysis and generation modes
+# Output templates: analysis and generation modes
 
 ## Analysis Mode → `GEO-LLMSTXT-ANALYSIS.md`
 
@@ -40,8 +40,8 @@
 
 These important pages were found on the site but not in llms.txt:
 
-1. [Page Title](URL) — [Why it should be included]
-2. [Page Title](URL) — [Why it should be included]
+1. [Page Title](URL): [Why it should be included]
+2. [Page Title](URL): [Why it should be included]
 
 ## Improvement Recommendations
 

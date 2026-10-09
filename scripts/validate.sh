@@ -19,7 +19,7 @@ sect() { printf "\n\033[1m▶ %s\033[0m\n" "$1"; }
 
 FAILED=0
 
-sect "0. Preflight — required tooling"
+sect "0. Preflight: required tooling"
 PREFLIGHT_FAIL=0
 for cmd in python3 grep sed; do
   command -v "$cmd" >/dev/null 2>&1 || { fail "missing required command: $cmd"; PREFLIGHT_FAIL=1; }
@@ -70,19 +70,19 @@ for _,defs in h["hooks"].items():
             assert inner.get("type")=="command" and "command" in inner
 PY
 else
-  ok "no hooks/ — nothing to check (THL Open ships no phone-home hook by design)"
+  ok "no hooks/, nothing to check (THL Open ships no phone-home hook by design)"
 fi
 
 sect "5. No-login / no-telemetry posture (free, standalone)"
 NL=0
-[[ -f .mcp.json ]] && { fail ".mcp.json present — skills must not be gated behind a login MCP"; NL=1; }
-[[ -d mcp-server ]] && { fail "mcp-server/ present — don't ship a gating server"; NL=1; }
+[[ -f .mcp.json ]] && { fail ".mcp.json present: skills must not be gated behind a login MCP"; NL=1; }
+[[ -d mcp-server ]] && { fail "mcp-server/ present: don't ship a gating server"; NL=1; }
 HITS="$(grep -RIl --include='*.md' -E 'login required|sign in to use|requires_mcp: *true' skills docs 2>/dev/null || true)"
 [[ -n "$HITS" ]] && { fail "login-gating language found:"; echo "$HITS" | sed 's/^/        /'; NL=1; }
-[[ $NL -eq 0 ]] && ok "no login gating — every skill runs on the user's own session"
+[[ $NL -eq 0 ]] && ok "no login gating: every skill runs on the user's own session"
 
 sect "6. Relative markdown links resolve (P4)"
-python3 - <<'PY' && ok "all local markdown links resolve" || fail "broken local link(s) — see above"
+python3 - <<'PY' && ok "all local markdown links resolve" || fail "broken local link(s), see above"
 import re, os, glob, sys
 broken = []
 files = glob.glob("**/*.md", recursive=True)
@@ -95,7 +95,7 @@ for f in files:
         if t.startswith(("http://","https://","#","mailto:")): continue
         t = t.split("#")[0]
         if not t: continue
-        # Only validate things that actually look like local file paths — skip bare
+        # Only validate things that actually look like local file paths; skip bare
         # placeholders inside templates (e.g. "[Title](URL)", "[Name](path)").
         looks_like_path = t.startswith(("./","../")) or "/" in t or \
             re.search(r'\.(md|json|jsonld|ts|tsx|png|sh|txt|ya?ml)$', t)
@@ -106,21 +106,21 @@ if broken:
     print("   " + "\n   ".join(broken[:40]), file=sys.stderr); sys.exit(1)
 PY
 
-sect "7. Leak-check (no client names / secrets — pre-publish gate)"
+sect "7. Leak-check (no client names / secrets: pre-publish gate)"
 LEAK=0
-# Client denylist — single tokens, matched as whole words (-w is portable BSD/GNU).
+# Client denylist: single tokens, matched as whole words (-w is portable BSD/GNU).
 DENY='stonewell|heffernan|septech|kirbyko|dougall|laurene'
 LH="$(grep -RIwniE --include='*.md' --include='*.ts' --include='*.tsx' --include='*.json' "$DENY" skills tools docs examples evals README.md CHANGELOG.md CONTRIBUTING.md 2>/dev/null || true)"
 [[ -n "$LH" ]] && { fail "possible client-name leak:"; echo "$LH" | sed 's/^/        /'; LEAK=1; }
 # Obvious secret shapes.
 SH="$(grep -RInE --include='*.*' -e 'AKIA[0-9A-Z]{16}' -e '-----BEGIN [A-Z ]*PRIVATE KEY-----' -e 'sk-[A-Za-z0-9]{20,}' skills tools docs 2>/dev/null || true)"
 [[ -n "$SH" ]] && { fail "possible secret:"; echo "$SH" | sed 's/^/        /'; LEAK=1; }
-# Home paths — warn only (install instructions legitimately reference ~/.claude/skills).
+# Home paths: warn only (install instructions legitimately reference ~/.claude/skills).
 PH="$(grep -RIlE --include='*.md' '/Users/[a-z]|/home/[a-z]' skills tools docs examples evals 2>/dev/null || true)"
-[[ -n "$PH" ]] && warn "absolute home path(s) — confirm these are anti-pattern examples, not real paths: $(echo "$PH" | tr '\n' ' ')"
+[[ -n "$PH" ]] && warn "absolute home path(s): confirm these are anti-pattern examples, not real paths: $(echo "$PH" | tr '\n' ' ')"
 [[ $LEAK -eq 0 ]] && ok "no client names or secrets detected"
 
-sect "8. Skill trigger-phrase overlap (P1 sibling distinction — warning only)"
+sect "8. Skill trigger-phrase overlap (P1 sibling distinction, warning only)"
 python3 - <<'PY'
 import glob, re
 def triggers(text):
@@ -145,9 +145,9 @@ PY
 sect "9. claude plugin validate (optional)"
 if command -v claude >/dev/null 2>&1; then
   claude plugin validate "$ROOT" >/tmp/thl-validate.log 2>&1 && ok "claude plugin validate passed" \
-    || warn "claude plugin validate reported issues (see /tmp/thl-validate.log) — non-blocking"
+    || warn "claude plugin validate reported issues (see /tmp/thl-validate.log), non-blocking"
 else
-  echo "  (claude CLI not on PATH — skipping)"
+  echo "  (claude CLI not on PATH, skipping)"
 fi
 
 echo

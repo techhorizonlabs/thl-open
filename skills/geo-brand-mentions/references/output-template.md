@@ -1,7 +1,7 @@
-# Output template — `GEO-BRAND-MENTIONS.md`
+# Output template: `GEO-BRAND-MENTIONS.md`
 
 Generate a file called `GEO-BRAND-MENTIONS.md` in this shape. Every `[placeholder]` must be
-filled or marked `N/A` — no `[...]` strings may remain in the delivered report.
+filled or marked `N/A`. No `[...]` strings may remain in the delivered report.
 
 ```markdown
 # Brand Authority Report: [Brand Name]

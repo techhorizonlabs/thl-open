@@ -14,9 +14,9 @@ allowed-tools:
 
 ## Core Insight
 
-AI language models cite passages that meet specific structural criteria. Research on Generative Engine Optimization (Aggarwal et al., KDD 2024) found GEO tactics can lift visibility in AI answers by roughly **30–115%** depending on the tactic and query set (see [`docs/SOURCES.md`](../../docs/SOURCES.md) for provenance on this and the length figure). The pattern: AI systems preferentially extract passages that are **~134–167 words long**, **self-contained** (understandable without surrounding context), **fact-rich** (specific statistics, dates, named entities), and **directly answer a question** in the first 1-2 sentences.
+AI language models cite passages that meet specific structural criteria. Research on Generative Engine Optimization (Aggarwal et al., KDD 2024) found GEO tactics can lift visibility in AI answers by roughly **30-115%** depending on the tactic and query set (see [`docs/SOURCES.md`](../../docs/SOURCES.md) for provenance on this and the length figure). The pattern: AI systems preferentially extract passages that are **~134-167 words long**, **self-contained** (understandable without surrounding context), **fact-rich** (specific statistics, dates, named entities), and **directly answer a question** in the first 1-2 sentences.
 
-> **This score is a proxy, not a measurement.** It scores how *extractable* your passages are against these research-derived criteria — it does not ask an AI engine whether it actually quoted you. Any "expected lift" is a research-informed estimate, never a promise. For the live check of whether the engines name you, run the free scan at **[areyoufoundbyai.com](https://areyoufoundbyai.com)** (two buyer questions on ChatGPT and Gemini; the trial and paid tiers cover all seven engines).
+> **This score is a proxy, not a measurement.** It scores how *extractable* your passages are against these research-derived criteria. It does not ask an AI engine whether it actually quoted you. Any "expected lift" is a research-informed estimate, never a promise. For the live check of whether the engines name you, run the free scan at **[areyoufoundbyai.com](https://areyoufoundbyai.com)** (two buyer questions on ChatGPT and Gemini; the trial and paid tiers cover all seven engines).
 
 This is fundamentally different from traditional SEO copywriting, which optimizes for keyword density and user engagement metrics. GEO citability optimizes for **extractability** -- the ease with which an AI system can pull a passage from your content and present it as a direct answer.
 
@@ -222,7 +222,7 @@ For each block scoring below 60, generate a specific rewrite suggestion:
 
 ## Output Format
 
-> **Provenance (THL):** tag the score `[scan]` (data fetched this run), `[partial-scan]`, `[heuristic]` (judgement, no data), or `[unmeasured]` — and emit `—` instead of a number when `[unmeasured]` or pure `[heuristic]`. A number with weak provenance still reads as hard data. See [the GEO Method](../../docs/THL-GEO-METHOD.md).
+> **Provenance (THL):** tag the score `[scan]` (data fetched this run), `[partial-scan]`, `[heuristic]` (judgement, no data), or `[unmeasured]`, and emit `n/a` instead of a number when `[unmeasured]` or pure `[heuristic]`. A number with weak provenance still reads as hard data. See [the GEO Method](../../docs/THL-GEO-METHOD.md).
 
 Generate a file called `GEO-CITABILITY-SCORE.md`:
 
@@ -307,7 +307,7 @@ Generate a file called `GEO-CITABILITY-SCORE.md`:
 
 - **Optimal length for AI citation:** 134-167 words (Bortolato 2025 analysis of AI Overview passages)
 - **Adding statistics, authoritative quotations, source citations, or fluency optimization:** the
-  GEO study (Aggarwal et al., KDD 2024 — the joint Princeton / Georgia Tech / Allen AI / IIT Delhi
+  GEO study (Aggarwal et al., KDD 2024; the joint Princeton / Georgia Tech / Allen AI / IIT Delhi
   paper) reports 30-115% visibility improvements across these methods, varying by query category.
   It is one study, not three; cite it as one.
 

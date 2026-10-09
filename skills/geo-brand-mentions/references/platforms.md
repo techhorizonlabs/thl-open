@@ -6,24 +6,24 @@ Background for the platform weights in `SKILL.md`. Based on the Ahrefs study (De
 count, and **the platform the mention sits on matters enormously.** A mention on YouTube or
 Reddit can outweigh a dofollow backlink from a DR 70 blog.
 
-Each platform below carries its own rationale, a scan recipe, and a 0–100 rubric. Score every
+Each platform below carries its own rationale, a scan recipe, and a 0-100 rubric. Score every
 platform, then apply the composite weights in `SKILL.md`.
 
 ---
 
-## 1. YouTube — Correlation ~0.737 (STRONGEST)
+## 1. YouTube: Correlation ~0.737 (STRONGEST)
 
 **Why it matters most:**
 - Second-largest search engine and largest video platform globally (2.5B+ monthly users).
 - AI training datasets heavily incorporate YouTube transcripts, descriptions, and metadata.
 - Google's Gemini and AI Overviews directly reference YouTube content; Perplexity and ChatGPT both index and cite it.
-- Transcripts are especially valuable — natural-language mentions in conversational context, which is how AI models process and generate text.
+- Transcripts are especially valuable: natural-language mentions in conversational context, which is how AI models process and generate text.
 
 **What to check:**
 - **Brand channel:** active? subscriber count, video count, upload frequency.
 - **Third-party mentions:** other channels reviewing / comparing / tutorialising the brand.
 - **Descriptions & transcripts:** brand name in descriptions and spoken content of relevant videos (AI indexes both).
-- **Search presence:** searching "[brand]" on YouTube — do results appear, are they positive?
+- **Search presence:** searching "[brand]" on YouTube: do results appear, are they positive?
 - **Comments:** brand mentioned in comments on relevant industry videos.
 
 **How to scan:**
@@ -32,7 +32,7 @@ platform, then apply the composite weights in `SKILL.md`.
 3. Search: `"[brand name]" site:youtube.com` (exact match for description mentions)
 4. Note: subscriber count, video count, latest upload date, third-party mention count
 
-**Scoring (0–100):**
+**Scoring (0-100):**
 
 | Score | Criteria |
 |---|---|
@@ -45,7 +45,7 @@ platform, then apply the composite weights in `SKILL.md`.
 
 ---
 
-## 2. Reddit — High correlation
+## 2. Reddit: High correlation
 
 **Why it matters:**
 - One of the most heavily indexed platforms in AI training data (confirmed by Google's $60M/year Reddit licensing deal, 2024).
@@ -58,7 +58,7 @@ platform, then apply the composite weights in `SKILL.md`.
 - **Mention volume + trend:** how many threads, increasing or decreasing?
 - **Sentiment:** mostly positive / negative / neutral? common praise points and complaints.
 - **Official presence:** official account? participation? AMAs?
-- **Recommendation threads:** does it appear in "what do you recommend for X?" — top pick or also-ran?
+- **Recommendation threads:** does it appear in "what do you recommend for X?" Top pick or also-ran?
 - **Own subreddit:** exists? how active?
 
 **How to scan:**
@@ -68,7 +68,7 @@ platform, then apply the composite weights in `SKILL.md`.
 4. Check `reddit.com/user/[brand-name]` for an official account
 5. Note: thread count, dominant subreddits, sentiment, recommendation frequency
 
-**Scoring (0–100):**
+**Scoring (0-100):**
 
 | Score | Criteria |
 |---|---|
@@ -81,11 +81,11 @@ platform, then apply the composite weights in `SKILL.md`.
 
 ---
 
-## 3. Wikipedia / Wikidata — High correlation
+## 3. Wikipedia / Wikidata: High correlation
 
 **Why it matters:**
-- One of the highest-authority sources in AI training data — every major model trains on Wikipedia dumps.
-- AI systems use Wikipedia for **entity recognition** — deciding whether a brand is a "real" entity worth knowing about.
+- One of the highest-authority sources in AI training data; every major model trains on Wikipedia dumps.
+- AI systems use Wikipedia for **entity recognition**: deciding whether a brand is a "real" entity worth knowing about.
 - Wikidata supplies machine-readable facts that AI models use for knowledge-graph construction.
 - A Wikipedia page is a strong notability signal, which correlates with AI treating the brand as authoritative.
 
@@ -97,9 +97,9 @@ platform, then apply the composite weights in `SKILL.md`.
 - **Mentions:** referenced in other articles (industry, competitor, category pages)?
 - **Article quality:** stub, start-class, or higher?
 
-**How to scan — use BOTH methods; web search alone produces false negatives:**
+**How to scan: use BOTH methods; web search alone produces false negatives:**
 
-**Method 1 — Python API check (MOST RELIABLE, do this FIRST):**
+**Method 1: Python API check (MOST RELIABLE, do this FIRST):**
 ```bash
 python3 -c "
 import requests, json
@@ -121,21 +121,21 @@ r2 = requests.get(wd_url, headers={'User-Agent': 'GEO-Audit/1.0'}, timeout=15)
 wd = r2.json()
 entities = wd.get('search', [])
 if entities:
-    print(f'WIKIDATA ENTRY: {entities[0].get(\"id\", \"\")} — {entities[0].get(\"description\", \"\")}')
+    print(f'WIKIDATA ENTRY: {entities[0].get(\"id\", \"\")}: {entities[0].get(\"description\", \"\")}')
 "
 ```
 
-**Method 2 — Direct URL check (backup verification):**
-1. WebFetch `https://en.wikipedia.org/wiki/[Brand_Name]` — does the page load (not a redirect to search)?
+**Method 2: Direct URL check (backup verification):**
+1. WebFetch `https://en.wikipedia.org/wiki/[Brand_Name]`. Does the page load (not a redirect to search)?
 2. WebFetch `https://en.wikipedia.org/wiki/[Founder_Name]` for the founder article
 
-**Method 3 — Search (least reliable, supplemental only):**
+**Method 3: Search (least reliable, supplemental only):**
 1. Search: `[brand name] site:wikipedia.org`
 2. Search: `[brand name] site:wikidata.org`
 
-**CRITICAL:** If the API says a page exists, it exists — never override that with a search result that failed to find it. Note article existence, quality, edit history, and Wikidata completeness.
+**CRITICAL:** If the API says a page exists, it exists. Never override that with a search result that failed to find it. Note article existence, quality, edit history, and Wikidata completeness.
 
-**Scoring (0–100):**
+**Scoring (0-100):**
 
 | Score | Criteria |
 |---|---|
@@ -148,7 +148,7 @@ if entities:
 
 ---
 
-## 4. LinkedIn — Moderate correlation
+## 4. LinkedIn: Moderate correlation
 
 **Why it matters:**
 - Increasingly indexed by AI systems for professional and B2B context.
@@ -169,7 +169,7 @@ if entities:
 2. Check `linkedin.com/company/[brand-name]` for the company page
 3. Note: follower count, post frequency, employees listed, engagement levels
 
-**Scoring (0–100):**
+**Scoring (0-100):**
 
 | Score | Criteria |
 |---|---|
@@ -182,9 +182,9 @@ if entities:
 
 ---
 
-## 5. Other platforms — Supplementary
+## 5. Other platforms: Supplementary
 
-Lower but still meaningful correlation. Score this basket as one 0–100 dimension, weighting the
+Lower but still meaningful correlation. Score this basket as one 0-100 dimension, weighting the
 platforms most relevant to the brand's category.
 
 **How to scan:**
@@ -198,8 +198,8 @@ platforms most relevant to the brand's category.
 | Platform | Relevance | Signal strength |
 |---|---|---|
 | **Quora** | Answers frequently appear in AI training data and are cited by Perplexity | Moderate for B2C, lower for B2B |
-| **Stack Overflow / Exchange** | Critical for developer-facing brands — is the product discussed? a tag? an official account answering? | High for technical products, irrelevant for most B2C |
+| **Stack Overflow / Exchange** | Critical for developer-facing brands: is the product discussed? a tag? an official account answering? | High for technical products, irrelevant for most B2C |
 | **GitHub** | Org presence, repo stars, mentions in other repos' docs/discussions | High for dev tools / open source, low otherwise |
 | **Industry forums** | Niche authority AI picks up from domain-specific data (Hacker News, ProductHunt, community Slacks) | Moderate, valuable for niche authority |
-| **News & press** | Entity authority + recency signals | Moderate — recency matters; last 6 months ≫ 3 years ago |
+| **News & press** | Entity authority + recency signals | Moderate; recency matters; last 6 months ≫ 3 years ago |
 | **Podcasts** | Growing training-data source; transcripts increasingly indexed | Moderate and growing |
