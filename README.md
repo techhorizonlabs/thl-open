@@ -47,7 +47,7 @@ Same method, three depths. Start wherever you are:
 
 | | | |
 |---|---|---|
-| **⚡ Measure visibility** | **[areyoufoundbyai.com](https://areyoufoundbyai.com)** | Enter your URL → a live check of what AI answers when your buyers ask, in about a minute. Free, hosted, nothing to install: two buyer questions on ChatGPT and Gemini. Pro and its 14-day trial run the full measure across seven engines, as often as you choose, from a token balance shared across your sites. The *outcome*. |
+| **⚡ Measure visibility** | **[areyoufoundbyai.com](https://areyoufoundbyai.com)** | Enter your URL → a live check of what AI answers when your buyers ask, in about a minute. Free, hosted, nothing to install: two buyer questions on ChatGPT and Gemini. Pro runs the full measure across seven engines, as often as you choose, from a token balance shared across your sites. The *outcome*. |
 | **🛠 Diagnose readiness** | **this repo** | Run the full six-dimension readiness audit in Claude Code: *why* you're visible or not, all the evidence, none of the black box. The *inputs* you control. |
 | **🤝 Done for you** | **[Tech Horizon Labs](https://techhorizonlabs.com)** | We deploy it on your stack, with the calibration data and client playbooks that stay proprietary. |
 
